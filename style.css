@@ -1,0 +1,29 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 2rem;
+}
+
+.container {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    padding: .5rem;
+    border: 1px solid lightslategray;
+    border-radius: 4px;
+}
+
+.fields {
+    display: grid;
+    width: 400px;
+    grid-template-columns: 1fr 1fr;
+}
