@@ -4,11 +4,21 @@ const search = document.getElementById('search');
 const result = document.getElementById('result');
 const info   = document.getElementById('info');
 
+// let toelating;
+// fetch("data/toelating/duib.html")
+//     .then(response => response.text())
+//     .then(text => {console.log(text); toelating = text);
+
+fetch("https://raw.githubusercontent.com/uu-asc/uro_raadplegen/master/data/toelating/duib.html")
+    .then(response.text())
+    .then(function (text) {
+        info.innerHTML = text;
+    });
+
 let uro_data;
 fetch("https://raw.githubusercontent.com/uu-asc/uro_raadplegen/master/data/data.json")
     .then(response => response.json())
     .then(json => uro_data = json);
-
 
 // SEARCH RECORDS
 search.addEventListener('keyup', filterRecords);
