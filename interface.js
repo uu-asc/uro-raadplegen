@@ -10,7 +10,7 @@ const info   = document.getElementById('info');
 //     .then(text => {console.log(text); toelating = text);
 
 fetch("https://raw.githubusercontent.com/uu-asc/uro_raadplegen/master/data/toelating/duib.html")
-    .then(response.text())
+    .then(response => response.text())
     .then(function (text) {
         info.innerHTML = text;
     });
