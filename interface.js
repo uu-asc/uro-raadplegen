@@ -9,11 +9,6 @@ const info   = document.getElementById('info');
 //     .then(response => response.text())
 //     .then(text => {console.log(text); toelating = text);
 
-fetch("https://raw.githubusercontent.com/uu-asc/uro_raadplegen/master/data/toelating/duib.html")
-    .then(response => response.text())
-    .then(function (text) {
-        info.innerHTML = text;
-    });
 
 let uro_data;
 fetch("https://raw.githubusercontent.com/uu-asc/uro_raadplegen/master/data/data.json")
@@ -95,7 +90,13 @@ function filterRecords() {
                 </div>
             </div>
             `;
+        fetch(`https://raw.githubusercontent.com/uu-asc/uro_raadplegen/master/data/toelating/${filter}.html`)
+            .then(response => response.text())
+            .then(function (text) {
+                info.innerHTML = text;
+            });
     } else {
         result.innerHTML = ''
+        info.innerHTML = ''
     };
 };
