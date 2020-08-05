@@ -4,11 +4,6 @@ const search = document.getElementById('search');
 const result = document.getElementById('result');
 const info   = document.getElementById('info');
 
-// let toelating;
-// fetch("data/toelating/duib.html")
-//     .then(response => response.text())
-//     .then(text => {console.log(text); toelating = text);
-
 
 let uro_data;
 fetch("https://raw.githubusercontent.com/uu-asc/uro_raadplegen/master/data/data.json")
@@ -23,8 +18,8 @@ function filterRecords() {
         let record = uro_data[filter]
         result.innerHTML = `
             <div class="container">
-                <div class="box">
-                    <h2>opleiding</h2>
+                <div class="box margins-off">
+                    <h3>Opleiding</h3>
                     <div class="fields">
                         <div class="field">opleiding</div>
                         <div class="value">${filter}</div>
@@ -34,8 +29,8 @@ function filterRecords() {
                         <div class="value">${record['type_opleiding']}</div>
                     </div>
                 </div>
-                <div class="box">
-                    <h2>croho</h2>
+                <div class="box margins-off">
+                    <h3>CROHO</h3>
                     <div class="fields">
                         <div class="field">croho</div>
                         <div class="value">${record['croho']}</div>
@@ -49,8 +44,8 @@ function filterRecords() {
                         <div class="value">${record['bekostigings_niveau']}</div>
                     </div>
                 </div>
-                <div class="box">
-                    <h2>onderdeel</h2>
+                <div class="box margins-off">
+                    <h3>Onderdeel</h3>
                     <div class="fields">
                         <div class="field">faculteit</div>
                         <div class="value">${record['faculteit']}</div>
@@ -62,8 +57,8 @@ function filterRecords() {
                         <div class="value">${record['aggregaat_3']}</div>
                     </div>
                 </div>
-                <div class="box">
-                    <h2>instroom</h2>
+                <div class="box margins-off">
+                    <h3>Instroom</h3>
                     <div class="fields">
                         <div class="field">februari_instroom</div>
                         <div class="value">${record['februari_instroom']}</div>
@@ -75,8 +70,8 @@ function filterRecords() {
                         <div class="value">${record['inschrijven_vanaf']}</div>
                     </div>
                 </div>
-                <div class="box">
-                    <h2>toelating</h2>
+                <div class="box margins-off">
+                    <h3>Toelating RATHO</h3>
                     <div class="fields">
                         <div class="field">NT</div>
                         <div class="value">${record['NT']}</div>

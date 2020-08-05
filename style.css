@@ -1,25 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+* + * {
+    margin-top: 1.5em;
+}
+
+.margins-off {
+    margin-top: 0;
+}
+
+.margins-off * + * {
+    margin-top: 0;
+}
+
+ul, ol, li {
+    padding-left: 1em;
+}
+
+li {
+    margin-top: 0;
 }
 
 body {
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
     padding: 2rem;
 }
 
+.input {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+#search {
+    padding: 0.25rem;
+    border: 1px solid darkslategray;
+    border-radius: 4px;
+}
 .container {
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
     flex-wrap: wrap;
 }
 
 .box {
     display: flex;
     flex-direction: column;
-    padding: .5rem;
-    border: 1px solid lightslategray;
+    border: 1px solid darkslategray;
     border-radius: 4px;
+    margin-top: 0;
+}
+
+.box h3 {
+    background-color: black;
+    color: white;
+    padding: .5rem;
+}
+
+.box > * {
+    padding: .5rem;
 }
 
 .fields {
