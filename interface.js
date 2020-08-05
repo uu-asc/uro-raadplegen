@@ -5,7 +5,7 @@ const result = document.getElementById('result');
 const info   = document.getElementById('info');
 
 let uro_data;
-fetch("https://raw.githubusercontent.com/uu-asc/uro_raadplegen/master/data.json")
+fetch("https://raw.githubusercontent.com/uu-asc/uro_raadplegen/master/data/data.json")
     .then(response => response.json())
     .then(json => uro_data = json);
 
