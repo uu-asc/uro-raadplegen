@@ -4,20 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>URO</title>
-    <!-- <link rel="stylesheet" href="https://unpkg.com/mvp.css"> -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" type="image/x-icon" href="static/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="static/style.css">
 </head>
 <body>
-    <div class="input margins-off">
-        <h1 class="margins-off">raadpleeg uro</h1>
-        <label for="search" class="margins-off">opleidingscode</label>
-        <input type="text" id="search" class="margins-off">
+    <div class="header margins-off">
+        <h1>raadpleeg uro</h1>
+        <div class="input">
+            <label for="search">opleidingscode</label>
+            <input type="text" id="search">
+        </div>
+        <img src="static/UU_logo_NL_ZWART.png" alt="Universiteit Utrecht" width="180px">
+    </div>
+    <code><a href="content/standaardteksten_vooropleiding.html">standaarteksten vooropleiding</a></code>
+    <div class="container column margins-off">
+        <div id="result" class="margins-off"></div>
+        <div id="info" class="box"></div>
     </div>
 
-    <div id="result" class="margins-off"></div>
+    <code><a href="mailto:l.c.vriend@uu.nl" class="monospace">feedback/suggesties</a></code>
 
-    <div id="info" class="box"></div>
 
 </body>
 <script src="interface.js"></script>
