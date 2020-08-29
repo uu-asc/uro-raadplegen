@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vakken</title>
+    <link rel="icon" type="image/x-icon" href="static/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+</head>
+<body>
+    <div class="header margins-off">
+        <h1>raadpleeg vakken</h1>
+        <div class="input">
+            <label for="search">vaknaam</label>
+            <input type="text" id="search">
+        </div>
+        <img src="static/UU_logo_NL_ZWART.png" alt="Universiteit Utrecht" width="180px">
+    </div>
+    <code><a href="content/standaardteksten_vooropleiding.html">standaarteksten vooropleiding</a></code>
+    <div class="container column margins-off">
+        <div id="result" class="margins-off"></div>
+        <div id="info" class="box"></div>
+    </div>
+
+    <code><a href="mailto:l.c.vriend@uu.nl" class="monospace">feedback/suggesties</a></code>
+    <h3>Aanvullende vakkeneisen</h3>
+    <textarea id="vakeis" cols="70" rows="5">Zip</textarea>
+    <button onclick="toClipboard('vakeis')">Copy</button>
+
+</body>
+<script src="js/interface_vakken.js"></script>
+</html>
