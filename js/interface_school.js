@@ -22,7 +22,7 @@ function copyText(element) {
 }
 
 let data
-fetch("../data/data_school.json")
+fetch("../data/school.json")
     .then(response => response.json())
     .then(json => data = json)
 
@@ -30,6 +30,7 @@ fetch("../data/data_school.json")
 inputCode.addEventListener('keyup', filterRecords)
 inputNaam.addEventListener('keyup', filterRecords)
 inputPlaats.addEventListener('keyup', filterRecords)
+
 function filterRecords() {
     let code = inputCode.value.toUpperCase()
     let naam = inputNaam.value.toUpperCase()

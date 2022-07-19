@@ -5,7 +5,7 @@ const result = document.getElementById('result');
 const info = document.getElementById('info');
 
 let uro_data;
-fetch("https://raw.githubusercontent.com/uu-asc/uro_raadplegen/master/data/data_uro.json")
+fetch("data/uro.json")
     .then(response => response.json())
     .then(json => uro_data = json);
 
@@ -84,7 +84,7 @@ function filterRecords() {
                 </div>
             </div>
             `;
-        fetch(`https://raw.githubusercontent.com/uu-asc/uro_raadplegen/master/data/toelating/${filter}.html`)
+        fetch(`data/toelating/${filter}.html`)
             .then(response => response.text())
             .then(function (text) {
                 info.innerHTML = text;

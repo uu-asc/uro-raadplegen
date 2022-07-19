@@ -6,7 +6,7 @@ const result = document.getElementById('result');
 const info = document.getElementById('info');
 
 let vak_data;
-fetch("../data/data_vakken.json")
+fetch("../data/vak.json")
     .then(response => response.json())
     .then(json => vak_data = json);
 
