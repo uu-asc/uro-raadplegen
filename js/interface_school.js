@@ -22,7 +22,7 @@ function copyText(element) {
 }
 
 let data
-fetch("https://raw.githubusercontent.com/uu-asc/uro_raadplegen/master/data/data_school.json")
+fetch("../data/data_school.json")
     .then(response => response.json())
     .then(json => data = json)
 
@@ -35,7 +35,7 @@ function filterRecords() {
     let naam = inputNaam.value.toUpperCase()
     let plaats = inputPlaats.value.toUpperCase()
     let rows = []
-    for (let record in data) {
+    for (let record of data) {
         if (
             record[0].includes(code)
             && record[1].includes(naam)
