@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,17 +9,26 @@
     <link rel="stylesheet" type="text/css" href="../static/style.css">
 </head>
 
+<nav>
+    <code><a href="../index.html">uro</a></code>
+    <code><a href="../content/vakken.html">vakken</a></code>
+    <code><a href="../content/scholen.html">standaardteksten</a></code>
+</nav>
+
 <body>
     <h3>Aanvullende vakkeneisen</h3>
-    <textarea id="vakeis" cols="70" rows="5">We hebben nog niet kunnen verifiëren dat je aan de volgende ingangseis voldoet: wiskunde op havo-niveau, cijfer 6 of hoger. Zie ook de toelatingseisen bij jouw opleiding op onze bachelorkiezersite: www.uu.nl/bachelors</textarea>
+    <textarea id="vakeis" cols="70"
+        rows="5">We hebben nog niet kunnen verifiëren dat je aan de volgende ingangseis voldoet: wiskunde op havo-niveau, cijfer 6 of hoger. Zie ook de toelatingseisen bij jouw opleiding op onze bachelorkiezersite: www.uu.nl/bachelors</textarea>
     <button onclick="toClipboard('vakeis')">Copy</button>
 
     <h3>Cijferlijst bij pbh</h3>
-    <textarea id="cijferlijst_pbh" cols="70" rows="5">Je hebt een cijferlijst opgestuurd. Deze kunnen we niet verwerken. We hebben één van de volgende documenten nodig: een scan van het getuigschrift of een afstudeerverklaring van de hbo-instelling. Zie https://www.uu.nl/bachelors/sites/default/files/oo_hboverklaring.pdf voor de eisen die we stellen aan de afstudeerverklaring.</textarea>
+    <textarea id="cijferlijst_pbh" cols="70"
+        rows="5">Je hebt een cijferlijst opgestuurd. Deze kunnen we niet verwerken. We hebben één van de volgende documenten nodig: een scan van het getuigschrift of een afstudeerverklaring van de hbo-instelling. Zie https://www.uu.nl/bachelors/sites/default/files/oo_hboverklaring.pdf voor de eisen die we stellen aan de afstudeerverklaring.</textarea>
     <button onclick="toClipboard('cijferlijst_pbh')">Copy</button>
 
     <h3>Verklaring zonder examendatum</h3>
-    <textarea id="verklaring" cols="70" rows="5">Het document dat je hebt geüpload vermeld niet expliciet dat de propedeuse is behaald en vermeld geen examendatum. Deze kunnen we niet verwerken. We hebben één van de volgende documenten nodig: een scan van het getuigschrift of een afstudeerverklaring van de hbo-instelling. Zie https://www.uu.nl/bachelors/sites/default/files/oo_hboverklaring.pdf voor de eisen die we stellen aan de afstudeerverklaring.</textarea>
+    <textarea id="verklaring" cols="70"
+        rows="5">Het document dat je hebt geüpload vermeld niet expliciet dat de propedeuse is behaald en vermeld geen examendatum. Deze kunnen we niet verwerken. We hebben één van de volgende documenten nodig: een scan van het getuigschrift of een afstudeerverklaring van de hbo-instelling. Zie https://www.uu.nl/bachelors/sites/default/files/oo_hboverklaring.pdf voor de eisen die we stellen aan de afstudeerverklaring.</textarea>
     <button onclick="toClipboard('verklaring')">Copy</button>
 
 
@@ -36,4 +46,5 @@
         document.execCommand("copy");
     }
 </script>
+
 </html>

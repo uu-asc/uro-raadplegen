@@ -2,8 +2,7 @@ console.log("i have been summoned")
 
 const search = document.getElementById('search');
 const result = document.getElementById('result');
-const info   = document.getElementById('info');
-
+const info = document.getElementById('info');
 
 let uro_data;
 fetch("https://raw.githubusercontent.com/uu-asc/uro_raadplegen/master/data/data_uro.json")
