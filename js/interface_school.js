@@ -38,8 +38,8 @@ function filterRecords() {
     let rows = []
     for (let record of data) {
         if (
-            // record[0].includes(code)
-            record[1].includes(naam)
+            record[0].includes(code)
+            && record[1].includes(naam)
             && record[2].includes(plaats)
         ) {
             rows.push(
@@ -49,7 +49,7 @@ function filterRecords() {
                     <td class="copyable">${record[2]}</td>
                 </tr>`
             )
-            result.innerHTML = `<table>${rows.join('')}</table>`
         }
     }
+    result.innerHTML = `<table>${rows.join('')}</table>`
 }
