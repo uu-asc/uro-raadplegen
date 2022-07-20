@@ -1,10 +1,18 @@
 import pandas as pd
+from urllib import request
+import ssl
 
 
-url = 'https://wetten.overheid.nl/BWBR0035059/2019-09-01'
+def fetch_ratho():
+    url = 'https://wetten.overheid.nl/BWBR0035059/2022-04-15'
+    context = ssl._create_unverified_context()
+    response = request.urlopen(url, context=context)
+    html = response.read()
 
-ratho = pd.concat(
-    pd.read_html(url)[4:14]
-).rename(
-    {'Opleidingen': 'croho_naam'}, axis=1
-).drop(['NG¹'], axis=1)
+    to_rename = {'Opleidingen': 'croho_naam_nl'}
+    tables = pd.read_html(html)[1:10]
+    return (
+        pd.concat(tables, ignore_index=True)
+        .rename(to_rename, axis=1)
+        .drop(['NG¹'], axis=1)
+    )
