@@ -20,18 +20,44 @@
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
     margin-top: 0;
-    padding: 2rem;
-    padding-top: 0;
+    padding-block: 1rem;
+    padding-inline: 2rem;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+}
+
+header>* {
+    margin-top: 0;
+    flex-grow: 1;
+}
+
+header>h1 {
+    font-variant: small-caps;
+}
+
+header>img {
+    flex-grow: 0;
 }
 
 nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
     margin-top: 0;
     margin-bottom: 4px;
 }
 
 nav>* {
-    padding-right: 16px;
+    margin-top: 0;
 }
 
 ul,
@@ -51,6 +77,7 @@ input {
 }
 
 button {
+    margin-top: 0;
     padding: 0.25rem;
     border: 1px solid darkslategray;
     border-radius: 4px;
@@ -74,33 +101,20 @@ td {
 
 .monospace {
     font-family: 'Courier New', Courier, monospace;
-    font-size: 0.8em;
-}
-
-.header {
-    display: flex;
-    /* width: 100%; */
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: 1;
-}
-
-.header>* {
-    flex-grow: 1;
-}
-
-.header>img {
-    flex-grow: 0;
 }
 
 .search_bar {
     display: flex;
+    flex-wrap: wrap;
     gap: 1.5rem;
     align-items: center;
 }
 
+.search_bar>div {
+    display: contents;
+}
+
 .container {
-    margin-top: 0;
     display: flex;
     gap: 1.5rem;
     flex-wrap: wrap;

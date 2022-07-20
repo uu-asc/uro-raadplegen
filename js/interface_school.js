@@ -44,7 +44,7 @@ function filterRecords() {
         ) {
             rows.push(
                 `<tr>
-                    <td class="copyable">${record[0]}</td>
+                    <td class="copyable monospace">${record[0]}</td>
                     <td class="copyable">${record[1]}</td>
                     <td class="copyable">${record[2]}</td>
                 </tr>`

@@ -23,7 +23,7 @@ function filterRecords() {
                         <div class="field">opleiding</div>
                         <div class="value">${filter}</div>
                         <div class="field">opleiding_naam</div>
-                        <div class="value">${record['opleiding_naam']}</div>
+                        <div class="value">${record['opleiding_naam_nl']}</div>
                         <div class="field">type_opleiding</div>
                         <div class="value">${record['type_opleiding']}</div>
                     </div>
@@ -34,13 +34,13 @@ function filterRecords() {
                         <div class="field">croho</div>
                         <div class="value">${record['croho']}</div>
                         <div class="field">croho_naam</div>
-                        <div class="value">${record['croho_naam']}</div>
+                        <div class="value">${record['croho_naam_nl']}</div>
                         <div class="field">croho_sector</div>
                         <div class="value">${record['croho_sector']}</div>
                         <div class="field">nominale_studieduur</div>
                         <div class="value">${record['nominale_studieduur']}</div>
                         <div class="field">bekostigings_niveau</div>
-                        <div class="value">${record['bekostigings_niveau']}</div>
+                        <div class="value">${record['bekostigingsniveau']}</div>
                     </div>
                 </div>
                 <div class="box margins-off">
