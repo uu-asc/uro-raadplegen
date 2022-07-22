@@ -5,21 +5,6 @@ const inputName = document.getElementById('search_name');
 const result = document.getElementById('result');
 const info = document.getElementById('info');
 
-document.addEventListener('click', function (event) {
-    let element = event.target;
-    let isCopyable = element.classList.contains('copyable');
-    if (isCopyable) {
-        copyText(element, event.shiftKey)
-    }
-})
-
-function copyText(element) {
-    let to_copy = element.innerText
-    navigator
-        .clipboard.writeText(to_copy)
-        .then(res => { console.log("gekopieerd naar klembord") })
-}
-
 let vak_data;
 fetch("../data/vak.json")
     .then(response => response.json())

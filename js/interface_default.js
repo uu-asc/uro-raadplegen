@@ -4,27 +4,6 @@ const inputCode = document.getElementById('zoek_code')
 const inputNaam = document.getElementById('zoek_naam')
 const result = document.getElementById('result')
 
-document.addEventListener('click', function (event) {
-    if (event.target.matches("input")) {
-        event.target.value = ""
-    }
-})
-
-document.addEventListener('click', function (event) {
-    let element = event.target
-    let isCopyable = element.classList.contains('copyable')
-    if (isCopyable) {
-        copyText(element)
-    }
-})
-
-function copyText(element) {
-    let to_copy = element.innerText
-    navigator
-        .clipboard.writeText(to_copy)
-        .then(res => { console.log("gekopieerd naar klembord") })
-}
-
 // SEARCH RECORDS
 inputCode.addEventListener('keyup', filterRecords)
 inputNaam.addEventListener('keyup', filterRecords)

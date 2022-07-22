@@ -6,21 +6,6 @@ const inputPlaats = document.getElementById('zoek_plaats')
 const result = document.getElementById('result')
 const info = document.getElementById('info')
 
-document.addEventListener('click', function (event) {
-    let element = event.target;
-    let isCopyable = element.classList.contains('copyable');
-    if (isCopyable) {
-        copyText(element, event.shiftKey)
-    }
-})
-
-function copyText(element) {
-    let to_copy = element.innerText
-    navigator
-        .clipboard.writeText(to_copy)
-        .then(res => { console.log("gekopieerd naar klembord") })
-}
-
 let data
 fetch("../data/school.json")
     .then(response => response.json())
@@ -38,9 +23,9 @@ function filterRecords() {
     let rows = []
     for (let record of data) {
         if (
-            record[0].includes(code)
-            && record[1].includes(naam)
-            && record[2].includes(plaats)
+            record[1].toUpperCase().includes(naam)
+            && record[2].toUpperCase().includes(plaats)
+            && record[0].toUpperCase().includes(code)
         ) {
             rows.push(
                 `<tr>

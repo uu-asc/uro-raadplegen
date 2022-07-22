@@ -94,6 +94,11 @@ button:active {
 table {
     table-layout: fixed;
     width: 100%;
+    border-collapse: collapse;
+}
+
+tr:hover {
+    background-color: hsl(195, 53%, 89%);
 }
 
 td {
