@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>vak</title>
+    <title>nationaliteit</title>
     <link rel="icon" type="image/x-icon" href="../static/favicon.ico">
     <link rel="stylesheet" type="text/css" href="../static/style.css">
 </head>
 
 <body>
     <header class="margins-off">
-        <h1>vak</h1>
+        <h1>nationaliteit</h1>
         <nav>
             <code><a href="../index.html">uro</a></code>
             
@@ -32,12 +32,12 @@
     <div class="search_bar margins-off">
         
 <div>
-    <label for="search_code">code</label>
-    <input type="text" id="search_code">
+    <label for="zoek_code">code</label>
+    <input type="text" id="zoek_code">
 </div>
 <div>
-    <label for="search_name">naam</label>
-    <input type="text" id="search_name">
+    <label for="zoek_name">naam</label>
+    <input type="text" id="zoek_naam">
 </div>
 
     </div>
@@ -49,6 +49,12 @@
     <code><a href="mailto:l.c.vriend@uu.nl" class="monospace">feedback/suggesties</a></code>
 </body>
 
-<script src="../js/interface_vak.js"></script>
+<script>
+    let data
+    fetch("../data/nationaliteit.json")
+        .then(response => response.json())
+        .then(json => data = json)
+</script>
+<script src="../js/interface_default.js"></script>
 
 </html>

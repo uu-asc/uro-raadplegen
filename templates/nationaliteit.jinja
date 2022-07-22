@@ -1,7 +1,7 @@
 {% extends "_base_.jinja" %}
 {% set nested = '../' %}
 
-{% block title %}school{% endblock %}
+{% block title %}nationaliteit{% endblock %}
 
 {% block search_bar %}
 <div>
@@ -12,12 +12,14 @@
     <label for="zoek_name">naam</label>
     <input type="text" id="zoek_naam">
 </div>
-<div>
-    <label for="zoek_name">plaats</label>
-    <input type="text" id="zoek_plaats">
-</div>
 {% endblock %}
 
 {% block script %}
-<script src="../js/interface_school.js"></script>
+<script>
+    let data
+    fetch("../data/nationaliteit.json")
+        .then(response => response.json())
+        .then(json => data = json)
+</script>
+<script src="../js/interface_default.js"></script>
 {% endblock %}

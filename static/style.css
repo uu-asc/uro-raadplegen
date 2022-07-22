@@ -92,6 +92,7 @@ button:active {
 }
 
 table {
+    table-layout: fixed;
     width: 100%;
 }
 
@@ -155,4 +156,8 @@ td {
 
 .copyable:hover {
     cursor: pointer;
+}
+
+.copyable:active {
+    font-weight: bold;
 }
