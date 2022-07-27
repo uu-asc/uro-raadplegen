@@ -3,40 +3,70 @@
 
 {% block title %}standaardteksten{% endblock %}
 
+{% block style %}
+<style>
+    .autogrid {
+        display: grid;
+        grid-template-columns: repeat( auto-fit, minmax(300px, 1fr) );
+        grid-template-rows: max-content;
+        gap: 1rem;
+    }
+    .autogrid textarea {
+        width: 280px;
+        height: 280px;
+    }
+</style>
+{% endblock %}
+
 {% block search_bar %}
 {% endblock %}
 
 {% block content %}
-<h3>Aanvullende vakkeneisen hbo-propedeuse</h3>
+<div class="autogrid">
 <div>
-    <textarea id="vakeis_pbh" cols="70" rows="5">We hebben de hbo-verklaring/diploma geaccepteerd. Er gelden echter aanvullende eisen als je op basis van een hbo-p wilt inschrijven:
-    [URO]
+<h3>Aanvullende vakkeneisen hbo-p</h3>
+<textarea id="vakeis_pbh">We hebben de hbo-verklaring/diploma geaccepteerd. Er gelden echter aanvullende eisen als je op basis van een hbo-p wilt inschrijven:
+[URO]
+
 Zie: www.uu.nl/bachelors > opleiding > toelating > nl voor meer informatie. Upload ook de certificaten waaruit blijkt dat je aan de aanvullende eisen voldoet.</textarea>
-    <button onclick="toClipboard('vakeis_pbh')">Copy</button>
+<button onclick="toClipboard('vakeis_pbh')">Copy</button>
 </div>
 
-<h3>Cijferlijst bij hbo-propedeuse</h3>
 <div>
-    <textarea id="cijferlijst_pbh" cols="70" rows="5">Je hebt een cijferlijst opgestuurd. Deze kunnen we niet verwerken. We hebben één van de volgende documenten nodig: een scan van het diploma of een afstudeerverklaring van de hbo-instelling.
+<h3>Cijferlijst bij hbo-p</h3>
+<textarea id="cijferlijst_pbh">Je hebt een cijferlijst opgestuurd. Deze kunnen we niet verwerken. We hebben één van de volgende documenten nodig: een scan van het diploma of een afstudeerverklaring van de hbo-instelling.
 
 Zie https://www.uu.nl/bachelors/sites/default/files/oo_hboverklaring.pdf voor de eisen die we stellen aan de afstudeerverklaring.</textarea>
-    <button onclick="toClipboard('cijferlijst_pbh')">Copy</button>
+<button onclick="toClipboard('cijferlijst_pbh')">Copy</button>
 </div>
 
+<div>
 <h3>Verklaring zonder examendatum</h3>
-<div>
-    <textarea id="verklaring_pbh" cols="70" rows="5">Het document dat je hebt geüpload vermeld niet expliciet dat de propedeuse is behaald en vermeld geen examendatum. Deze kunnen we niet verwerken. We hebben één van de volgende documenten nodig: een scan van het diploma of een afstudeerverklaring van de hbo-instelling.
+<textarea id="verklaring_pbh">Het document dat je hebt geüpload vermeld niet expliciet dat de propedeuse is behaald en vermeld geen examendatum. Deze kunnen we niet verwerken. We hebben één van de volgende documenten nodig: een scan van het diploma of een afstudeerverklaring van de hbo-instelling.
 
 Zie https://www.uu.nl/bachelors/sites/default/files/oo_hboverklaring.pdf voor de eisen die we stellen aan de afstudeerverklaring.</textarea>
-    <button onclick="toClipboard('verklaring_pbh')">Copy</button>
+<button onclick="toClipboard('verklaring_pbh')">Copy</button>
 </div>
 
-<h3>Bindend studieadvies</h3>
 <div>
-    <textarea id="bsa" cols="70" rows="5">Je hebt een bindend studieadvies geupload. Dit kunnen we niet accepteren. We hebben één van de volgende documenten nodig: een scan van het diploma of een afstudeerverklaring van de hbo-instelling.
+<h3>Bindend studieadvies</h3>
+<textarea id="bsa">Je hebt een bindend studieadvies geupload. Dit kunnen we niet accepteren. We hebben één van de volgende documenten nodig: een scan van het diploma of een afstudeerverklaring van de hbo-instelling.
 
 Zie https://www.uu.nl/bachelors/sites/default/files/oo_hboverklaring.pdf voor de eisen die we stellen aan de afstudeerverklaring.</textarea>
-    <button onclick="toClipboard('bsa')">Copy</button>
+<button onclick="toClipboard('bsa')">Copy</button>
+</div>
+
+<div>
+<h3>Vakkeneisen niet compleet</h3>
+<textarea id="vakeis">Je hebt nog niet voldaan aan de aanvullende vakkeneisen. Jouw vooropleiding is:
+[VOOROPLEIDING]
+
+Bij deze vooropleiding gelden de volgende eisen:
+[URO]
+
+Zie: www.uu.nl/bachelors > opleiding > toelating > nl voor meer informatie. Upload certificaten waaruit blijkt dat je aan de overige aanvullende eisen voldoet.</textarea>
+<button onclick="toClipboard('vakeis')">Copy</button>
+</div>
 </div>
 {% endblock %}
 

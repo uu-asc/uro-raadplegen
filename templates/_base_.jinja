@@ -7,6 +7,7 @@
     <title>{% block title %}{% endblock %}</title>
     <link rel="icon" type="image/x-icon" href="{{ nested }}static/favicon.ico">
     <link rel="stylesheet" type="text/css" href="{{ nested }}static/style.css">
+    {% block style %}{% endblock %}
 </head>
 
 <body>
@@ -14,9 +15,9 @@
         <h1>{{ self.title() }}</h1>
         <nav>
             <code><a href="{{ nested }}index.html">uro</a></code>
-            {% for page in pages %}
+            {% for page in pages -%}
             <code><a href="{{ nested }}content/{{ page }}.html">{{ page }}</a></code>
-            {% endfor %}
+            {%- endfor %}
             {% block nav %}{% endblock %}
         </nav>
         <img src="{{ nested }}static/UU_logo_NL_ZWART.png" alt="Universiteit Utrecht" width="320px">
