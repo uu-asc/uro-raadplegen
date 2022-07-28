@@ -1,0 +1,11 @@
+html, body {
+    height: auto;
+}
+
+#info * + :where(h2,h3,h4) {
+    margin-top: .5em;
+}
+
+#info :where(p:not(:last-child)) {
+    margin-bottom: 1rem;
+}

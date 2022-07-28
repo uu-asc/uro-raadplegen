@@ -1,0 +1,15 @@
+html, body {
+    height: auto;
+}
+
+.autogrid {
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(300px, 1fr) );
+    grid-template-rows: max-content;
+    gap: 1rem;
+}
+
+.autogrid textarea {
+    width: 280px;
+    height: 280px;
+}

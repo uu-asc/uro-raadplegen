@@ -1,25 +1,3 @@
-{% extends "_base_.jinja" %}
-{% set nested = '../' %}
-
-{% block title %}nationaliteit{% endblock %}
-
-{% block search_bar %}
-<div>
-    <label for="zoek_code">code</label>
-    <input type="text" id="zoek_code">
-</div>
-<div>
-    <label for="zoek_name">naam</label>
-    <input type="text" id="zoek_naam">
-</div>
-{% endblock %}
-
-{% block script %}
-<script>
-    let data
-    fetch("../data/nationaliteit.json")
-        .then(response => response.json())
-        .then(json => data = json)
-</script>
-<script src="../js/interface_default.js"></script>
-{% endblock %}
+{% extends '_ref_.jinja' %}
+{% set name = 'nationaliteit' %}
+{% set file = '../data/nationaliteit.json' %}

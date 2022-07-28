@@ -1,0 +1,28 @@
+{% extends '__base__.jinja' %}
+{% set nested = '' %}
+
+{% block title %}uro_toelating{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" type="text/css" href="{{ nested }}static/style.uro_toelating.css">
+{% endblock %}
+
+{% block search_bar %}
+<div class="searchbar__filters">
+    <div>
+        <label for="search">opleidingscode</label>
+        <input type="text" id="search">
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container column">
+    <div id="result"></div>
+    <div id="info" class="box"></div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script src="js/interface_uro_toelating.js"></script>
+{% endblock %}

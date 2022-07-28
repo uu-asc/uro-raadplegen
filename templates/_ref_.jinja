@@ -1,0 +1,38 @@
+{% extends '__base__.jinja' %}
+{% set nested = '../' %}
+
+{% block title %}{{ name }}{% endblock %}
+
+{% block search_bar %}
+<div class="searchbar">
+    <div class="searchbar__filters">
+    {% for input in inputs %}
+        <div>
+            <label for="{{ input }}">{{ input }}</label>
+            <input type="text" id="{{ input }}">
+        </div>
+    {% endfor %}
+    </div>
+    <div class="searchbar__controls">
+        <button id="wisfilters">wis filters</button>
+        <div id="nresults"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container column">
+    <div id="result"></div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script>
+    let headernames = {{ inputs }}
+    let data
+    fetch("{{ file }}")
+        .then(response => response.json())
+        .then(json => data = json)
+</script>
+<script src="../js/interface_default.js"></script>
+{% endblock %}

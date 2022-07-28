@@ -1,21 +1,10 @@
-{% extends "_base_.jinja" %}
+{% extends '__base__.jinja' %}
 {% set nested = '../' %}
 
 {% block title %}standaardteksten{% endblock %}
 
 {% block style %}
-<style>
-    .autogrid {
-        display: grid;
-        grid-template-columns: repeat( auto-fit, minmax(300px, 1fr) );
-        grid-template-rows: max-content;
-        gap: 1rem;
-    }
-    .autogrid textarea {
-        width: 280px;
-        height: 280px;
-    }
-</style>
+<link rel="stylesheet" type="text/css" href="{{ nested }}static/style.standaardteksten.css">
 {% endblock %}
 
 {% block search_bar %}

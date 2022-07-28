@@ -50,43 +50,6 @@ function filterRecords() {
                     </div>
                 </div>
                 <div class="box margins-off">
-                    <h3>Onderdeel</h3>
-                    <div class="fields">
-                        <div class="field">faculteit</div>
-                        <div class="value">${record['faculteit']}</div>
-                        <div class="field">aggregaat_1</div>
-                        <div class="value">${record['aggregaat_1']}</div>
-                        <div class="field">aggregaat_2</div>
-                        <div class="value">${record['aggregaat_2']}</div>
-                        <div class="field">aggregaat_3</div>
-                        <div class="value">${record['aggregaat_3']}</div>
-                    </div>
-                </div>
-                <div class="box margins-off">
-                    <h3>Instroom</h3>
-                    <div class="fields">
-                        <div class="field">februari_instroom</div>
-                        <div class="value">${record['februari_instroom']}</div>
-                        <div class="field">croho_inschrijven_vanaf</div>
-                        <div class="value">${record['croho_inschrijven_vanaf']}</div>
-                        <div class="field">croho_inschrijven_tm</div>
-                        <div class="value">${record['croho_inschrijven_tm']}</div>
-                        <div class="field">ext_inschrijven_vanaf</div>
-                        <div class="value">${record['ext_inschrijven_vanaf']}</div>
-                        <div class="field">ext_inschrijven_tm</div>
-                        <div class="value">${record['ext_inschrijven_tm']}</div>
-                    </div>
-                </div>
-                <div class="box margins-off">
-                    <h3>Herinschrijving</h3>
-                    <div class="fields">
-                        <div class="field">croho_inschrijven_tm</div>
-                        <div class="value">${record['croho_herinschrijven_tm']}</div>
-                        <div class="field">ext_inschrijven_vanaf</div>
-                        <div class="value">${record['ext_herinschrijven_tm']}</div>
-                    </div>
-                </div>
-                <div class="box margins-off">
                     <h3>Toelating RATHO</h3>
                     <div class="fields">
                         <div class="field">NT</div>
@@ -109,3 +72,41 @@ function filterRecords() {
         info.innerHTML = ''
     }
 }
+
+{/* <div class="box margins-off">
+<div class="box margins-off">
+    <h3>Onderdeel</h3>
+    <div class="fields">
+        <div class="field">faculteit</div>
+        <div class="value">${record['faculteit']}</div>
+        <div class="field">aggregaat_1</div>
+        <div class="value">${record['aggregaat_1']}</div>
+        <div class="field">aggregaat_2</div>
+        <div class="value">${record['aggregaat_2']}</div>
+        <div class="field">aggregaat_3</div>
+        <div class="value">${record['aggregaat_3']}</div>
+    </div>
+</div>
+<h3>Instroom</h3>
+<div class="fields">
+    <div class="field">februari_instroom</div>
+    <div class="value">${record['februari_instroom']}</div>
+    <div class="field">croho_inschrijven_vanaf</div>
+    <div class="value">${record['croho_inschrijven_vanaf']}</div>
+    <div class="field">croho_inschrijven_tm</div>
+    <div class="value">${record['croho_inschrijven_tm']}</div>
+    <div class="field">ext_inschrijven_vanaf</div>
+    <div class="value">${record['ext_inschrijven_vanaf']}</div>
+    <div class="field">ext_inschrijven_tm</div>
+    <div class="value">${record['ext_inschrijven_tm']}</div>
+</div>
+</div>
+<div class="box margins-off">
+<h3>Herinschrijving</h3>
+<div class="fields">
+    <div class="field">croho_inschrijven_tm</div>
+    <div class="value">${record['croho_herinschrijven_tm']}</div>
+    <div class="field">ext_inschrijven_vanaf</div>
+    <div class="value">${record['ext_herinschrijven_tm']}</div>
+</div>
+</div> */}
