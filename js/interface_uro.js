@@ -4,17 +4,17 @@ const search = document.getElementById('search');
 const result = document.getElementById('result');
 const info = document.getElementById('info');
 
-let uro_data;
-fetch("data/uro.json")
+let data
+fetch("data/uro_details.json")
     .then(response => response.json())
-    .then(json => uro_data = json);
+    .then(json => data = json)
 
 // SEARCH RECORDS
 search.addEventListener('keyup', filterRecords);
 function filterRecords() {
     let filter = search.value.toUpperCase();
-    if (uro_data.hasOwnProperty(filter)) {
-        let record = uro_data[filter]
+    if (data.hasOwnProperty(filter)) {
+        let record = data[filter]
         result.innerHTML = `
             <div class="container">
                 <div class="box margins-off">
@@ -24,8 +24,12 @@ function filterRecords() {
                         <div class="value">${filter}</div>
                         <div class="field">opleiding_naam</div>
                         <div class="value">${record['opleiding_naam_nl']}</div>
+                        <div class="field">opleiding_naam_en</div>
+                        <div class="value">${record['opleiding_naam_en']}</div>
                         <div class="field">type_opleiding</div>
                         <div class="value">${record['type_opleiding']}</div>
+                        <div class="field">inschrijfvorm</div>
+                        <div class="value">${record['vtdt_vorm']}</div>
                     </div>
                 </div>
                 <div class="box margins-off">
@@ -35,6 +39,8 @@ function filterRecords() {
                         <div class="value">${record['croho']}</div>
                         <div class="field">croho_naam</div>
                         <div class="value">${record['croho_naam_nl']}</div>
+                        <div class="field">croho_naam_en</div>
+                        <div class="value">${record['croho_naam_en']}</div>
                         <div class="field">croho_sector</div>
                         <div class="value">${record['croho_sector']}</div>
                         <div class="field">nominale_studieduur</div>
@@ -61,12 +67,23 @@ function filterRecords() {
                     <div class="fields">
                         <div class="field">februari_instroom</div>
                         <div class="value">${record['februari_instroom']}</div>
-                        <div class="field">inschrijven_tm</div>
-                        <div class="value">${record['inschrijven_tm']}</div>
-                        <div class="field">herinschrijven_tm</div>
-                        <div class="value">${record['herinschrijven_tm']}</div>
-                        <div class="field">inschrijven_vanaf</div>
-                        <div class="value">${record['inschrijven_vanaf']}</div>
+                        <div class="field">croho_inschrijven_vanaf</div>
+                        <div class="value">${record['croho_inschrijven_vanaf']}</div>
+                        <div class="field">croho_inschrijven_tm</div>
+                        <div class="value">${record['croho_inschrijven_tm']}</div>
+                        <div class="field">ext_inschrijven_vanaf</div>
+                        <div class="value">${record['ext_inschrijven_vanaf']}</div>
+                        <div class="field">ext_inschrijven_tm</div>
+                        <div class="value">${record['ext_inschrijven_tm']}</div>
+                    </div>
+                </div>
+                <div class="box margins-off">
+                    <h3>Herinschrijving</h3>
+                    <div class="fields">
+                        <div class="field">croho_inschrijven_tm</div>
+                        <div class="value">${record['croho_herinschrijven_tm']}</div>
+                        <div class="field">ext_inschrijven_vanaf</div>
+                        <div class="value">${record['ext_herinschrijven_tm']}</div>
                     </div>
                 </div>
                 <div class="box margins-off">
@@ -83,14 +100,12 @@ function filterRecords() {
                     </div>
                 </div>
             </div>
-            `;
+            `
         fetch(`data/toelating/${filter}.html`)
-            .then(response => response.text())
-            .then(function (text) {
-                info.innerHTML = text;
-            });
+            .then(response => response.ok ? response.text() : "")
+            .then(function (text) { info.innerHTML = text })
     } else {
         result.innerHTML = ''
         info.innerHTML = ''
-    };
-};
+    }
+}
