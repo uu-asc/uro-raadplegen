@@ -180,7 +180,7 @@ td, th {
 }
 
 .copyable:active {
-    font-weight: bold;
+    color: gray;
 }
 
 #result {

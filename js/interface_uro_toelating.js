@@ -21,45 +21,45 @@ function filterRecords() {
                     <h3>Opleiding</h3>
                     <div class="fields">
                         <div class="field">opleiding</div>
-                        <div class="value">${filter}</div>
+                        <div class="value copyable">${filter}</div>
                         <div class="field">opleiding_naam</div>
-                        <div class="value">${record['opleiding_naam_nl']}</div>
+                        <div class="value copyable">${record['opleiding_naam_nl']}</div>
                         <div class="field">opleiding_naam_en</div>
-                        <div class="value">${record['opleiding_naam_en']}</div>
+                        <div class="value copyable">${record['opleiding_naam_en']}</div>
                         <div class="field">type_opleiding</div>
-                        <div class="value">${record['type_opleiding']}</div>
+                        <div class="value copyable">${record['type_opleiding']}</div>
                         <div class="field">inschrijfvorm</div>
-                        <div class="value">${record['vtdt_vorm']}</div>
+                        <div class="value copyable">${record['vtdt_vorm']}</div>
                     </div>
                 </div>
                 <div class="box margins-off">
                     <h3>CROHO</h3>
                     <div class="fields">
                         <div class="field">croho</div>
-                        <div class="value">${record['croho']}</div>
+                        <div class="value copyable">${record['croho']}</div>
                         <div class="field">croho_naam</div>
-                        <div class="value">${record['croho_naam_nl']}</div>
+                        <div class="value copyable">${record['croho_naam_nl']}</div>
                         <div class="field">croho_naam_en</div>
-                        <div class="value">${record['croho_naam_en']}</div>
+                        <div class="value copyable">${record['croho_naam_en']}</div>
                         <div class="field">croho_sector</div>
-                        <div class="value">${record['croho_sector']}</div>
+                        <div class="value copyable">${record['croho_sector']}</div>
                         <div class="field">nominale_studieduur</div>
-                        <div class="value">${record['nominale_studieduur']}</div>
+                        <div class="value copyable">${record['nominale_studieduur']}</div>
                         <div class="field">bekostigings_niveau</div>
-                        <div class="value">${record['bekostigingsniveau']}</div>
+                        <div class="value copyable">${record['bekostigingsniveau']}</div>
                     </div>
                 </div>
                 <div class="box margins-off">
                     <h3>Toelating RATHO</h3>
                     <div class="fields">
                         <div class="field">NT</div>
-                        <div class="value">${record['NT']}</div>
+                        <div class="value copyable">${record['NT']}</div>
                         <div class="field">NG</div>
-                        <div class="value">${record['NG']}</div>
+                        <div class="value copyable">${record['NG']}</div>
                         <div class="field">EM</div>
-                        <div class="value">${record['EM']}</div>
+                        <div class="value copyable">${record['EM']}</div>
                         <div class="field">CM</div>
-                        <div class="value">${record['CM']}</div>
+                        <div class="value copyable">${record['CM']}</div>
                     </div>
                 </div>
             </div>
