@@ -168,7 +168,6 @@ td, th {
 
 .fields {
     display: grid;
-    width: 400px;
     grid-template-columns: 1fr 1fr;
 }
 
