@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Hairline&family=Lato&display=swap');
 
 * {
     padding: 0;
@@ -26,6 +26,7 @@ header {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap-reverse;
+    border-bottom: 1px solid black;
 }
 
 header>* {
@@ -34,7 +35,8 @@ header>* {
 }
 
 header>h1 {
-    font-variant: small-caps;
+    font-family: 'Bungee Hairline', cursive;
+    font-size: 3rem;
 }
 
 header>img {
