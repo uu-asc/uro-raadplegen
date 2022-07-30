@@ -1,0 +1,32 @@
+{% extends '__base__.jinja' %}
+{% set nested = '../' %}
+{% set file = '../data/nuttige_links.json' %}
+
+{% block title %}nuttige.links{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" type="text/css" href="{{ nested }}static/style.nuttige_links.css">
+{% endblock %}
+
+{% block search_bar %}
+<div class="searchbar">
+    <div class="searchbar__filters">
+        <div>
+            <label for="zoekterm">zoekterm</label>
+            <input type="text" id="zoekterm">
+        </div>
+    </div>
+    <div class="searchbar__controls">
+        <button id="wisfilters">wis filters</button>
+        <div id="nresults"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div id="nuttige_links"></div>
+{% endblock %}
+
+{% block script %}
+<script src="../js/interface_nuttige_links.js"></script>
+{% endblock %}

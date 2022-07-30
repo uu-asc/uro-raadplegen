@@ -22,9 +22,8 @@
         </nav>
         <img src="{{ nested }}static/UU_logo_NL_ZWART_CROP.png" alt="Universiteit Utrecht" width="240px">
     </header>
-    <div>
-        {% block search_bar %}{% endblock %}
-    </div>
+    <div id="messageboard" class="monospace"></div>
+    {% block search_bar %}{% endblock %}
     {% block content %}{% endblock %}
     <code><a href="mailto:l.c.vriend@uu.nl" class="monospace">feedback/suggesties</a></code>
 </body>

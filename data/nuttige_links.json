@@ -1,0 +1,62 @@
+{
+    "Wet- en regelgeving": {
+        "Overheid": [
+            {"url": "https://wetten.overheid.nl/BWBR0005682", "text": "Wet op het hoger onderwijs en wetenschappelijk onderzoek"},
+            {"url": "https://wetten.overheid.nl/BWBR0006152", "text": "Uitvoeringsbesluit WHW 2008"},
+            {"url": "https://wetten.overheid.nl/BWBR0033693", "text": "Wet Kwaliteit in verscheidenheid hoger onderwijs"}
+        ],
+        "Universiteit Utrecht": [
+            {"url": "www.uu.nl/onderwijsregelingen", "text": "Regelingen en procedures"},
+            {"url": "https://students.uu.nl/sites/default/files/uu-reglementinschrijvingencollegegeld2022-2023.pdf", "text": "Reglement Inschrijving en Collegegeld 2022-2023"}
+        ]
+    },
+    "Bekostiging": {
+        "DUO": [
+            {"url": "https://duo.nl/zakelijk/hoger-onderwijs/bekostiging-en-subsidies/bekostiging-ho.jsp", "text": "Bekostiging Ho"},
+            {"url": "https://duo.nl/zakelijk/images/beslisregels-statustoekenning-rijksbijdrage-ho-2023.pdf", "text": "Beslisregels statustoekenning Rijksbijdrage"},
+            {"url": "https://duo.nl/zakelijk/images/helderheid-bekostiging-ho.pdf", "text": "Notitie Helderheid bekostiging Ho"},
+            {"url": "https://duo.nl/zakelijk/images/aanvullende-notitie.pdf", "text": "Aanvulling op notitie Helderheid"}
+        ]
+    },
+    "Collegegeld": {
+        "Overheid": [
+            {"url": "https://www.rijksoverheid.nl/onderwerpen/hoger-onderwijs/vraag-en-antwoord/recht-op-halvering-collegegeld", "text": "Wanneer heb ik recht op halvering collegegeld?"}
+        ],
+        "DUO": [
+            {"url": "https://www.duo.nl/particulier/collegegeld.jsp#collegegeld", "text": "Collegegeld"}
+        ],
+        "Universiteit Utrecht": [
+            {"url": "https://students.uu.nl/sites/default/files/uu-reglementinschrijvingencollegegeld2022-2023.pdf#page=10", "text": "RIC | 4 Collegegeld"},
+            {"url": "https://www.uu.nl/bachelors/algemene-informatie/informatie-voor-nederlandse-studenten/kosten-studeren/collegegeld", "text": "Bachelors > Kosten studeren > Collegegeld"},
+            {"url": "https://www.uu.nl/masters/algemene-informatie/informatie-voor-nederlandse-studenten/geldzaken/collegegeld", "text": "Masters > Geldzaken > Collegegeld"},
+            {"url": "https://students.uu.nl/praktische-zaken/geldzaken/collegegeld", "text": "Praktische zaken > Geldzaken > Collegegeld"}
+        ]
+    },
+    "Verblijfsvergunning": {
+        "IND": [
+            {"url": "https://ind.nl/nl/verblijfsvergunningen/langdurig-ingezetene-eu/aanvragen-verblijfsvergunning-eu-langdurig-ingezetene", "text": "Aanvragen verblijfsvergunning EU-langdurig ingezetene"},
+            {"url": "https://ind.nl/nl/verblijfsvergunning-eu-langdurig-ingezetene-in-andere-eu-landen", "text": "Landen met verblijfsvergunning EU-langdurig ingezetene"},
+            {"url": "https://www.vreemdelingendocumenten.nl/nl/documenten", "text": "Echtheidskenmerken van Nederlandse documenten voor vreemdelingen"}
+        ],
+        "DUO": [
+            {"url": "https://www.duo.nl/particulier/studiefinanciering/voorwaarden.jsp", "text": "Voorwaarden studiefinanciering"},
+            {"url": "https://www.duo.nl/particulier/verblijfsvergunning-type-1.jsp", "text": "Beslisboom verblijfsvergunning type-1"},
+            {"url": "https://duo.nl/zakelijk/images/programma-van-eisen-hoger-onderwijs.pdf#page=238", "text": "PvE | Bijlage 13: Verblijfsdocument"}
+        ]
+    },
+    "Toelaatbaarheid": {
+        "Overheid": [
+            {"url": "https://wetten.overheid.nl/BWBR0035059", "text": "Regeling aanmelding en toelating hoger onderwijs"}
+        ],
+        "Universiteit Utrecht": [
+            {"url": "https://www.uu.nl/bachelors", "text": "Bachelor kiezersite"},
+            {"url": "https://www.uu.nl/masters", "text": "Master kiezersite"},
+            {"url": "https://students.uu.nl/praktische-zaken/regelingen-en-procedures/oer-en-studentenstatuut", "text": "Onderwijs- en Examenregeling"},
+            {"url": "https://students.uu.nl/sites/default/files/uu-reglementinschrijvingencollegegeld2022-2023.pdf#page=6", "text": "RIC | 2B Eerste inschrijving bacheloropleiding"},
+            {"url": "https://www.uu.nl/bachelors/sites/default/files/oo_hboverklaring.pdf", "text": "Eisen hbo-verklaring"}
+        ],
+        "Nuffic": [
+            {"url": "https://www.nuffic.nl/onderwerpen/diploma/onderwijssystemen", "text": "Onderwijssystemen: Vergelijk buitenlandse met Nederlandse diploma's"}
+        ]
+    }
+}

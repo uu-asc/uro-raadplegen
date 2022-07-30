@@ -12,6 +12,12 @@ html, body {
     height: 100vh;
 }
 
+@media (max-width: 1000px) {
+    html, body {
+        height: auto;
+    }
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -36,7 +42,7 @@ header>* {
 
 header>h1 {
     font-family: 'Bungee Hairline', cursive;
-    font-size: 3rem;
+    font-size: 2.5rem;
 }
 
 header>img {
@@ -92,11 +98,12 @@ table {
     border-collapse: collapse;
 }
 
-tr:hover {
+tbody tr:hover {
     background-color: hsl(195, 53%, 89%);
 }
 
 th {
+    cursor: pointer;
     text-align: left;
 }
 
@@ -104,14 +111,13 @@ td, th {
     padding: .25em;
 }
 
-.monospace {
-    font-family: 'Courier New', Courier, monospace;
-}
+/* custom elements */
 
 .searchbar {
     display: flex;
     flex-direction: column;
     gap: .5rem;
+    border-bottom: 1px solid black;
 }
 
 .searchbar__filters {
@@ -124,6 +130,7 @@ td, th {
     display: grid;
     gap: .5rem;
     grid-template-columns: 1fr 1fr;
+    break-inside: avoid;
 }
 
 .searchbar__filters>div>* {
@@ -137,6 +144,31 @@ td, th {
 .searchbar__controls :last-child {
     margin-left: auto;
 }
+
+#result {
+    overflow: auto;
+    width: 100%;
+}
+
+#nresults {
+    font-size: .9em;
+}
+
+#messageboard {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: black;
+    color: white;
+    font-size: .8em;
+    padding: .5em;
+}
+
+#messageboard span {
+    color: lightblue;
+}
+
+/* utilities */
 
 .container {
     display: flex;
@@ -185,11 +217,16 @@ td, th {
     color: gray;
 }
 
-#result {
-    overflow: scroll;
-    width: 100%;
+.monospace {
+    font-family: 'Courier New', Courier, monospace;
 }
 
-#nresults {
-    font-size: .9em;
+[data-sort="asc"]::after {
+    content: "▲";
+    padding-inline: .25em;
+}
+
+[data-sort="desc"]::after {
+    content: "▼";
+    padding-inline: .25em;
 }
