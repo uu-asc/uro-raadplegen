@@ -19,7 +19,7 @@ window.addEventListener("keydown", function (event) {
 }, true)
 
 document.addEventListener("click", function (event) {
-    if (event.target.matches("input")) {
+    if (event.target.matches("input") && event.target.value) {
         event.target.value = ""
         let keyupEvent = new Event('keyup')
         event.target.dispatchEvent(keyupEvent)
