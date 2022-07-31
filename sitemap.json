@@ -1,0 +1,148 @@
+{
+    "index": {
+        "title": "uro.raadplegen",
+        "template": "index.jinja",
+        "url": "index.html",
+        "stylesheets": ["static/style.index.css"],
+        "data": "data/voorbeeld.json",
+        "inputs": ["gebouw", "adres", "postcode"],
+        "show_in_nav": false
+    },
+    "toelating": {
+        "title": "toelating",
+        "oms": "Toelatingseisen per opleiding volgens RATHO en bachelorkiezersite",
+        "template": "toelating.jinja",
+        "url": "content/toelating.html",
+        "stylesheets": ["static/style.toelating.css"],
+        "scripts": ["js/interface_toelating.js"],
+        "data": "data/toelating.json",
+        "nested": "../",
+        "show_in_nav": true
+    },
+    "opleiding": {
+        "title": "opleiding",
+        "oms": "Uitgebreide informatie per opleiding (croho, openstelling, inschrijfvormen, etc.)",
+        "template": "_ref_.jinja",
+        "url": "content/opleiding.html",
+        "stylesheets": ["static/style.opleiding.css"],
+        "data": "data/opleiding.json",
+        "inputs": [
+            "opleiding",
+            "opleiding_naam_nl",
+            "opleiding_naam_en",
+            "faculteit",
+            "examentype",
+            "vtdt_vorm",
+            "type_opleiding",
+            "februari_instroom",
+            "aggregaat_1",
+            "aggregaat_2",
+            "aggregaat_3",
+            "croho",
+            "croho_naam_nl",
+            "croho_naam_en",
+            "croho_sector",
+            "nominale_studieduur",
+            "bekostigingsniveau",
+            "ingangsdatum_actueel",
+            "afloopdatum_actueel",
+            "croho_inschrijven_tm",
+            "croho_herinschrijven_tm",
+            "croho_inschrijven_vanaf",
+            "ext_inschrijven_tm",
+            "ext_herinschrijven_tm",
+            "ext_inschrijven_vanaf",
+            "vtdt_inschrijven_tm",
+            "vtdt_herinschrijven_tm",
+            "vtdt_inschrijven_vanaf"
+        ],
+        "nested": "../",
+        "show_in_nav": true
+    },
+    "vooropleiding": {
+        "title": "vooropleiding",
+        "oms": "Referentietabel vooropleidingen",
+        "template": "_ref_.jinja",
+        "url": "content/vooropleiding.html",
+        "data": "data/vooropleiding.json",
+        "inputs": ["vooropleiding", "naam", "type_vooropleiding"],
+        "nested": "../",
+        "show_in_nav": true
+    },
+    "vak": {
+        "title": "vak",
+        "oms": "Referentietabel vakken",
+        "template": "_ref_.jinja",
+        "url": "content/vak.html",
+        "data": "data/vak.json",
+        "inputs": ["vak", "naam"],
+        "nested": "../",
+        "show_in_nav": true
+    },
+    "school": {
+        "title": "school",
+        "oms": "Referentietabel scholen",
+        "template": "_ref_.jinja",
+        "url": "content/school.html",
+        "data": "data/school.json",
+        "inputs": ["school", "naam", "plaats"],
+        "nested": "../",
+        "show_in_nav": true
+    },
+    "land": {
+        "title": "land",
+        "oms": "Referentietabel landen",
+        "template": "_ref_.jinja",
+        "url": "content/land.html",
+        "data": "data/land.json",
+        "inputs": [
+            "land",
+            "naam",
+            "eer",
+            "land_iso",
+            "ingangsdatum",
+            "afloopdatum"
+        ],
+        "nested": "../",
+        "show_in_nav": true
+    },
+    "nationaliteit": {
+        "title": "nationaliteit",
+        "oms": "Referentietabel nationaliteiten",
+        "template": "_ref_.jinja",
+        "url": "content/nationaliteit.html",
+        "data": "data/nationaliteit.json",
+        "inputs": [
+            "nationaliteit",
+            "naam",
+            "eer",
+            "ingangsdatum",
+            "afloopdatum"
+        ],
+        "nested": "../",
+        "show_in_nav": true
+    },
+    "standaardteksten": {
+        "title": "std.teksten",
+        "oms": "Standaardteksten bij afkeur uploads",
+        "template": "standaardteksten.jinja",
+        "url": "content/standaardteksten.html",
+        "stylesheets": [
+            "static/style.standaardteksten.css",
+            "static/jquery.highlight-within-textarea.css"
+        ],
+        "nested": "../",
+        "show_in_nav": true
+    },
+    "nuttige_links": {
+        "title": "nuttige.links",
+        "oms": "Verzameling nuttige links rondom inschrijving, collegegeld en bekostiging",
+        "template": "nuttige_links.jinja",
+        "url": "content/nuttige_links.html",
+        "stylesheets": ["static/style.nuttige_links.css"],
+        "scripts": ["js/interface_nuttige_links.js"],
+        "data": "data/nuttige_links.json",
+        "nested": "../",
+        "show_in_nav": true
+    }
+}

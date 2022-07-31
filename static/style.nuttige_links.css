@@ -7,8 +7,22 @@
 
 #nuttige_links div {
     break-inside: avoid;
+    margin-bottom: 1.5rem;
 }
 
 #nuttige_links *+*:where(:not(li)) {
     margin-top: .5em;
+}
+
+#nuttige_links h3 {
+    padding-block: 1rem;
+    border-bottom: 1px solid black;
+}
+
+#nuttige_links div > :where(:not(h3)) {
+    padding-left: .5rem;
+}
+
+#nuttige_links :where(li) {
+    padding-left: .25rem;
 }

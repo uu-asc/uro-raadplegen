@@ -1,7 +1,16 @@
 {% extends '__base__.jinja' %}
-{% set nested = '../' %}
 
-{% block title %}{{ name }}{% endblock %}
+{% block script %}
+<script src="{{ nested }}js/interface_referentie.js"></script>
+<script>
+    let headernames = {{ inputs }}
+    let data
+    fetch("{{ nested }}{{ data }}")
+        .then(response => response.json())
+        .then(json => data = json)
+        .then(data => showRecords(data))
+</script>
+{% endblock %}
 
 {% block search_bar %}
 <div class="searchbar">
@@ -24,15 +33,4 @@
 <div class="container column">
     <div id="result"></div>
 </div>
-{% endblock %}
-
-{% block script %}
-<script>
-    let headernames = {{ inputs }}
-    let data
-    fetch("{{ file }}")
-        .then(response => response.json())
-        .then(json => data = json)
-</script>
-<script src="../js/interface_default.js"></script>
 {% endblock %}

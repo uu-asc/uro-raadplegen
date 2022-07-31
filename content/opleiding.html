@@ -4,15 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UU|CSa|uro.zoeken</title>
+    <title>UU|CSa|opleiding</title>
     <link rel="icon" type="image/x-icon" href="../static/favicon.ico">
     <link rel="stylesheet" type="text/css" href="../static/style.css">
-    <link rel="stylesheet" type="text/css" href="../static/style.uro_zoeken.css">
+    <link rel="stylesheet" type="text/css" href="../static/style.opleiding.css">
 <script src="../js/interface_referentie.js"></script>
 <script>
     let headernames = ['opleiding', 'opleiding_naam_nl', 'opleiding_naam_en', 'faculteit', 'examentype', 'vtdt_vorm', 'type_opleiding', 'februari_instroom', 'aggregaat_1', 'aggregaat_2', 'aggregaat_3', 'croho', 'croho_naam_nl', 'croho_naam_en', 'croho_sector', 'nominale_studieduur', 'bekostigingsniveau', 'ingangsdatum_actueel', 'afloopdatum_actueel', 'croho_inschrijven_tm', 'croho_herinschrijven_tm', 'croho_inschrijven_vanaf', 'ext_inschrijven_tm', 'ext_herinschrijven_tm', 'ext_inschrijven_vanaf', 'vtdt_inschrijven_tm', 'vtdt_herinschrijven_tm', 'vtdt_inschrijven_vanaf']
     let data
-    fetch("../data/uro.json")
+    fetch("../data/opleiding.json")
         .then(response => response.json())
         .then(json => data = json)
         .then(data => showRecords(data))
@@ -21,17 +21,17 @@
 
 <body>
     <header>
-        <h1><a href="../index.html">uro.zoeken</a></h1>
+        <h1><a href="../index.html">opleiding</a></h1>
         <nav>
-            <a href="../content/uro_toelating.html">uro_toelating</a>
-            <a href="../content/uro_zoeken.html">uro_zoeken</a>
+            <a href="../content/toelating.html">toelating</a>
+            <a href="../content/opleiding.html">opleiding</a>
             <a href="../content/vooropleiding.html">vooropleiding</a>
             <a href="../content/vak.html">vak</a>
             <a href="../content/school.html">school</a>
             <a href="../content/land.html">land</a>
             <a href="../content/nationaliteit.html">nationaliteit</a>
-            <a href="../content/standaardteksten.html">standaardteksten</a>
-            <a href="../content/nuttige_links.html">nuttige_links</a>
+            <a href="../content/standaardteksten.html">std.teksten</a>
+            <a href="../content/nuttige_links.html">nuttige.links</a>
         </nav>
         <img src="../static/UU_logo_NL_ZWART_CROP.png" alt="Universiteit Utrecht" width="240px">
     </header>

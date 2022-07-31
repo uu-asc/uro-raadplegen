@@ -1,18 +1,28 @@
-const links = document.querySelector("#nuttige_links")
-const input = document.querySelector("#zoekterm")
-input.addEventListener("keyup", showView)
-
 let data
 fetch("../data/nuttige_links.json")
     .then(response => response.json())
     .then(json => data = json)
-    .then(data => links.innerHTML = renderView(data))
+    .then(data => {
+        document
+            .querySelector("#nuttige_links")
+            .innerHTML = renderView(data)
+    })
 
+
+// INTERACTIVITY
+document.addEventListener("keyup", function (event) {
+    if (event.target.matches("input")) { showView() }
+})
+
+
+// SHOW RECORDS
 function showView() {
     let view = filterRecords(data)
-    links.innerHTML = renderView(view)
+    document.querySelector("#nuttige_links").innerHTML = renderView(view)
 }
 
+
+// RENDER RECORDS
 function renderView(view) {
     let items = []
     for (let [key, section] of Object.entries(view)) {
@@ -31,8 +41,10 @@ function renderView(view) {
     return items.join("")
 }
 
+
+// FILTER RECORDS
 function filterRecords(data) {
-    let zoekterm = input.value.toUpperCase()
+    let zoekterm = document.querySelector("#zoekterm").value.toUpperCase()
     let view = {}
     for (let [key1, section] of Object.entries(data)) {
         // kijk of zoekterm in kopje1 voorkomt

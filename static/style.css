@@ -27,6 +27,7 @@ body {
     padding-inline: 2rem;
 }
 
+/* HEADER */
 header {
     display: flex;
     justify-content: space-between;
@@ -45,6 +46,14 @@ header>h1 {
     font-size: 2.5rem;
 }
 
+header>h1:hover {
+    cursor: pointer;
+}
+
+header>h1>a {
+    all: unset;
+}
+
 header>img {
     flex-grow: 0;
 }
@@ -61,6 +70,7 @@ nav>* {
     margin-top: 0;
 }
 
+/* LISTS */
 ul,
 ol,
 li {
@@ -71,12 +81,14 @@ li {
     margin-top: 0;
 }
 
+/* INPUTS */
 input {
     padding: .25rem;
     border: 1px solid darkslategray;
     border-radius: 4px;
 }
 
+/* BUTTONS */
 button {
     margin-top: 0;
     padding: .25rem;
@@ -85,6 +97,7 @@ button {
 }
 
 button:hover {
+    cursor: pointer;
     background: gray;
 }
 
@@ -92,8 +105,8 @@ button:active {
     background: white;
 }
 
+/* TABLES */
 table {
-    table-layout: fixed;
     width: 100%;
     border-collapse: collapse;
 }
@@ -229,4 +242,33 @@ td, th {
 [data-sort="desc"]::after {
     content: "▼";
     padding-inline: .25em;
+}
+
+/* keyboard */
+kbd {
+    font-family: Consolas, "Lucida Console", monospace;
+    display: inline-block;
+    border-radius: 3px;
+    padding: 0px 3px;
+    box-shadow: 1px 1px 1px #777;
+    font-size: small;
+    background: #eee;
+    font-weight: 500;
+    color: #555;
+    cursor: pointer;
+    font-variant: small-caps;
+    font-weight: 600;
+    letter-spacing: 1px;
+    user-select: none;
+}
+
+kbd:hover,
+kbd:hover * {
+    color: black;
+}
+
+kbd:active,
+kbd:active * {
+    color: black;
+    box-shadow: 1px 1px 0px #ddd inset;
 }

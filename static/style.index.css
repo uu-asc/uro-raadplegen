@@ -1,0 +1,35 @@
+main {
+    columns: 2;
+    column-width: 320px;
+    gap: 2.5rem;
+}
+
+main > * {
+    break-inside: avoid;
+}
+
+p, ul, table, button {
+    margin-bottom: 1.5em;
+}
+
+.sitemap__links {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: auto 1fr;
+    /* height: 100%; */
+}
+
+.sitemap__links a {
+    display: contents;
+}
+
+.searchbar {
+    width: max-content;
+}
+.searchbar__filters>div>* {
+    justify-self: start;
+}
+
+#result {
+    font-size: .8em;
+}

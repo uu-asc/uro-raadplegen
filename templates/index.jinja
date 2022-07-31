@@ -1,0 +1,62 @@
+{% extends '__base__.jinja' %}
+
+{% block script %}
+<script src="{{ nested }}js/interface_referentie.js"></script>
+<script>
+    let headernames = {{ inputs }}
+    let data
+    fetch("{{ nested }}{{ data }}")
+        .then(response => response.json())
+        .then(json => data = json)
+        .then(data => showRecords(data))
+</script>
+{% endblock %}
+
+{% block content%}
+<main>
+    <section class="sitemap">
+        <h3>Sitemap</h3>
+        <p>De volgende pagina's zijn beschikbaar:</p>
+        <div class="sitemap__links">
+        {% for key, item in sitemap.items() %}
+            {% if item.show_in_nav %}
+            <a href="{{ item.url }}">
+                <span>{{ key }}</span>
+                <span>{{ item.oms }}</span>
+            </a>
+            {% endif %}
+        {% endfor %}
+        </div>
+    </section>
+    <section class="instructies">
+        <h3>Instructies</h3>
+        <h4>Filters</h4>
+        <ul>
+            <li>Gebruik inputs om data te filteren</li>
+            <li>Zoektermen zijn hoofdletter <i>ongevoelig</i></li>
+            <li>Input leegmaken via klik of <kbd>esc</kbd></li>
+            <li>Wis alles met "wis filters" knop of <kbd>shift</kbd>-<kbd>esc</kbd></li>
+        </ul>
+        <div class="searchbar__filters">
+        {% for input in inputs %}
+            <div>
+                <label for="{{ input }}">{{ input }}</label>
+                <input type="text" id="{{ input }}">
+            </div>
+        {% endfor %}
+        </div>
+        <div class="searchbar__controls">
+            <button id="wisfilters">wis filters</button>
+            <div id="nresults"></div>
+        </div>
+        <h4>Resultaten</h4>
+        <ul>
+            <li>Klik op kolom om data te sorteren</li>
+            <li>Klik op cell om inhoud naar klembord te kopiëren</li>
+        </ul>
+        <div class="container column">
+            <div id="result"></div>
+        </div>
+    </section>
+</main>
+{% endblock %}

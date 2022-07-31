@@ -1,99 +1,23 @@
 {% extends '__base__.jinja' %}
-{% set nested = '../' %}
 
-{% block title %}std.teksten{% endblock %}
-
-{% block style %}
-<link rel="stylesheet" type="text/css" href="{{ nested }}static/style.standaardteksten.css">
-<link href="../static/jquery.highlight-within-textarea.css" rel="stylesheet">
+{% block script %}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="../js/jquery.highlight-within-textarea.js"></script>
+<script src="{{ nested }}js/jquery.highlight-within-textarea.js"></script>
 {% endblock %}
 
 {% block content %}
 <div class="autogrid">
+{% for tekst in standaardteksten %}
 <div>
-<h3>Aanvullende vakkeneisen hbo-p</h3>
-<textarea id="vakeis_pbh">We hebben de hbo-verklaring/diploma geaccepteerd. Er gelden echter aanvullende eisen als je op basis van een hbo-p wilt inschrijven:<br>
-[URO]<br>
-<br>
-Zie: www.uu.nl/bachelors > opleiding > toelating > nl voor meer informatie. Upload ook de certificaten waaruit blijkt dat je aan de aanvullende eisen voldoet.</textarea>
-<button onclick="toClipboard('vakeis_pbh')">Copy</button>
+<h3>{{ tekst.title }}</h3>
+<textarea id="{{ tekst.id }}">{{ tekst.content }}</textarea>
+<button onclick="copyTextFromElementWithId('{{ tekst.id }}')">Copy</button>
 </div>
-
-<div>
-<h3>Cijferlijst bij hbo-p</h3>
-<textarea id="cijferlijst_pbh">Je hebt een cijferlijst opgestuurd. Deze kunnen we niet verwerken. We hebben één van de volgende documenten nodig: een scan van het diploma of een afstudeerverklaring van de hbo-instelling.<br>
-<br>
-Zie https://www.uu.nl/bachelors/sites/default/files/oo_hboverklaring.pdf voor de eisen die we stellen aan de afstudeerverklaring.</textarea>
-<button onclick="toClipboard('cijferlijst_pbh')">Copy</button>
-</div>
-
-<div>
-<h3>Verklaring zonder examendatum</h3>
-<textarea id="verklaring_pbh">Het document dat je hebt geüpload vermeld niet expliciet dat de propedeuse is behaald en vermeld geen examendatum. Deze kunnen we niet verwerken. We hebben één van de volgende documenten nodig: een scan van het diploma of een afstudeerverklaring van de hbo-instelling.<br>
-<br>
-Zie https://www.uu.nl/bachelors/sites/default/files/oo_hboverklaring.pdf voor de eisen die we stellen aan de afstudeerverklaring.</textarea>
-<button onclick="toClipboard('verklaring_pbh')">Copy</button>
-</div>
-
-<div>
-<h3>Bindend studieadvies</h3>
-<textarea id="bsa">Je hebt een bindend studieadvies geupload. Dit kunnen we niet accepteren. We hebben één van de volgende documenten nodig: een scan van het diploma of een afstudeerverklaring van de hbo-instelling.<br>
-<br>
-Zie https://www.uu.nl/bachelors/sites/default/files/oo_hboverklaring.pdf voor de eisen die we stellen aan de afstudeerverklaring.</textarea>
-<button onclick="toClipboard('bsa')">Copy</button>
-</div>
-
-<div>
-<h3>Vakkeneisen niet compleet</h3>
-<textarea id="vakeis">Je hebt nog niet voldaan aan de aanvullende vakkeneisen. Jouw vooropleiding is:<br>
-[VOOROPLEIDING]<br>
-<br>
-Bij deze vooropleiding gelden de volgende eisen:<br>
-[URO]<br>
-<br>
-Zie: www.uu.nl/bachelors > opleiding > toelating > nl voor meer informatie. Upload certificaten waaruit blijkt dat je aan de overige aanvullende eisen voldoet.</textarea>
-<button onclick="toClipboard('vakeis')">Copy</button>
-</div>
-
-<div>
-<h3>Diploma niet toelatinggevend</h3>
-<textarea id="dip">Je hebt het volgende diploma aangeleverd:<br>
-[VOOROPLEIDING]<br>
-<br>
-Deze vooropleiding geeft geen toelating tot de opleiding. Zie: www.uu.nl/bachelors > opleiding > toelating > nl voor meer informatie. Upload een diploma waaruit blijkt dat je toelaatbaar bent tot de opleiding.</textarea>
-<button onclick="toClipboard('dip')">Copy</button>
-</div>
-
-<div>
-<h3>Opleiding niet akkoord</h3>
-<textarea id="dip">We hebben reactie ontvangen van de opleiding. Zij stellen dat de door jouw aangeleverde documenten onvoldoende zijn. Zij stellen de volgende eisen:<br>
-[EISEN]<br>
-<br>
-We verzoeken je om aan te tonen dat je aan bovenstaande eisen voldoet. Mocht je niet over de benodigde documenten beschikken dan kunnen wij je helaas niet toelaten tot de opleiding.</textarea>
-<button onclick="toClipboard('dip')">Copy</button>
-</div>
-
-</div>
-{% endblock %}
-
-{% block script %}
-<script>
-    function toClipboard(id) {
-        /* Get the text field */
-        var copyText = document.getElementById(id)
-
-        /* Select the text field */
-        copyText.select()
-        copyText.setSelectionRange(0, 99999) /*For mobile devices*/
-
-        /* Copy the text inside the text field */
-        document.execCommand("copy")
-    }
-
+<script defer>
     $('textarea').highlightWithinTextarea({
         highlight: /\[.*\]/gi
     })
 </script>
+{% endfor %}
+</div>
 {% endblock %}

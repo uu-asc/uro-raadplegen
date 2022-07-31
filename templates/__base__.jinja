@@ -4,29 +4,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{% endblock %}</title>
+    <title>UU|CSa|{{ title }}</title>
     <link rel="icon" type="image/x-icon" href="{{ nested }}static/favicon.ico">
     <link rel="stylesheet" type="text/css" href="{{ nested }}static/style.css">
+    {% for stylesheet in stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ nested }}{{ stylesheet }}">
+    {% endfor %}
     {% block style %}{% endblock %}
+    {% block script %}{% endblock %}
 </head>
 
 <body>
     <header>
-        <h1>{{ self.title() }}</h1>
+        <h1><a href="{{ nested }}index.html">{{ title }}</a></h1>
         <nav>
-            <code><a href="{{ nested }}index.html">uro_toelating</a></code>
-            {% for page in pages -%}
-            <code><a href="{{ nested }}content/{{ page }}.html">{{ page }}</a></code>
-            {%- endfor %}
-            {% block nav %}{% endblock %}
+        {% for key, item in sitemap.items() %}
+            {% if item.show_in_nav %}
+            <a href="{{ nested }}{{ item.url }}">{{ item.title }}</a>
+            {% endif %}
+        {% endfor %}
         </nav>
         <img src="{{ nested }}static/UU_logo_NL_ZWART_CROP.png" alt="Universiteit Utrecht" width="240px">
     </header>
     <div id="messageboard" class="monospace"></div>
     {% block search_bar %}{% endblock %}
     {% block content %}{% endblock %}
-    <code><a href="mailto:l.c.vriend@uu.nl" class="monospace">feedback/suggesties</a></code>
+    <a href="mailto:l.c.vriend@uu.nl" class="monospace">feedback/suggesties</a>
 </body>
 <script src="{{ nested }}js/utilities.js"></script>
-{% block script %}{% endblock %}
+{% for script in scripts %}
+<script src="{{ nested }}{{ script }}"></script>
+{% endfor %}
 </html>

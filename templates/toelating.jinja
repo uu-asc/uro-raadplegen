@@ -1,11 +1,4 @@
 {% extends '__base__.jinja' %}
-{% set nested = '' %}
-
-{% block title %}uro.toelating{% endblock %}
-
-{% block style %}
-<link rel="stylesheet" type="text/css" href="{{ nested }}static/style.uro_toelating.css">
-{% endblock %}
 
 {% block search_bar %}
 <div class="searchbar__filters">
@@ -21,8 +14,4 @@
     <div id="result"></div>
     <div id="info" class="box"></div>
 </div>
-{% endblock %}
-
-{% block script %}
-<script src="js/interface_uro_toelating.js"></script>
 {% endblock %}

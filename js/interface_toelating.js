@@ -5,7 +5,7 @@ const result = document.getElementById('result');
 const info = document.getElementById('info');
 
 let data
-fetch("data/uro_details.json")
+fetch("../data/uro_details.json")
     .then(response => response.json())
     .then(json => data = json)
 
@@ -64,7 +64,7 @@ function filterRecords() {
                 </div>
             </div>
             `
-        fetch(`data/toelating/${filter}.html`)
+        fetch(`../data/toelating/${filter}.html`)
             .then(response => response.ok ? response.text() : "")
             .then(function (text) { info.innerHTML = text })
     } else {

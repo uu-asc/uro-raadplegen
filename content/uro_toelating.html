@@ -4,44 +4,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UU|CSa|nuttige.links</title>
+    <title>UU|CSa|uro.toelating</title>
     <link rel="icon" type="image/x-icon" href="../static/favicon.ico">
     <link rel="stylesheet" type="text/css" href="../static/style.css">
-    <link rel="stylesheet" type="text/css" href="../static/style.nuttige_links.css">
+    <link rel="stylesheet" type="text/css" href="../static/style.uro_toelating.css">
 </head>
 
 <body>
     <header>
-        <h1><a href="../index.html">nuttige.links</a></h1>
+        <h1><a href="../index.html">uro.toelating</a></h1>
         <nav>
-            <a href="../content/toelating.html">toelating</a>
-            <a href="../content/opleiding.html">opleiding</a>
+            <a href="../content/uro_toelating.html">uro_toelating</a>
+            <a href="../content/uro_zoeken.html">uro_zoeken</a>
             <a href="../content/vooropleiding.html">vooropleiding</a>
             <a href="../content/vak.html">vak</a>
             <a href="../content/school.html">school</a>
             <a href="../content/land.html">land</a>
             <a href="../content/nationaliteit.html">nationaliteit</a>
-            <a href="../content/standaardteksten.html">std.teksten</a>
-            <a href="../content/nuttige_links.html">nuttige.links</a>
+            <a href="../content/standaardteksten.html">standaardteksten</a>
+            <a href="../content/nuttige_links.html">nuttige_links</a>
         </nav>
         <img src="../static/UU_logo_NL_ZWART_CROP.png" alt="Universiteit Utrecht" width="240px">
     </header>
     <div id="messageboard" class="monospace"></div>
-<div class="searchbar">
-    <div class="searchbar__filters">
-        <div>
-            <label for="zoekterm">zoekterm</label>
-            <input type="text" id="zoekterm">
-        </div>
-    </div>
-    <div class="searchbar__controls">
-        <button id="wisfilters">wis filters</button>
-        <div id="nresults"></div>
+<div class="searchbar__filters">
+    <div>
+        <label for="search">opleidingscode</label>
+        <input type="text" id="search">
     </div>
 </div>
-<div id="nuttige_links"></div>
+<div class="container column">
+    <div id="result"></div>
+    <div id="info" class="box"></div>
+</div>
     <a href="mailto:l.c.vriend@uu.nl" class="monospace">feedback/suggesties</a>
 </body>
 <script src="../js/utilities.js"></script>
-<script src="../js/interface_nuttige_links.js"></script>
+<script src="../js/interface_uro_toelating.js"></script>
 </html>
