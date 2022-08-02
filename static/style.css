@@ -177,8 +177,12 @@ td, th {
     padding: .5em;
 }
 
-#messageboard span {
+#messageboard .klembord {
     color: lightblue;
+}
+
+#messageboard .heart {
+    color: hsl(0, 100%, 37%);
 }
 
 /* utilities */

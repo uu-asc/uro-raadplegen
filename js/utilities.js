@@ -44,7 +44,7 @@ function copyText(element) {
     navigator
         .clipboard.writeText(content)
         .then(res => {
-            messageboard.innerHTML = `&hearts; klembord: <span>${content}</span> &hearts;`
+            messageboard.innerHTML = `<span class="heart">&hearts;</span> klembord: <span class="klembord">${content}</span> <span class="heart">&hearts;</span>`
             setTimeout(() => messageboard.innerHTML = "", 1200)
         })
 }
