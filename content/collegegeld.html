@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UU|CSa|collegegeld</title>
+    <link rel="icon" type="image/x-icon" href="../static/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
+    <link rel="stylesheet" type="text/css" href="../static/style.collegegeld.css">
+</head>
+
+<body>
+    <header>
+        <h1><a href="../index.html">collegegeld</a></h1>
+        <nav>
+            <a href="../content/toelating.html">toelating</a>
+            <a href="../content/opleiding.html">opleiding</a>
+            <a href="../content/vooropleiding.html">vooropleiding</a>
+            <a href="../content/vak.html">vak</a>
+            <a href="../content/school.html">school</a>
+            <a href="../content/land.html">land</a>
+            <a href="../content/nationaliteit.html">nationaliteit</a>
+            <a href="../content/standaardteksten.html">std.teksten</a>
+            <a href="../content/nuttige_links.html">nuttige.links</a>
+            <a href="../content/collegegeld.html">collegegeld</a>
+        </nav>
+        <img src="../static/UU_logo_NL_ZWART_CROP.png" alt="Universiteit Utrecht" width="240px">
+    </header>
+    <div id="messageboard" class="monospace"></div>
+<main>
+    <section class="settings">
+        <fieldset class="periode">
+            <legend>Periode</legend>
+            <div>
+                <select name="startmaand" id="startmaand">
+                    <option value="01" selected>september</option>
+                    <option value="02">oktober</option>
+                    <option value="03">november</option>
+                    <option value="04">december</option>
+                    <option value="05">januari</option>
+                    <option value="06">februari</option>
+                    <option value="07">maart</option>
+                    <option value="08">april</option>
+                    <option value="09">mei</option>
+                    <option value="10">juni</option>
+                    <option value="11">juli</option>
+                    <option value="12">augustus</option>
+                </select>
+                <label for="startmaand">maand vanaf</label>
+            </div>
+            <div>
+                <select name="stopmaand" id="stopmaand">
+                    <option value="01">september</option>
+                    <option value="02">oktober</option>
+                    <option value="03">november</option>
+                    <option value="04">december</option>
+                    <option value="05">januari</option>
+                    <option value="06">februari</option>
+                    <option value="07">maart</option>
+                    <option value="08">april</option>
+                    <option value="09">mei</option>
+                    <option value="10">juni</option>
+                    <option value="11">juli</option>
+                    <option value="12" selected>augustus</option>
+                </select>
+                <label for="stopmaand">maand t/m</label>
+            </div>
+            <div>
+                <input type="number" id="nmaanden" name="nmaanden" value="12" inputmode="numeric" pattern="[0-9]*" min="1" max="12" size="3">
+                <label for="nmaanden">aantal maanden</label>
+            </div>
+        </fieldset>
+        <fieldset class="getalsnotatie">
+            <legend>Getalsnotatie</legend>
+            <div>Settings</div>
+            <div>
+                <input type="checkbox" name="ascurrency">
+                <label for="ascurrency">formatteer als bedrag</label>
+            </div>
+            <div>
+                <input type="checkbox" name="septhousands">
+                <label for="septhousands">scheidingsteken</label>
+            </div>
+            <div>Formaat</div>
+            <div>
+                <input type="radio" id="locale-nl" name="locale" value="nl-NL" checked>
+                <label for="nl-NL">Nederlands</label>
+            </div>
+            <div>
+                <input type="radio" id="locale-en" name="locale" value="en-US">
+                <label for="nl-NL">Engels</label>
+            </div>
+        </fieldset>
+    </section>
+    <section class="data">
+        <table border="1">
+            <thead>
+                <tr style="text-align: right;">
+                    <th></th>
+                    <th>examentype</th>
+                    <th>BA</th>
+                    <th>MA</th>
+                </tr>
+                <tr>
+                    <th>categorie</th>
+                    <th>collegegeldtype</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th rowspan="2" valign="top" class="copyable">wettelijk</th>
+                    <th class="copyable">Deeltijd</th>
+                    <td class="copyable">1963</td>
+                    <td class="copyable">1963</td>
+                </tr>
+                <tr>
+                    <th class="copyable">Voltijd</th>
+                    <td class="copyable">2209</td>
+                    <td class="copyable">2209</td>
+                </tr>
+                <tr>
+                    <th rowspan="3" valign="top" class="copyable">kleinschalig</th>
+                    <th class="copyable">UCR</th>
+                    <td class="copyable">3750</td>
+                    <td class="copyable"></td>
+                </tr>
+                <tr>
+                    <th class="copyable">PPE</th>
+                    <td class="copyable">4418</td>
+                    <td class="copyable"></td>
+                </tr>
+                <tr>
+                    <th class="copyable">UCU</th>
+                    <td class="copyable">4584</td>
+                    <td class="copyable"></td>
+                </tr>
+                <tr>
+                    <th rowspan="6" valign="top" class="copyable">niet-EER</th>
+                    <th class="copyable">UCR</th>
+                    <td class="copyable">9450</td>
+                    <td class="copyable"></td>
+                </tr>
+                <tr>
+                    <th class="copyable">LAAG</th>
+                    <td class="copyable">11000</td>
+                    <td class="copyable">17500</td>
+                </tr>
+                <tr>
+                    <th class="copyable">PPE</th>
+                    <td class="copyable">13100</td>
+                    <td class="copyable"></td>
+                </tr>
+                <tr>
+                    <th class="copyable">HOOG</th>
+                    <td class="copyable">14000</td>
+                    <td class="copyable">20750</td>
+                </tr>
+                <tr>
+                    <th class="copyable">UCU</th>
+                    <td class="copyable">14000</td>
+                    <td class="copyable"></td>
+                </tr>
+                <tr>
+                    <th class="copyable">TOP</th>
+                    <td class="copyable">23300</td>
+                    <td class="copyable">26700</td>
+                </tr>
+                <tr>
+                    <th rowspan="5" valign="top" class="copyable">graad</th>
+                    <th class="copyable">LAAG</th>
+                    <td class="copyable">9895</td>
+                    <td class="copyable">12295</td>
+                </tr>
+                <tr>
+                    <th class="copyable">PPE</th>
+                    <td class="copyable">12063</td>
+                    <td class="copyable"></td>
+                </tr>
+                <tr>
+                    <th class="copyable">HOOG</th>
+                    <td class="copyable">12336</td>
+                    <td class="copyable">14363</td>
+                </tr>
+                <tr>
+                    <th class="copyable">UCU</th>
+                    <td class="copyable">12336</td>
+                    <td class="copyable"></td>
+                </tr>
+                <tr>
+                    <th class="copyable">TOP</th>
+                    <td class="copyable">20200</td>
+                    <td class="copyable">23200</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</main>
+    <a href="mailto:l.c.vriend@uu.nl" class="monospace">feedback/suggesties</a>
+</body>
+<script src="../js/utilities.js"></script>
+<script src="../js/interface_collegegeld.js"></script>
+</html>

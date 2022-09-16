@@ -144,5 +144,15 @@
         "data": "data/nuttige_links.json",
         "nested": "../",
         "show_in_nav": true
+    },
+    "collegegeld": {
+        "title": "collegegeld",
+        "oms": "Collegegeldbedragen per type en periode",
+        "template": "collegegeld.jinja",
+        "url": "content/collegegeld.html",
+        "stylesheets": ["static/style.collegegeld.css"],
+        "scripts": ["js/interface_collegegeld.js"],
+        "nested": "../",
+        "show_in_nav": true
     }
 }

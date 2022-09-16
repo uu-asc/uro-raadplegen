@@ -46,7 +46,8 @@
     },
     "Toelaatbaarheid": {
         "Overheid": [
-            {"url": "https://wetten.overheid.nl/BWBR0035059", "text": "Regeling aanmelding en toelating hoger onderwijs"}
+            {"url": "https://wetten.overheid.nl/BWBR0035059", "text": "Regeling aanmelding en toelating hoger onderwijs"},
+            {"url": "https://www.rijksoverheid.nl/onderwerpen/voortgezet-onderwijs/vraag-en-antwoord/hoe-zit-het-vwo-in-elkaar", "text": "Hoe zit het vwo in elkaar?"}
         ],
         "Universiteit Utrecht": [
             {"url": "https://www.uu.nl/bachelors", "text": "Bachelor kiezersite"},
