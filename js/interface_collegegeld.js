@@ -60,8 +60,22 @@ function updateInputsMaanden() {
     updateTable(data.data)
 }
 
+function incrementMaand(n) {
+    let val = parseInt(inputNMaanden.value) + n
+    return val > 12 ? 12 : val < 1 ? 1 : val
+}
+
 document.addEventListener("change", event => {
     if ( event.target.matches(`[name$=maand]`) ) { updateInputsMaanden() }
     if ( event.target.matches(`[name="nmaanden"]`) ) { updateTable(data.data) }
     if ( event.target.closest("fieldset")?.classList.contains("getalsnotatie") ) { updateTable(data.data) }
+})
+
+document.addEventListener("click", event => {
+    if ( event.target.matches(`#increment, #decrement`) ) {
+        let n = event.target.id === "increment" ? 1 : -1
+        let nmaand = incrementMaand(n)
+        inputNMaanden.value = nmaand
+        updateTable(data.data)
+    }
 })

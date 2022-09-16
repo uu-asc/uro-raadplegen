@@ -1,11 +1,7 @@
-table {
-    border-collapse: collapse;
+main {
+    display: flex;
+    gap: 1.5rem;
 }
-td {
-    text-align: right;
-    padding: .25em;
-}
-th {
-    text-align: left;
-    padding: .25em;
+fieldset {
+    padding: 1rem;
 }
