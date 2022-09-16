@@ -5,3 +5,6 @@ main {
 fieldset {
     padding: 1rem;
 }
+td {
+    text-align: right;
+}
