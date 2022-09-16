@@ -9,7 +9,7 @@ window.addEventListener("keydown", function (event) {
         case "Escape":
             if (event.shiftKey) {
                 document
-                    .querySelectorAll("input")
+                    .querySelectorAll("input.query-input")
                     .forEach(el => el.value = "")
             } else {
                 event.target.value = ""
@@ -24,7 +24,7 @@ window.addEventListener("keydown", function (event) {
 })
 
 document.addEventListener("click", function (event) {
-    if (event.target.matches("input") && event.target.value) {
+    if (event.target.matches("input.query-input") && event.target.value) {
         event.target.value = ""
         let keyupEvent = new Event("keyup", {bubbles: true})
         event.target.dispatchEvent(keyupEvent)
