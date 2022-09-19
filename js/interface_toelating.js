@@ -1,21 +1,29 @@
 console.log("i have been summoned")
 
-const search = document.getElementById('search');
-const result = document.getElementById('result');
-const info = document.getElementById('info');
+let params = new URLSearchParams(window.location.search)
+const search = document.getElementById("search");
+const result = document.getElementById("result");
+const info = document.getElementById("info");
 
 let data
 fetch("../data/toelating.json")
     .then(response => response.json())
     .then(json => data = json)
+    .then(data => {
+        if (params.get("opl")) {
+            search.value = params.get("opl")
+            search.dispatchEvent(new Event("keyup", {bubbles: true}))
+        }
+    })
 
 // SEARCH RECORDS
-search.addEventListener('keyup', filterRecords);
+search.addEventListener("keyup", filterRecords)
 function filterRecords() {
-    let filter = search.value.toUpperCase();
+    let filter = search.value.toUpperCase()
     if (data.hasOwnProperty(filter)) {
         let record = data[filter]
         result.innerHTML = `
+            <a href="./toelating.html?opl=${filter}">&#128279; directe link naar deze pagina</a>
             <div class="container">
                 <div class="box margins-off">
                     <h3>Opleiding</h3>
@@ -72,41 +80,3 @@ function filterRecords() {
         info.innerHTML = ''
     }
 }
-
-{/* <div class="box margins-off">
-<div class="box margins-off">
-    <h3>Onderdeel</h3>
-    <div class="fields">
-        <div class="field">faculteit</div>
-        <div class="value">${record['faculteit']}</div>
-        <div class="field">aggregaat_1</div>
-        <div class="value">${record['aggregaat_1']}</div>
-        <div class="field">aggregaat_2</div>
-        <div class="value">${record['aggregaat_2']}</div>
-        <div class="field">aggregaat_3</div>
-        <div class="value">${record['aggregaat_3']}</div>
-    </div>
-</div>
-<h3>Instroom</h3>
-<div class="fields">
-    <div class="field">februari_instroom</div>
-    <div class="value">${record['februari_instroom']}</div>
-    <div class="field">croho_inschrijven_vanaf</div>
-    <div class="value">${record['croho_inschrijven_vanaf']}</div>
-    <div class="field">croho_inschrijven_tm</div>
-    <div class="value">${record['croho_inschrijven_tm']}</div>
-    <div class="field">ext_inschrijven_vanaf</div>
-    <div class="value">${record['ext_inschrijven_vanaf']}</div>
-    <div class="field">ext_inschrijven_tm</div>
-    <div class="value">${record['ext_inschrijven_tm']}</div>
-</div>
-</div>
-<div class="box margins-off">
-<h3>Herinschrijving</h3>
-<div class="fields">
-    <div class="field">croho_inschrijven_tm</div>
-    <div class="value">${record['croho_herinschrijven_tm']}</div>
-    <div class="field">ext_inschrijven_vanaf</div>
-    <div class="value">${record['ext_herinschrijven_tm']}</div>
-</div>
-</div> */}

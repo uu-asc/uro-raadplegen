@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Hairline&family=Lato&display=swap');
 
 :root {
+    --fs-xl: clamp(2rem, 3vw + 1rem, 3.5rem);
     --color-background: hsl(0, 0%, 99%);
     --color-background-shade: hsl(0, 0%, 97%);
     --color-surface-dark: hsl(0, 4%, 11%);
@@ -56,7 +57,7 @@ header > * {
 
 header > h1 {
     font-family: 'Bungee Hairline', cursive;
-    font-size: 2.5rem;
+    font-size: var(--fs-xl);
 }
 
 header > h1:hover {
@@ -233,6 +234,9 @@ td, th {
 }
 
 #result {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
     overflow: auto;
     width: 100%;
 }
