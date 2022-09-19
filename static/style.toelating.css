@@ -9,3 +9,11 @@ html, body {
 #info :where(p:not(:last-child)) {
     margin-bottom: 1rem;
 }
+
+#result {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    overflow: auto;
+    width: 100%;
+}
