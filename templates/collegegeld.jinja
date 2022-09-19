@@ -6,7 +6,7 @@
         <fieldset class="periode">
             <legend>Periode</legend>
             <div>
-                <select name="startmaand" id="startmaand">
+                <select name="startmaand" id="startmaand" autocomplete="off">
                     <option value="01" selected>september</option>
                     <option value="02">oktober</option>
                     <option value="03">november</option>
@@ -23,7 +23,7 @@
                 <label for="startmaand">maand vanaf</label>
             </div>
             <div>
-                <select name="stopmaand" id="stopmaand">
+                <select name="stopmaand" id="stopmaand" autocomplete="off">
                     <option value="01">september</option>
                     <option value="02">oktober</option>
                     <option value="03">november</option>
@@ -40,7 +40,7 @@
                 <label for="stopmaand">maand t/m</label>
             </div>
             <div>
-                <input type="text" id="nmaanden" name="nmaanden" value="12" size="3">
+                <input type="text" id="nmaanden" name="nmaanden" value="12" size="3" autocomplete="off">
                 <button id="increment">+</button>
                 <button id="decrement">-</button>
                 <label for="nmaanden">aantal maanden</label>
@@ -50,20 +50,20 @@
             <legend>Getalsnotatie</legend>
             <div>Settings</div>
             <div>
-                <input type="checkbox" name="ascurrency">
+                <input type="checkbox" name="ascurrency" autocomplete="off">
                 <label for="ascurrency">formatteer als bedrag</label>
             </div>
             <div>
-                <input type="checkbox" name="septhousands">
+                <input type="checkbox" name="septhousands" autocomplete="off">
                 <label for="septhousands">scheidingsteken</label>
             </div>
             <div>Formaat</div>
             <div>
-                <input type="radio" id="locale-nl" name="locale" value="nl-NL" checked>
+                <input type="radio" id="locale-nl" name="locale" value="nl-NL" autocomplete="off" checked>
                 <label for="locale-nl">Nederlands</label>
             </div>
             <div>
-                <input type="radio" id="locale-en" name="locale" value="en-US">
+                <input type="radio" id="locale-en" name="locale" value="en-US" autocomplete="off" >
                 <label for="locale-en">Engels</label>
             </div>
         </fieldset>

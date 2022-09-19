@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UU|CSa|opleiding</title>
     <link rel="icon" type="image/x-icon" href="../static/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../static/style.css">
+    <link rel="stylesheet" type="text/css" href="../static/style.__base__.css">
+    <link rel="stylesheet" type="text/css" href="../static/style.ref.css">
     <link rel="stylesheet" type="text/css" href="../static/style.opleiding.css">
 <script src="../js/interface_referentie.js"></script>
 <script>
-    let headernames = ['opleiding', 'opleiding_naam_nl', 'opleiding_naam_en', 'faculteit', 'examentype', 'vtdt_vorm', 'type_opleiding', 'februari_instroom', 'aggregaat_1', 'aggregaat_2', 'aggregaat_3', 'croho', 'croho_naam_nl', 'croho_naam_en', 'croho_sector', 'nominale_studieduur', 'bekostigingsniveau', 'ingangsdatum_actueel', 'afloopdatum_actueel', 'croho_inschrijven_tm', 'croho_herinschrijven_tm', 'croho_inschrijven_vanaf', 'ext_inschrijven_tm', 'ext_herinschrijven_tm', 'ext_inschrijven_vanaf', 'vtdt_inschrijven_tm', 'vtdt_herinschrijven_tm', 'vtdt_inschrijven_vanaf']
+    let headernames = ['opleiding', 'opleiding_naam_nl', 'opleiding_naam_en', 'examentype', 'vtdt_vorm', 'type_opleiding', 'februari_instroom', 'faculteit', 'aggregaat_1', 'aggregaat_2', 'aggregaat_3', 'croho', 'croho_naam_nl', 'croho_naam_en', 'croho_sector', 'nominale_studieduur', 'bekostigingsniveau', 'ingangsdatum_actueel', 'afloopdatum_actueel', 'croho_inschrijven_tm', 'croho_herinschrijven_tm', 'croho_inschrijven_vanaf', 'ext_inschrijven_tm', 'ext_herinschrijven_tm', 'ext_inschrijven_vanaf', 'vtdt_inschrijven_tm', 'vtdt_herinschrijven_tm', 'vtdt_inschrijven_vanaf']
     let data
     fetch("../data/opleiding.json")
         .then(response => response.json())
@@ -23,16 +24,22 @@
     <header>
         <h1><a href="../index.html">opleiding</a></h1>
         <nav>
-            <a href="../content/toelating.html">toelating</a>
-            <a href="../content/opleiding.html">opleiding</a>
-            <a href="../content/vooropleiding.html">vooropleiding</a>
-            <a href="../content/vak.html">vak</a>
-            <a href="../content/school.html">school</a>
-            <a href="../content/land.html">land</a>
-            <a href="../content/nationaliteit.html">nationaliteit</a>
-            <a href="../content/standaardteksten.html">std.teksten</a>
-            <a href="../content/nuttige_links.html">nuttige.links</a>
-            <a href="../content/collegegeld.html">collegegeld</a>
+        <ul>
+                <li><a href="../content/toelating.html">toelating</a></li>
+                <li><a href="../content/opleiding.html">opleiding</a></li>
+                    <li><a href="../content/vooropleiding.html">referentie</a>
+                        <ul class="dropdown">
+                            <li><a href="../content/vooropleiding.html">vooropleiding</a></li>
+                            <li><a href="../content/vak.html">vak</a></li>
+                            <li><a href="../content/school.html">school</a></li>
+                            <li><a href="../content/land.html">land</a></li>
+                            <li><a href="../content/nationaliteit.html">nationaliteit</a></li>
+                        </ul>
+                    </li>
+                <li><a href="../content/standaardteksten.html">std.teksten</a></li>
+                <li><a href="../content/nuttige_links.html">nuttige.links</a></li>
+                <li><a href="../content/collegegeld.html">collegegeld</a></li>
+        </ul>
         </nav>
         <img src="../static/UU_logo_NL_ZWART_CROP.png" alt="Universiteit Utrecht" width="240px">
     </header>
@@ -40,120 +47,146 @@
 <div class="searchbar">
     <div class="searchbar__filters">
         <div>
-            <label for="opleiding">opleiding</label>
-            <input type="text" id="opleiding" class="query-input">
+            <label for="opleiding" data-label="index">opleiding</label>
+            <input type="text" id="opleiding" class="query-input" data-label="index">
         </div>
         <div>
-            <label for="opleiding_naam_nl">opleiding_naam_nl</label>
-            <input type="text" id="opleiding_naam_nl" class="query-input">
+            <label for="opleiding_naam_nl" data-label="details">opleiding_naam_nl</label>
+            <input type="text" id="opleiding_naam_nl" class="query-input" data-label="details">
         </div>
         <div>
-            <label for="opleiding_naam_en">opleiding_naam_en</label>
-            <input type="text" id="opleiding_naam_en" class="query-input">
+            <label for="opleiding_naam_en" data-label="details">opleiding_naam_en</label>
+            <input type="text" id="opleiding_naam_en" class="query-input" data-label="details">
         </div>
         <div>
-            <label for="faculteit">faculteit</label>
-            <input type="text" id="faculteit" class="query-input">
+            <label for="examentype" data-label="details">examentype</label>
+            <input type="text" id="examentype" class="query-input" data-label="details">
         </div>
         <div>
-            <label for="examentype">examentype</label>
-            <input type="text" id="examentype" class="query-input">
+            <label for="vtdt_vorm" data-label="details">vtdt_vorm</label>
+            <input type="text" id="vtdt_vorm" class="query-input" data-label="details">
         </div>
         <div>
-            <label for="vtdt_vorm">vtdt_vorm</label>
-            <input type="text" id="vtdt_vorm" class="query-input">
+            <label for="type_opleiding" data-label="details">type_opleiding</label>
+            <input type="text" id="type_opleiding" class="query-input" data-label="details">
         </div>
         <div>
-            <label for="type_opleiding">type_opleiding</label>
-            <input type="text" id="type_opleiding" class="query-input">
+            <label for="februari_instroom" data-label="details">februari_instroom</label>
+            <input type="text" id="februari_instroom" class="query-input" data-label="details">
         </div>
         <div>
-            <label for="februari_instroom">februari_instroom</label>
-            <input type="text" id="februari_instroom" class="query-input">
+            <label for="faculteit" data-label="onderdeel">faculteit</label>
+            <input type="text" id="faculteit" class="query-input" data-label="onderdeel">
         </div>
         <div>
-            <label for="aggregaat_1">aggregaat_1</label>
-            <input type="text" id="aggregaat_1" class="query-input">
+            <label for="aggregaat_1" data-label="onderdeel">aggregaat_1</label>
+            <input type="text" id="aggregaat_1" class="query-input" data-label="onderdeel">
         </div>
         <div>
-            <label for="aggregaat_2">aggregaat_2</label>
-            <input type="text" id="aggregaat_2" class="query-input">
+            <label for="aggregaat_2" data-label="onderdeel">aggregaat_2</label>
+            <input type="text" id="aggregaat_2" class="query-input" data-label="onderdeel">
         </div>
         <div>
-            <label for="aggregaat_3">aggregaat_3</label>
-            <input type="text" id="aggregaat_3" class="query-input">
+            <label for="aggregaat_3" data-label="onderdeel">aggregaat_3</label>
+            <input type="text" id="aggregaat_3" class="query-input" data-label="onderdeel">
         </div>
         <div>
-            <label for="croho">croho</label>
-            <input type="text" id="croho" class="query-input">
+            <label for="croho" data-label="croho">croho</label>
+            <input type="text" id="croho" class="query-input" data-label="croho">
         </div>
         <div>
-            <label for="croho_naam_nl">croho_naam_nl</label>
-            <input type="text" id="croho_naam_nl" class="query-input">
+            <label for="croho_naam_nl" data-label="croho">croho_naam_nl</label>
+            <input type="text" id="croho_naam_nl" class="query-input" data-label="croho">
         </div>
         <div>
-            <label for="croho_naam_en">croho_naam_en</label>
-            <input type="text" id="croho_naam_en" class="query-input">
+            <label for="croho_naam_en" data-label="croho">croho_naam_en</label>
+            <input type="text" id="croho_naam_en" class="query-input" data-label="croho">
         </div>
         <div>
-            <label for="croho_sector">croho_sector</label>
-            <input type="text" id="croho_sector" class="query-input">
+            <label for="croho_sector" data-label="croho">croho_sector</label>
+            <input type="text" id="croho_sector" class="query-input" data-label="croho">
         </div>
         <div>
-            <label for="nominale_studieduur">nominale_studieduur</label>
-            <input type="text" id="nominale_studieduur" class="query-input">
+            <label for="nominale_studieduur" data-label="croho">nominale_studieduur</label>
+            <input type="text" id="nominale_studieduur" class="query-input" data-label="croho">
         </div>
         <div>
-            <label for="bekostigingsniveau">bekostigingsniveau</label>
-            <input type="text" id="bekostigingsniveau" class="query-input">
+            <label for="bekostigingsniveau" data-label="croho">bekostigingsniveau</label>
+            <input type="text" id="bekostigingsniveau" class="query-input" data-label="croho">
         </div>
         <div>
-            <label for="ingangsdatum_actueel">ingangsdatum_actueel</label>
-            <input type="text" id="ingangsdatum_actueel" class="query-input">
+            <label for="ingangsdatum_actueel" data-label="openstelling">ingangsdatum_actueel</label>
+            <input type="text" id="ingangsdatum_actueel" class="query-input" data-label="openstelling">
         </div>
         <div>
-            <label for="afloopdatum_actueel">afloopdatum_actueel</label>
-            <input type="text" id="afloopdatum_actueel" class="query-input">
+            <label for="afloopdatum_actueel" data-label="openstelling">afloopdatum_actueel</label>
+            <input type="text" id="afloopdatum_actueel" class="query-input" data-label="openstelling">
         </div>
         <div>
-            <label for="croho_inschrijven_tm">croho_inschrijven_tm</label>
-            <input type="text" id="croho_inschrijven_tm" class="query-input">
+            <label for="croho_inschrijven_tm" data-label="openstelling">croho_inschrijven_tm</label>
+            <input type="text" id="croho_inschrijven_tm" class="query-input" data-label="openstelling">
         </div>
         <div>
-            <label for="croho_herinschrijven_tm">croho_herinschrijven_tm</label>
-            <input type="text" id="croho_herinschrijven_tm" class="query-input">
+            <label for="croho_herinschrijven_tm" data-label="openstelling">croho_herinschrijven_tm</label>
+            <input type="text" id="croho_herinschrijven_tm" class="query-input" data-label="openstelling">
         </div>
         <div>
-            <label for="croho_inschrijven_vanaf">croho_inschrijven_vanaf</label>
-            <input type="text" id="croho_inschrijven_vanaf" class="query-input">
+            <label for="croho_inschrijven_vanaf" data-label="openstelling">croho_inschrijven_vanaf</label>
+            <input type="text" id="croho_inschrijven_vanaf" class="query-input" data-label="openstelling">
         </div>
         <div>
-            <label for="ext_inschrijven_tm">ext_inschrijven_tm</label>
-            <input type="text" id="ext_inschrijven_tm" class="query-input">
+            <label for="ext_inschrijven_tm" data-label="openstelling">ext_inschrijven_tm</label>
+            <input type="text" id="ext_inschrijven_tm" class="query-input" data-label="openstelling">
         </div>
         <div>
-            <label for="ext_herinschrijven_tm">ext_herinschrijven_tm</label>
-            <input type="text" id="ext_herinschrijven_tm" class="query-input">
+            <label for="ext_herinschrijven_tm" data-label="openstelling">ext_herinschrijven_tm</label>
+            <input type="text" id="ext_herinschrijven_tm" class="query-input" data-label="openstelling">
         </div>
         <div>
-            <label for="ext_inschrijven_vanaf">ext_inschrijven_vanaf</label>
-            <input type="text" id="ext_inschrijven_vanaf" class="query-input">
+            <label for="ext_inschrijven_vanaf" data-label="openstelling">ext_inschrijven_vanaf</label>
+            <input type="text" id="ext_inschrijven_vanaf" class="query-input" data-label="openstelling">
         </div>
         <div>
-            <label for="vtdt_inschrijven_tm">vtdt_inschrijven_tm</label>
-            <input type="text" id="vtdt_inschrijven_tm" class="query-input">
+            <label for="vtdt_inschrijven_tm" data-label="openstelling">vtdt_inschrijven_tm</label>
+            <input type="text" id="vtdt_inschrijven_tm" class="query-input" data-label="openstelling">
         </div>
         <div>
-            <label for="vtdt_herinschrijven_tm">vtdt_herinschrijven_tm</label>
-            <input type="text" id="vtdt_herinschrijven_tm" class="query-input">
+            <label for="vtdt_herinschrijven_tm" data-label="openstelling">vtdt_herinschrijven_tm</label>
+            <input type="text" id="vtdt_herinschrijven_tm" class="query-input" data-label="openstelling">
         </div>
         <div>
-            <label for="vtdt_inschrijven_vanaf">vtdt_inschrijven_vanaf</label>
-            <input type="text" id="vtdt_inschrijven_vanaf" class="query-input">
+            <label for="vtdt_inschrijven_vanaf" data-label="openstelling">vtdt_inschrijven_vanaf</label>
+            <input type="text" id="vtdt_inschrijven_vanaf" class="query-input" data-label="openstelling">
         </div>
     </div>
     <div class="searchbar__controls">
-        <button id="wisfilters">wis filters</button>
+        <div>
+            <div>
+                <input type="checkbox" name="toon-filters" id="toon-filters" autocomplete="off" checked>
+                <label for="toon-filters">toon filters</label>
+            </div>
+            <button id="wisfilters">wis filters</button>
+        </div>
+        <div>
+            <div>toon kolommen:</div>
+            <div>
+                <input type="checkbox" name="label-details" id="details" autocomplete="off" checked>
+                <button data-target="details">details</button>
+            </div>
+            <div>
+                <input type="checkbox" name="label-onderdeel" id="onderdeel" autocomplete="off" checked>
+                <button data-target="onderdeel">onderdeel</button>
+            </div>
+            <div>
+                <input type="checkbox" name="label-croho" id="croho" autocomplete="off" checked>
+                <button data-target="croho">croho</button>
+            </div>
+            <div>
+                <input type="checkbox" name="label-openstelling" id="openstelling" autocomplete="off" checked>
+                <button data-target="openstelling">openstelling</button>
+            </div>
+            <button id="toon-alle-labels">alle</button>
+        </div>
         <div id="nresults"></div>
     </div>
 </div>

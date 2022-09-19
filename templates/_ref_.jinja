@@ -1,9 +1,14 @@
 {% extends '__base__.jinja' %}
 
+
 {% block script %}
 <script src="{{ nested }}js/interface_referentie.js"></script>
 <script>
+{% if inputs is mapping %}
+    let headernames = {{ inputs.values()|sum(start=[]) }}
+{% else %}
     let headernames = {{ inputs }}
+{% endif %}
     let data
     fetch("{{ nested }}{{ data }}")
         .then(response => response.json())
@@ -12,22 +17,56 @@
 </script>
 {% endblock %}
 
+
 {% block search_bar %}
 <div class="searchbar">
     <div class="searchbar__filters">
+{% if inputs is mapping %}
+    {% for label, columns in inputs.items() %}
+        {% for column in columns %}
+        <div>
+            <label for="{{ column }}" data-label="{{ label }}">{{ column }}</label>
+            <input type="text" id="{{ column }}" class="query-input" data-label="{{ label }}">
+        </div>
+        {% endfor %}
+    {% endfor %}
+{% else %}
     {% for input in inputs %}
         <div>
             <label for="{{ input }}">{{ input }}</label>
             <input type="text" id="{{ input }}" class="query-input">
         </div>
     {% endfor %}
+ {% endif %}
     </div>
     <div class="searchbar__controls">
-        <button id="wisfilters">wis filters</button>
+        <div>
+            <div>
+                <input type="checkbox" name="toon-filters" id="toon-filters" autocomplete="off" checked>
+                <label for="toon-filters">toon filters</label>
+            </div>
+            <button id="wisfilters">wis filters</button>
+        </div>
+    {% if inputs is mapping %}
+        <div>
+            <div>toon kolommen:</div>
+            {% for label in inputs %}
+            {% if label != 'index' %}
+            <div>
+                <input type="checkbox" name="label-{{ label }}" id="{{ label }}" autocomplete="off" checked>
+                {# <label for="{{ label }}">{{ label }}</label> #}
+                <button data-target="{{ label }}">{{ label }}</button>
+            </div>
+            {% endif %}
+            {% endfor %}
+            <button id="toon-alle-labels">alle</button>
+        </div>
+    {% endif %}
         <div id="nresults"></div>
     </div>
 </div>
 {% endblock %}
+
 
 {% block content %}
 <div class="container column">

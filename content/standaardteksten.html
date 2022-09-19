@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UU|CSa|std.teksten</title>
     <link rel="icon" type="image/x-icon" href="../static/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../static/style.css">
+    <link rel="stylesheet" type="text/css" href="../static/style.__base__.css">
     <link rel="stylesheet" type="text/css" href="../static/style.standaardteksten.css">
     <link rel="stylesheet" type="text/css" href="../static/jquery.highlight-within-textarea.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -17,16 +17,22 @@
     <header>
         <h1><a href="../index.html">std.teksten</a></h1>
         <nav>
-            <a href="../content/toelating.html">toelating</a>
-            <a href="../content/opleiding.html">opleiding</a>
-            <a href="../content/vooropleiding.html">vooropleiding</a>
-            <a href="../content/vak.html">vak</a>
-            <a href="../content/school.html">school</a>
-            <a href="../content/land.html">land</a>
-            <a href="../content/nationaliteit.html">nationaliteit</a>
-            <a href="../content/standaardteksten.html">std.teksten</a>
-            <a href="../content/nuttige_links.html">nuttige.links</a>
-            <a href="../content/collegegeld.html">collegegeld</a>
+        <ul>
+                <li><a href="../content/toelating.html">toelating</a></li>
+                <li><a href="../content/opleiding.html">opleiding</a></li>
+                    <li><a href="../content/vooropleiding.html">referentie</a>
+                        <ul class="dropdown">
+                            <li><a href="../content/vooropleiding.html">vooropleiding</a></li>
+                            <li><a href="../content/vak.html">vak</a></li>
+                            <li><a href="../content/school.html">school</a></li>
+                            <li><a href="../content/land.html">land</a></li>
+                            <li><a href="../content/nationaliteit.html">nationaliteit</a></li>
+                        </ul>
+                    </li>
+                <li><a href="../content/standaardteksten.html">std.teksten</a></li>
+                <li><a href="../content/nuttige_links.html">nuttige.links</a></li>
+                <li><a href="../content/collegegeld.html">collegegeld</a></li>
+        </ul>
         </nav>
         <img src="../static/UU_logo_NL_ZWART_CROP.png" alt="Universiteit Utrecht" width="240px">
     </header>

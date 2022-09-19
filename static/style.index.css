@@ -26,10 +26,39 @@ p, ul, table, button {
 .searchbar {
     width: max-content;
 }
-.searchbar__filters>div>* {
+.searchbar__filters > div > * {
     justify-self: start;
 }
 
 #result {
     font-size: .8em;
+}
+
+/* keyboard */
+kbd {
+    font-family: Consolas, "Lucida Console", monospace;
+    display: inline-block;
+    border-radius: 3px;
+    padding: 0px 3px;
+    box-shadow: 1px 1px 1px #777;
+    font-size: small;
+    background: #eee;
+    font-weight: 500;
+    color: #555;
+    cursor: pointer;
+    font-variant: small-caps;
+    font-weight: 600;
+    letter-spacing: 1px;
+    user-select: none;
+}
+
+kbd:hover,
+kbd:hover * {
+    color: black;
+}
+
+kbd:active,
+kbd:active * {
+    color: black;
+    box-shadow: 1px 1px 0px #ddd inset;
 }

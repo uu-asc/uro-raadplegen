@@ -1,19 +1,69 @@
 console.log("i have been summoned")
 
+
 let SORTING_STATE = null
+let HIDDEN_COLUMNS_STATE = []
 
 
 // INTERACTIVITY
-document.addEventListener("keyup", function (event) {
+document.addEventListener("keyup", function(event) {
     if (event.target.matches("input")) { showRecords(data) }
 })
 
-document.addEventListener("click", function (event) {
+document.addEventListener("click", function(event) {
     if (event.target.matches("#wisfilters")) {
         document
             .querySelectorAll("input")
             .forEach( el => el.value = "" )
         showRecords(data)
+    }
+})
+
+
+// HIDE FILTERS
+document.addEventListener("change", function(event) {
+    if (event.target.matches("[name^=label]")) {
+        let label = event.target.name.split("-")[1]
+        let targets = document.querySelectorAll(`[data-label="${label}"]`)
+        if (event.target.checked) {
+            targets.forEach(el => {
+                el.classList.remove("hide")
+                HIDDEN_COLUMNS_STATE = HIDDEN_COLUMNS_STATE.filter(i => i !== el.id)
+            })
+        } else {
+            targets.forEach(el => {
+                el.classList.add("hide")
+                HIDDEN_COLUMNS_STATE.push(el.id)
+            })
+        }
+        showRecords(data)
+        return
+    }
+    if (event.target.matches("#toon-filters")) {
+        if (event.target.checked) {
+            document.querySelector(".searchbar__filters").classList.remove("hide")
+        } else {
+            document.querySelector(".searchbar__filters").classList.add("hide")
+        }
+        return
+    }
+})
+
+document.addEventListener("click", function(event) {
+    if (event.target.matches("[data-target]")) {
+        let label = event.target.dataset.target
+        document.querySelectorAll("[name^=label]").forEach(el => {
+            if (el.id === label) { el.checked = true } else { el.checked = false }
+            el.dispatchEvent(new Event("change", {bubbles: true}))
+        })
+        return
+    }
+    if (event.target.matches("#toon-alle-labels")) {
+        document.querySelectorAll("[name^=label]").forEach(el => {
+            el.checked = true
+            el.dispatchEvent(new Event("change", {bubbles: true}))
+        })
+        return
     }
 })
 
@@ -28,16 +78,22 @@ function showRecords(data) {
 
 // RENDER RECORDS
 function renderRecords(view) {
+    let used_cols = HIDDEN_COLUMNS_STATE.map(i => headernames.indexOf(i))
     let rows = []
     for (let record of view) {
         let row = record.map(
-            (item, idx) => `<td class="copyable ${idx === 0 ? "monospace" : ""}">${item}</td>`
+            (item, idx) => {
+                return `<td class="copyable${idx === 0 ? " monospace" : ""} ${used_cols.includes(idx) ? " hide" : ""}">${item}</td>`
+            }
         ).join("")
         rows.push(`<tr>${row}</tr>`)
     }
     renderattr = idx => idx === SORTING_STATE?.idx ? ` data-sort="${SORTING_STATE.sort}"` : ""
     let header = headernames.map(
-        (item, idx) => `<th${renderattr(idx)}>${item}</th>`).join("")
+        (item, idx) => {
+            return `<th${used_cols.includes(idx) ? ' class="hide" ' : ""}${renderattr(idx)}>${item.replace(/_/g, " ")}</th>`
+        }
+    ).join("")
     return `<table>
         <thead><tr>${header}</tr></thead>
         <tbody>${rows.join("")}</tbody>
@@ -58,7 +114,7 @@ function filterRecords(data) {
     })
     let filters = []
     document
-        .querySelectorAll("input")
+        .querySelectorAll("input.query-input")
         .forEach( el => filters.push(el.value.toUpperCase()) )
     return data.filter(test)
 }

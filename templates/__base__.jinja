@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UU|CSa|{{ title }}</title>
     <link rel="icon" type="image/x-icon" href="{{ nested }}static/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="{{ nested }}static/style.css">
+    <link rel="stylesheet" type="text/css" href="{{ nested }}static/style.__base__.css">
     {% for stylesheet in stylesheets %}
     <link rel="stylesheet" type="text/css" href="{{ nested }}{{ stylesheet }}">
     {% endfor %}
@@ -18,11 +18,26 @@
     <header>
         <h1><a href="{{ nested }}index.html">{{ title }}</a></h1>
         <nav>
-        {% for key, item in sitemap.items() %}
-            {% if item.show_in_nav %}
-            <a href="{{ nested }}{{ item.url }}">{{ item.title }}</a>
-            {% endif %}
-        {% endfor %}
+        <ul>
+            {# items uit sitemap worden als afzonderlijke link toegevoegd aan de header als het attribuut 'show_in_nav' gelijk is aan de 'titel' van het item. indien dit niet het geval is, wordt er een submenu aangemaakt die 'show_in_nav' als titel heeft. zolang opeenvolgende items dezelfde 'show_in_nav' hebben, worden ze in hetzelfde submenu geplaatst. #}
+            {% for key, item in sitemap.items() %}
+                {% if item.show_in_nav %}
+                {% if item.show_in_nav == item.title %}
+                <li><a href="{{ nested }}{{ item.url }}">{{ item.title }}</a></li>
+                {% else %}
+                    {% if loop.previtem[1].show_in_nav != item.show_in_nav %}
+                    <li><a href="{{ nested }}{{ item.url }}">{{ item.show_in_nav }}</a>
+                        <ul class="dropdown">
+                    {% endif %}
+                            <li><a href="{{ nested }}{{ item.url }}">{{ item.title }}</a></li>
+                    {% if loop.nextitem[1].show_in_nav != item.show_in_nav %}
+                        </ul>
+                    </li>
+                    {% endif %}
+                {% endif %}
+                {% endif %}
+            {% endfor %}
+        </ul>
         </nav>
         <img src="{{ nested }}static/UU_logo_NL_ZWART_CROP.png" alt="Universiteit Utrecht" width="240px">
     </header>

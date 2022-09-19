@@ -3,7 +3,9 @@
         "title": "uro.raadplegen",
         "template": "index.jinja",
         "url": "index.html",
-        "stylesheets": ["static/style.index.css"],
+        "stylesheets": [
+            "static/style.ref.css",
+            "static/style.index.css"],
         "data": "data/voorbeeld.json",
         "inputs": ["gebouw", "adres", "postcode"],
         "show_in_nav": false
@@ -13,87 +15,107 @@
         "oms": "Toelatingseisen per opleiding volgens RATHO en bachelorkiezersite",
         "template": "toelating.jinja",
         "url": "content/toelating.html",
-        "stylesheets": ["static/style.toelating.css"],
+        "stylesheets": [
+            "static/style.ref.css",
+            "static/style.toelating.css"
+        ],
         "scripts": ["js/interface_toelating.js"],
         "data": "data/toelating.json",
         "nested": "../",
-        "show_in_nav": true
+        "show_in_nav": "toelating"
     },
     "opleiding": {
         "title": "opleiding",
         "oms": "Uitgebreide informatie per opleiding (croho, openstelling, inschrijfvormen, etc.)",
         "template": "_ref_.jinja",
         "url": "content/opleiding.html",
-        "stylesheets": ["static/style.opleiding.css"],
-        "data": "data/opleiding.json",
-        "inputs": [
-            "opleiding",
-            "opleiding_naam_nl",
-            "opleiding_naam_en",
-            "faculteit",
-            "examentype",
-            "vtdt_vorm",
-            "type_opleiding",
-            "februari_instroom",
-            "aggregaat_1",
-            "aggregaat_2",
-            "aggregaat_3",
-            "croho",
-            "croho_naam_nl",
-            "croho_naam_en",
-            "croho_sector",
-            "nominale_studieduur",
-            "bekostigingsniveau",
-            "ingangsdatum_actueel",
-            "afloopdatum_actueel",
-            "croho_inschrijven_tm",
-            "croho_herinschrijven_tm",
-            "croho_inschrijven_vanaf",
-            "ext_inschrijven_tm",
-            "ext_herinschrijven_tm",
-            "ext_inschrijven_vanaf",
-            "vtdt_inschrijven_tm",
-            "vtdt_herinschrijven_tm",
-            "vtdt_inschrijven_vanaf"
+        "stylesheets": [
+            "static/style.ref.css",
+            "static/style.opleiding.css"
         ],
+        "data": "data/opleiding.json",
+        "inputs": {
+            "index": [
+                "opleiding"
+            ],
+            "details": [
+                "opleiding_naam_nl",
+                "opleiding_naam_en",
+                "examentype",
+                "vtdt_vorm",
+                "type_opleiding",
+                "februari_instroom"
+            ],
+            "onderdeel": [
+                "faculteit",
+                "aggregaat_1",
+                "aggregaat_2",
+                "aggregaat_3"
+            ],
+            "croho": [
+                "croho",
+                "croho_naam_nl",
+                "croho_naam_en",
+                "croho_sector",
+                "nominale_studieduur",
+                "bekostigingsniveau"
+            ],
+            "openstelling": [
+                "ingangsdatum_actueel",
+                "afloopdatum_actueel",
+                "croho_inschrijven_tm",
+                "croho_herinschrijven_tm",
+                "croho_inschrijven_vanaf",
+                "ext_inschrijven_tm",
+                "ext_herinschrijven_tm",
+                "ext_inschrijven_vanaf",
+                "vtdt_inschrijven_tm",
+                "vtdt_herinschrijven_tm",
+                "vtdt_inschrijven_vanaf"
+            ]
+        },
         "nested": "../",
-        "show_in_nav": true
+        "show_in_nav": "opleiding"
     },
     "vooropleiding": {
         "title": "vooropleiding",
         "oms": "Referentietabel vooropleidingen",
         "template": "_ref_.jinja",
         "url": "content/vooropleiding.html",
+        "stylesheets": ["static/style.ref.css"],
         "data": "data/vooropleiding.json",
         "inputs": ["vooropleiding", "naam", "type_vooropleiding"],
         "nested": "../",
-        "show_in_nav": true
+        "show_in_nav": "referentie"
     },
     "vak": {
         "title": "vak",
         "oms": "Referentietabel vakken",
         "template": "_ref_.jinja",
         "url": "content/vak.html",
+        "stylesheets": ["static/style.ref.css"],
         "data": "data/vak.json",
         "inputs": ["vak", "naam"],
         "nested": "../",
-        "show_in_nav": true
+        "show_in_nav": "referentie"
     },
     "school": {
         "title": "school",
         "oms": "Referentietabel scholen",
         "template": "_ref_.jinja",
         "url": "content/school.html",
+        "stylesheets": ["static/style.ref.css"],
         "data": "data/school.json",
         "inputs": ["school", "naam", "plaats"],
         "nested": "../",
-        "show_in_nav": true
+        "show_in_nav": "referentie"
     },
     "land": {
         "title": "land",
         "oms": "Referentietabel landen",
         "template": "_ref_.jinja",
         "url": "content/land.html",
+        "stylesheets": ["static/style.ref.css"],
         "data": "data/land.json",
         "inputs": [
             "land",
@@ -104,13 +126,14 @@
             "afloopdatum"
         ],
         "nested": "../",
-        "show_in_nav": true
+        "show_in_nav": "referentie"
     },
     "nationaliteit": {
         "title": "nationaliteit",
         "oms": "Referentietabel nationaliteiten",
         "template": "_ref_.jinja",
         "url": "content/nationaliteit.html",
+        "stylesheets": ["static/style.ref.css"],
         "data": "data/nationaliteit.json",
         "inputs": [
             "nationaliteit",
@@ -120,7 +143,7 @@
             "afloopdatum"
         ],
         "nested": "../",
-        "show_in_nav": true
+        "show_in_nav": "referentie"
     },
     "standaardteksten": {
         "title": "std.teksten",
@@ -132,7 +155,7 @@
             "static/jquery.highlight-within-textarea.css"
         ],
         "nested": "../",
-        "show_in_nav": true
+        "show_in_nav": "std.teksten"
     },
     "nuttige_links": {
         "title": "nuttige.links",
@@ -143,7 +166,7 @@
         "scripts": ["js/interface_nuttige_links.js"],
         "data": "data/nuttige_links.json",
         "nested": "../",
-        "show_in_nav": true
+        "show_in_nav": "nuttige.links"
     },
     "collegegeld": {
         "title": "collegegeld",
@@ -153,6 +176,6 @@
         "stylesheets": ["static/style.collegegeld.css"],
         "scripts": ["js/interface_collegegeld.js"],
         "nested": "../",
-        "show_in_nav": true
+        "show_in_nav": "collegegeld"
     }
 }
