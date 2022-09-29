@@ -138,6 +138,10 @@ a:hover {
     color: var(--color-accent);
 }
 
+.direct-link {
+    font-size: .8em;
+}
+
 /* LISTS */
 ul,
 ol,
@@ -200,50 +204,6 @@ td, th {
 
 
 /* custom elements */
-
-/* .searchbar {
-    display: flex;
-    flex-direction: column;
-    gap: .5rem;
-    border-bottom: 1px solid var(--color-outline);
-}
-
-.searchbar__filters {
-    column-width:300px;
-    column-gap: 1rem;
-    font-size: .8em;
-}
-
-.searchbar__filters > div {
-    display: grid;
-    gap: .5rem;
-    grid-template-columns: 1fr 1fr;
-    break-inside: avoid;
-}
-
-.searchbar__filters > div > * {
-    justify-self: end;
-}
-
-.searchbar__controls {
-    display: flex;
-}
-
-.searchbar__controls :last-child {
-    margin-left: auto;
-}
-
-#result {
-    display: flex;
-    flex-direction: column;
-    gap: .5rem;
-    overflow: auto;
-    width: 100%;
-}
-
-#nresults {
-    font-size: .9em;
-} */
 
 #messageboard {
     position: absolute;
