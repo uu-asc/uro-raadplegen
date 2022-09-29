@@ -51,12 +51,12 @@
             <input type="text" id="opleiding" class="query-input" data-label="index">
         </div>
         <div>
-            <label for="opleiding_naam_nl" data-label="details">opleiding_naam_nl</label>
-            <input type="text" id="opleiding_naam_nl" class="query-input" data-label="details">
+            <label for="opleiding_naam_nl" data-label="namen">opleiding_naam_nl</label>
+            <input type="text" id="opleiding_naam_nl" class="query-input" data-label="namen">
         </div>
         <div>
-            <label for="opleiding_naam_en" data-label="details">opleiding_naam_en</label>
-            <input type="text" id="opleiding_naam_en" class="query-input" data-label="details">
+            <label for="opleiding_naam_en" data-label="namen">opleiding_naam_en</label>
+            <input type="text" id="opleiding_naam_en" class="query-input" data-label="namen">
         </div>
         <div>
             <label for="examentype" data-label="details">examentype</label>
@@ -169,6 +169,10 @@
         </div>
         <div>
             <div>toon kolommen:</div>
+            <div>
+                <input type="checkbox" name="label-namen" id="namen" autocomplete="off" checked>
+                <button data-target="namen">namen</button>
+            </div>
             <div>
                 <input type="checkbox" name="label-details" id="details" autocomplete="off" checked>
                 <button data-target="details">details</button>

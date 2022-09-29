@@ -38,9 +38,11 @@
             "index": [
                 "opleiding"
             ],
-            "details": [
+            "namen": [
                 "opleiding_naam_nl",
-                "opleiding_naam_en",
+                "opleiding_naam_en"
+            ],
+            "details": [
                 "examentype",
                 "vtdt_vorm",
                 "type_opleiding",
