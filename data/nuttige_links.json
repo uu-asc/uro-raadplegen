@@ -20,6 +20,8 @@
     },
     "Collegegeld": {
         "Overheid": [
+            {"url": "https://wetten.overheid.nl/jci1.3:c:BWBR0005682&hoofdstuk=7&titeldeel=3&paragraaf=2&z=2022-09-01&g=2022-09-01", "text": "WHW | Paragraaf 2. Eigen bijdragen"
+            },
             {"url": "https://www.rijksoverheid.nl/onderwerpen/hoger-onderwijs/vraag-en-antwoord/recht-op-halvering-collegegeld", "text": "Wanneer heb ik recht op halvering collegegeld?"}
         ],
         "DUO": [
