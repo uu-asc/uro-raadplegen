@@ -10,20 +10,6 @@
         "inputs": ["gebouw", "adres", "postcode"],
         "show_in_nav": false
     },
-    "toelating": {
-        "title": "toelating",
-        "oms": "Toelatingseisen per opleiding volgens RATHO en bachelorkiezersite",
-        "template": "toelating.jinja",
-        "url": "content/toelating.html",
-        "stylesheets": [
-            "static/style.ref.css",
-            "static/style.toelating.css"
-        ],
-        "scripts": ["js/interface_toelating.js"],
-        "data": "data/toelating.json",
-        "nested": "../",
-        "show_in_nav": "toelating"
-    },
     "opleiding": {
         "title": "opleiding",
         "oms": "Uitgebreide informatie per opleiding (croho, openstelling, inschrijfvormen, etc.)",
@@ -77,7 +63,21 @@
             ]
         },
         "nested": "../",
-        "show_in_nav": "opleiding"
+        "show_in_nav": "uro"
+    },
+    "toelating": {
+        "title": "toelating",
+        "oms": "Toelatingseisen per opleiding volgens RATHO en bachelorkiezersite",
+        "template": "toelating.jinja",
+        "url": "content/toelating.html",
+        "stylesheets": [
+            "static/style.ref.css",
+            "static/style.toelating.css"
+        ],
+        "scripts": ["js/interface_toelating.js"],
+        "data": "data/toelating.json",
+        "nested": "../",
+        "show_in_nav": "uro"
     },
     "vooropleiding": {
         "title": "vooropleiding",
