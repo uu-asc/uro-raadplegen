@@ -8,15 +8,12 @@
     <link rel="icon" type="image/x-icon" href="../static/favicon.ico">
     <link rel="stylesheet" type="text/css" href="../static/style.__base__.css">
     <link rel="stylesheet" type="text/css" href="../static/style.ref.css">
-<script src="../js/interface_referentie.js"></script>
 <script>
+    let datapath = "../data/school.json"
+    let thisurl = "content/school.html"
     let headernames = ['school', 'naam', 'plaats']
-    let data
-    fetch("../data/school.json")
-        .then(response => response.json())
-        .then(json => data = json)
-        .then(data => showRecords(data))
 </script>
+<script src="../js/interface_referentie.js" defer></script>
 </head>
 
 <body>

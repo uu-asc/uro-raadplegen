@@ -2,19 +2,16 @@
 
 
 {% block script %}
-<script src="{{ nested }}js/interface_referentie.js"></script>
 <script>
+    let datapath = "{{ nested }}{{ data }}"
+    let thisurl = "{{ url }}"
 {% if inputs is mapping %}
     let headernames = {{ inputs.values()|sum(start=[]) }}
 {% else %}
     let headernames = {{ inputs }}
 {% endif %}
-    let data
-    fetch("{{ nested }}{{ data }}")
-        .then(response => response.json())
-        .then(json => data = json)
-        .then(data => showRecords(data))
 </script>
+<script src="{{ nested }}js/interface_referentie.js" defer></script>
 {% endblock %}
 
 

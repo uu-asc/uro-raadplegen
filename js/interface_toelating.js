@@ -23,7 +23,7 @@ function filterRecords() {
     if (data.hasOwnProperty(filter)) {
         let record = data[filter]
         result.innerHTML = `
-            <a href="./toelating.html?opl=${filter}" class="direct-link">&#128279; directe link naar deze pagina</a>
+            <a href="./toelating.html?opl=${filter}" class="direct-link">&#128279; directe link naar deze informatie</a>
             <div class="container">
                 <div class="box margins-off">
                     <h3>Opleiding</h3>

@@ -3,6 +3,17 @@ console.log("i have been summoned")
 
 let SORTING_STATE = null
 let HIDDEN_COLUMNS_STATE = []
+let PARAMS = new URLSearchParams(window.location.search)
+for (let [key, value] of PARAMS) {
+    el = document.getElementById(key)
+    if (el) { el.value = value }
+}
+
+let data
+fetch(datapath)
+    .then(response => response.json())
+    .then(json => data = json)
+    .then(data => showRecords(data))
 
 
 // INTERACTIVITY
@@ -101,7 +112,15 @@ function renderRecords(view) {
 }
 
 function renderNResults(view) {
-    return `n_resultaten <span class="monospace">${view.length} / ${data.length}</span>`
+    let params = {}
+    document.querySelectorAll("input.query-input").forEach(
+        el => {
+            if (el.value) { params[el.id] = el.value }
+        }
+    )
+    let urlparams = new URLSearchParams(params)
+    let url = `${thisurl.split('/')[1]}?${urlparams.toString()}`
+    return `n_resultaten <span class="monospace">${view.length} / ${data.length}</span><a href="${url}" class="direct-link">&#128279;</a>`
 }
 
 
