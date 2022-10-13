@@ -83,15 +83,19 @@
                 <label for="nmaanden">aantal maanden</label>
             </div>
         </fieldset>
+        <div>
+            <h4>maand labels</h4>
+            <output id="label-startmaand" class="copyable">september</output> - <output id="label-stopmaand" class="copyable">augustus</output>
+        </div>
         <fieldset class="getalsnotatie">
             <legend>Getalsnotatie</legend>
             <div>Settings</div>
             <div>
-                <input type="checkbox" name="ascurrency" autocomplete="off">
+                <input type="checkbox" id="ascurrency" name="ascurrency" autocomplete="off">
                 <label for="ascurrency">formatteer als bedrag</label>
             </div>
             <div>
-                <input type="checkbox" name="septhousands" autocomplete="off">
+                <input type="checkbox" id="septhousands" name="septhousands" autocomplete="off">
                 <label for="septhousands">scheidingsteken</label>
             </div>
             <div>Formaat</div>
@@ -208,6 +212,14 @@
                 </tr>
             </tbody>
         </table>
+    </section>
+    <section>
+    <div>
+        <h3>Flexstuderen</h3>
+        <label for="aantal-ec-flex">Aantal EC</label>
+        <input type="number" name="aantal-ec-flex" id="aantal-ec-flex">
+    </div>
+    <output class="copyable" id="te-betalen-bedrag-flex"></output>
     </section>
 </main>
     <a href="mailto:l.c.vriend@uu.nl" class="monospace">feedback/suggesties</a>
