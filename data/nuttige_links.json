@@ -7,7 +7,8 @@
         ],
         "Universiteit Utrecht": [
             {"url": "www.uu.nl/onderwijsregelingen", "text": "Regelingen en procedures"},
-            {"url": "https://students.uu.nl/sites/default/files/uu-reglementinschrijvingencollegegeld2022-2023.pdf", "text": "Reglement Inschrijving en Collegegeld 2022-2023 (RIC)"}
+            {"url": "https://students.uu.nl/sites/default/files/uu-reglementinschrijvingencollegegeld2022-2023.pdf", "text": "Reglement Inschrijving en Collegegeld 2022-2023 (RIC)"},
+            {"url": "https://intranet.uu.nl/kennisbank/onderwijs-en-examenregelingen-oer", "text": "Model OER Bachelor en Master + toelichting"}
         ]
     },
     "Bekostiging": {
@@ -31,7 +32,10 @@
             {"url": "https://students.uu.nl/sites/default/files/uu-reglementinschrijvingencollegegeld2022-2023.pdf#page=10", "text": "RIC | 4 Collegegeld"},
             {"url": "https://www.uu.nl/bachelors/algemene-informatie/informatie-voor-nederlandse-studenten/kosten-studeren/collegegeld", "text": "Bachelors > Kosten studeren > Collegegeld"},
             {"url": "https://www.uu.nl/masters/algemene-informatie/informatie-voor-nederlandse-studenten/geldzaken/collegegeld", "text": "Masters > Geldzaken > Collegegeld"},
-            {"url": "https://students.uu.nl/praktische-zaken/geldzaken/collegegeld", "text": "Praktische zaken > Geldzaken > Collegegeld"}
+            {"url": "https://students.uu.nl/praktische-zaken/geldzaken/collegegeld", "text": "Praktische zaken > Geldzaken > Collegegeld"},
+            {"url": "https://bestuurlijkactiefutrecht.nl/collegegeldvrij-besturen-uu/", "text": "Informatie aan studenten over collegegeldvrij besturen"},
+            {"url": "https://bestuurlijkactiefutrecht.nl/wp-content/uploads/sites/324/2021/10/Profileringsfonds-2015-Regeling-Bestuursbeurzenstudentbestuurdersstudentenorganisaties.pdf", "text": "Regeling Bestuursbeurzen voor studentbestuurders in studentenorganisaties van Hogeschool Utrecht en de Universiteit Utrecht"},
+            {"url": "https://www.uu.nl/masters/toelating-en-aanmelden/flexstuderen", "text": "Flexstuderen"}
         ]
     },
     "Verblijfsvergunning": {
@@ -62,6 +66,13 @@
         ],
         "Nuffic": [
             {"url": "https://www.nuffic.nl/onderwerpen/diploma/onderwijssystemen", "text": "Onderwijssystemen: Vergelijk buitenlandse met Nederlandse diploma's"}
+        ]
+    },
+    "Selectie & Plaatsing": {
+        "Universiteit Utrecht": [
+            {"url": "https://www.uu.nl/bachelors/hoe-werkt-inschrijven/wat-is-numerus-fixus", "text": "Bachelorkiezersite | Algemene informatie over numberus fixus"},
+            {"url": "https://www.uu.nl/media/82555", "text": "Reglement selectie voor numerus fixus bacheloropleidingen van de UU"},
+            {"url": "https://www.uu.nl/bachelors/hoe-werkt-inschrijven/wat-is-numerus-fixus/selectiecriteria-en-procedure-per-opleiding", "text": "Selectiecriteria en –procedure per opleiding"}
         ]
     }
 }

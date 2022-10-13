@@ -1,14 +1,56 @@
 let data = {"columns":["BA","MA"],"index":[["wettelijk","Deeltijd"],["wettelijk","Voltijd"],["kleinschalig","UCR"],["kleinschalig","PPE"],["kleinschalig","UCU"],["niet-EER","UCR"],["niet-EER","LAAG"],["niet-EER","PPE"],["niet-EER","HOOG"],["niet-EER","UCU"],["niet-EER","TOP"],["graad","LAAG"],["graad","PPE"],["graad","HOOG"],["graad","UCU"],["graad","TOP"]],"data":[[1963,1963],[2209,2209],[3750,null],[4418,null],[4584,null],[9450,null],[11000,17500],[13100,null],[14000,20750],[14000,null],[23300,26700],[9895,12295],[12063,null],[12336,14363],[12336,null],[20200,23200]]}
 
+let maanden = {
+    "01": {"nl-NL": "september", "en-US": "September"},
+    "02": {"nl-NL": "oktober", "en-US": "October"},
+    "03": {"nl-NL": "november", "en-US": "November"},
+    "04": {"nl-NL": "december", "en-US": "December"},
+    "05": {"nl-NL": "januari", "en-US": "January"},
+    "06": {"nl-NL": "februari", "en-US": "February"},
+    "07": {"nl-NL": "maart", "en-US": "March"},
+    "08": {"nl-NL": "april", "en-US": "April"},
+    "09": {"nl-NL": "mei", "en-US": "May"},
+    "10": {"nl-NL": "juni", "en-US": "June"},
+    "11": {"nl-NL": "juli", "en-US": "July"},
+    "12": {"nl-NL": "augustus", "en-US": "August"},
+}
+
 let selectStartmaand = document.querySelector(`[name="startmaand"]`)
 let selectStopmaand = document.querySelector(`[name="stopmaand"]`)
+let labelStartmaand = document.querySelector(`#label-startmaand`)
+let labelStopmaand = document.querySelector(`#label-stopmaand`)
 let inputNMaanden = document.querySelector(`[name="nmaanden"]`)
 let checkboxAsCurrency = document.querySelector(`[name="ascurrency"]`)
 let radioLocaleNL = document.querySelector(`#locale-nl`)
 let tabel = document.querySelector("table")
+let flexinput = document.querySelector(`#aantal-ec-flex`)
+let flexoutput = document.querySelector(`#te-betalen-bedrag-flex`)
+
+function calcFlexFee(ec) {
+    return formatNumber(ec * (2209 / 60) * 1.15)
+}
+
+function updateFlexFee() {
+    if ( flexinput.value ) {
+        flexoutput.innerText = calcFlexFee(flexinput.value)
+    } else { flexoutput.innerText = "" }
+    return
+}
+
+function updateLabelsMonths() {
+    let locale = getLocale()
+    let start = selectStartmaand.value
+    let stop = selectStopmaand.value
+    labelStartmaand.innerText = maanden[start][locale]
+    labelStopmaand.innerText = maanden[stop][locale]
+}
+
+function getLocale() {
+    return document.querySelector('input[name="locale"]:checked').value
+}
 
 function formatNumber(i) {
-    let locale = document.querySelector('input[name="locale"]:checked').value
+    let locale = getLocale()
     if ( i === 0 ) { return "" }
     if ( !checkboxAsCurrency.checked ) {
         let options = {
@@ -66,9 +108,29 @@ function incrementMaand(n) {
 }
 
 document.addEventListener("change", event => {
-    if ( event.target.matches(`[name$=maand]`) ) { updateInputsMaanden() }
-    if ( event.target.matches(`[name="nmaanden"]`) ) { updateTable(data.data) }
-    if ( event.target.closest("fieldset")?.classList.contains("getalsnotatie") ) { updateTable(data.data) }
+    if ( event.target.matches(`[name$=maand]`) ) {
+        updateInputsMaanden()
+        updateLabelsMonths()
+        return
+    }
+    if ( event.target.matches(`[name="nmaanden"]`) ) {
+        updateTable(data.data)
+        return
+    }
+    if ( event.target.closest("fieldset")?.classList.contains("getalsnotatie") ) {
+        updateTable(data.data)
+        updateFlexFee()
+        updateLabelsMonths()
+    }
+    if ( event.target.matches(`#aantal-ec-flex`)) {
+        updateFlexFee()
+    }
+})
+
+document.addEventListener("keyup", event => {
+    if ( event.target.matches(`#aantal-ec-flex`)) {
+        updateFlexFee()
+    }
 })
 
 document.addEventListener("click", event => {

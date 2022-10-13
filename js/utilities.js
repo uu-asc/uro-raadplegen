@@ -22,7 +22,10 @@ window.addEventListener("keydown", function (event) {
     // cancel the default action to avoid it being handled twice
     event.preventDefault()
     // send key up event to trigger rerender
-    document.querySelector("input.query-input").dispatchEvent(new Event("keyup", {bubbles: true}))
+    let inputs = document.querySelector("input.query-input")
+    if (inputs) {
+        inputs.dispatchEvent(new Event("keyup", {bubbles: true}))
+    }
 })
 
 document.addEventListener("click", function (event) {

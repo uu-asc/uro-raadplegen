@@ -6,6 +6,9 @@ main {
 fieldset {
     padding: 1rem;
 }
+label {
+    margin-right: .5em;
+}
 table, th, td {
     border: none;
 }
@@ -17,4 +20,9 @@ tbody th {
 }
 tbody th[rowspan] {
     font-variant: small-caps;
+}
+section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
