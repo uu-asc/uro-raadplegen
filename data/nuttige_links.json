@@ -64,8 +64,11 @@
             {"url": "https://students.uu.nl/sites/default/files/uu-reglementinschrijvingencollegegeld2022-2023.pdf#page=6", "text": "RIC | 2B Eerste inschrijving bacheloropleiding"},
             {"url": "https://www.uu.nl/bachelors/sites/default/files/oo_hboverklaring.pdf", "text": "Eisen hbo-verklaring"}
         ],
-        "Nuffic": [
-            {"url": "https://www.nuffic.nl/onderwerpen/diploma/onderwijssystemen", "text": "Onderwijssystemen: Vergelijk buitenlandse met Nederlandse diploma's"}
+        "Overig": [
+            {"url": "https://duo.nl/zakelijk/hoger-onderwijs/studentenadministratie/opleidingsgegevens-in-croho/raadplegen-en-downloaden.jsp", "text": "DUO | Opleidingsgegevens in CROHO"},
+            {"url": "https://zakelijk.duo.nl/portaal/zoeken-en-vinden/", "text": "DUO | RIO | Instellingen & opleidingen"},
+            {"url": "https://www.nvao.net/nl/besluiten/opleidingen", "text": "NVAO | Besluiten en rapporten"},
+            {"url": "https://www.nuffic.nl/onderwerpen/diploma/onderwijssystemen", "text": "Nuffic | Onderwijssystemen: Vergelijk buitenlandse met Nederlandse diploma's"}
         ]
     },
     "Selectie & Plaatsing": {
