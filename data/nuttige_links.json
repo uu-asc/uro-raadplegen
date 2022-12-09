@@ -77,5 +77,11 @@
             {"url": "https://www.uu.nl/media/82555", "text": "Reglement selectie voor numerus fixus bacheloropleidingen van de UU"},
             {"url": "https://www.uu.nl/bachelors/hoe-werkt-inschrijven/wat-is-numerus-fixus/selectiecriteria-en-procedure-per-opleiding", "text": "Selectiecriteria en –procedure per opleiding"}
         ]
+    },
+    "Privacy": {
+        "Universiteit Utrecht": [
+            {"url": "https://utrechtuniversity.github.io/dataprivacyhandbook/", "text": "Data Privacy Handbook"},
+            {"url": "https://intranet.uu.nl/en/knowledgebase/research-data-management-support", "text": "Research Data Management Support"}
+        ]
     }
 }
