@@ -3,11 +3,14 @@
         "Overheid": [
             {"url": "https://wetten.overheid.nl/BWBR0005682", "text": "Wet op het hoger onderwijs en wetenschappelijk onderzoek (WHW)"},
             {"url": "https://wetten.overheid.nl/BWBR0006152", "text": "Uitvoeringsbesluit WHW 2008"},
+            {"url": "https://wetten.overheid.nl/BWBR0042012/2020-08-01", "text": "Wet register onderwijsdeelnemers"}
+            {"url": "https://wetten.overheid.nl/BWBR0043632/2022-11-18", "text": "Regeling register onderwijsdeelnemers"},
             {"url": "https://wetten.overheid.nl/BWBR0033693", "text": "Wet Kwaliteit in verscheidenheid hoger onderwijs"}
         ],
         "Universiteit Utrecht": [
             {"url": "https://www.uu.nl/onderwijsregelingen", "text": "Regelingen en procedures"},
             {"url": "https://students.uu.nl/sites/default/files/uu-reglementinschrijvingencollegegeld2022-2023.pdf", "text": "Reglement Inschrijving en Collegegeld 2022-2023 (RIC)"},
+            {"url": "https://www.uu.nl/sites/default/files/reglement_inschrijving_en_collegegeld_2021-2022_definitief.pdf", "text": "Reglement Inschrijving en Collegegeld 2021-2022 (RIC)"},
             {"url": "https://intranet.uu.nl/kennisbank/onderwijs-en-examenregelingen-oer", "text": "Model OER Bachelor en Master + toelichting"}
         ]
     },
@@ -78,6 +81,11 @@
             {"url": "https://www.uu.nl/bachelors/hoe-werkt-inschrijven/wat-is-numerus-fixus/selectiecriteria-en-procedure-per-opleiding", "text": "Selectiecriteria en –procedure per opleiding"}
         ]
     },
+    "Promoties": {
+        "Universiteit Utrecht": [
+            {"url": "https://www.uu.nl/organisatie/promoveren-aan-de-uu/praktische-zaken/reglementen-en-formulieren", "text": "Promotiereglement"}
+        ]
+    }
     "Privacy": {
         "Universiteit Utrecht": [
             {"url": "https://utrechtuniversity.github.io/dataprivacyhandbook/", "text": "Data Privacy Handbook"},
