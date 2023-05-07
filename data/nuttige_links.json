@@ -85,8 +85,11 @@
         "Universiteit Utrecht": [
             {"url": "https://www.uu.nl/organisatie/promoveren-aan-de-uu/praktische-zaken/reglementen-en-formulieren", "text": "Promotiereglement"}
         ]
-    }
+    },
     "Privacy": {
+        "Overheid": [
+            {"url": "https://www.inspectie-oe.nl/publicaties/brochure/2019/10/16/informatieblad-archiefbeheer-scholen", "text": "Informatieblad: Inspectie Overheidsinformatie en Erfgoed (Bewaartermijnen / Archiefwet / AVG)"}
+        ],
         "Universiteit Utrecht": [
             {"url": "https://utrechtuniversity.github.io/dataprivacyhandbook/", "text": "Data Privacy Handbook"},
             {"url": "https://intranet.uu.nl/en/knowledgebase/research-data-management-support", "text": "Research Data Management Support"}
