@@ -22,6 +22,9 @@
             {"url": "https://duo.nl/zakelijk/images/helderheid-bekostiging-ho.pdf", "text": "Notitie Helderheid bekostiging Ho"},
             {"url": "https://duo.nl/zakelijk/images/aanvullende-notitie.pdf", "text": "Aanvulling op notitie Helderheid"},
             {"url": "https://duo.nl/zakelijk/hoger-onderwijs/studentenadministratie/inschrijven-student.jsp", "text": "Inschrijven student"}
+        ],
+        "Onderwijsinspectie": [
+            {"url": "https://www.onderwijsinspectie.nl/documenten/publicaties/2022/12/12/onderwijsaccountantsprotocol-ocw-2022", "text": "Onderwijsaccountantsprotocol OCW 2022"}
         ]
     },
     "Collegegeld": {
@@ -41,7 +44,7 @@
             {"url": "https://students.uu.nl/praktische-zaken/geldzaken/collegegeld", "text": "Praktische zaken > Geldzaken > Collegegeld"},
             {"url": "https://bestuurlijkactiefutrecht.nl/collegegeldvrij-besturen-uu/", "text": "Informatie aan studenten over collegegeldvrij besturen"},
             {"url": "https://bestuurlijkactiefutrecht.nl/wp-content/uploads/sites/324/2021/10/Profileringsfonds-2015-Regeling-Bestuursbeurzenstudentbestuurdersstudentenorganisaties.pdf", "text": "Regeling Bestuursbeurzen voor studentbestuurders in studentenorganisaties van Hogeschool Utrecht en de Universiteit Utrecht"},
-            {"url": "https://www.uu.nl/masters/toelating-en-aanmelden/flexstuderen", "text": "Flexstuderen"}
+            {"url": "https://www.uu.nl/masters/spaanse-taal-en-cultuur-educatie-en/collegegeld-en-studiefinanciering/flexstuderen", "text": "Flexstuderen (voorbeeld spaanse taal- en cultuur"}
         ]
     },
     "Verblijfsvergunning (VVR)": {
