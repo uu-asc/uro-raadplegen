@@ -9,6 +9,7 @@
         ],
         "Universiteit Utrecht": [
             {"url": "https://www.uu.nl/onderwijsregelingen", "text": "Regelingen en procedures"},
+            {"url": "https://students.uu.nl/sites/default/files/UU-Reglementinschrijvingencollegegeld2024-2025.pdf", "text": "Reglement Inschrijving en Collegegeld 2024-2025 (RIC)"},
             {"url": "https://students.uu.nl/sites/default/files/UU-Reglementinschrijvingencollegegeld2023-2024.pdf", "text": "Reglement Inschrijving en Collegegeld 2023-2024 (RIC)"},
             {"url": "https://students.uu.nl/sites/default/files/uu-reglementinschrijvingencollegegeld2022-2023.pdf", "text": "Reglement Inschrijving en Collegegeld 2022-2023 (RIC)"},
             {"url": "https://www.uu.nl/sites/default/files/reglement_inschrijving_en_collegegeld_2021-2022_definitief.pdf", "text": "Reglement Inschrijving en Collegegeld 2021-2022 (RIC)"},
@@ -31,7 +32,8 @@
         "Overheid": [
             {"url": "https://wetten.overheid.nl/jci1.3:c:BWBR0005682&hoofdstuk=7&titeldeel=3&paragraaf=2&z=2022-09-01&g=2022-09-01", "text": "WHW | Hoofdstuk 7. Onderwijs | Titel 3. Studenten en extraneï | Paragraaf 2. Eigen bijdragen"
             },
-            {"url": "https://www.rijksoverheid.nl/onderwerpen/hoger-onderwijs/vraag-en-antwoord/recht-op-halvering-collegegeld", "text": "Wanneer heb ik recht op halvering collegegeld?"}
+            {"url": "https://www.rijksoverheid.nl/onderwerpen/hoger-onderwijs/vraag-en-antwoord/recht-op-halvering-collegegeld", "text": "Wanneer heb ik recht op halvering collegegeld?"},
+            {"url": "https://wetboekplus.nl/burgerlijk-wetboek-boek-3-artikel-309-verjaring-rechtsvordering-uit-onverschuldigde-betaling/", "text": "Boek 3 Artikel 309 (3:309 BW) | Verjaring rechtsvordering uit onverschuldigde betaling"}
         ],
         "DUO": [
             {"url": "https://www.duo.nl/particulier/collegegeld.jsp#collegegeld", "text": "Collegegeld"}
@@ -56,7 +58,7 @@
         "DUO": [
             {"url": "https://www.duo.nl/particulier/studiefinanciering/voorwaarden.jsp", "text": "Voorwaarden studiefinanciering"},
             {"url": "https://www.duo.nl/particulier/verblijfsvergunning-type-1.jsp", "text": "Beslisboom verblijfsvergunning type-1"},
-            {"url": "https://duo.nl/zakelijk/images/programma-van-eisen-hoger-onderwijs.pdf#page=219", "text": "PvE | Bijlage 13: Verblijfsdocument"},
+            {"url": "https://duo.nl/zakelijk/images/programma-van-eisen-hoger-onderwijs.pdf#page=210", "text": "PvE | Bijlage 13: Verblijfsdocument"},
             {"url": "https://duo.nl/zakelijk/hoger-onderwijs/nieuws/bekostiging-en-subsidies/bekostiging-collegegeld-studenten-tijdelijke-verblijfstitels.jsp", "text": "Bekostiging en soort collegegeld voor studenten met tijdelijke verblijfstitels"}
         ]
     },
@@ -105,6 +107,11 @@
     "Studiefinanciëring": {
         "DUO": [
             {"url": "https://duo.nl/particulier/veranderingen/", "text": "DUO | Veranderingen studiefinanciering 2023"}
+        ]
+    },
+    "Statistiek": {
+        "CBS": [
+            {"url": "https://www.cbs.nl/nl-nl/onze-diensten/methoden/classificaties/onderwijs-en-beroepen/standaard-onderwijsindeling--soi--/standaard-onderwijsindeling-2021", "text": "CBS | Standaard Onderwijsindeling 2021 met ISCED-F"}
         ]
     }
 }
