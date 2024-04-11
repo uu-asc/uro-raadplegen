@@ -2,4 +2,4 @@
 Je hebt het volgende diploma aangeleverd:<br>
 [VOOROPLEIDING]<br>
 <br>
-Deze vooropleiding geeft geen toelating tot de opleiding. Zie: www.uu.nl/bachelors > opleiding > toelating > nl voor meer informatie. Upload een diploma waaruit blijkt dat je toelaatbaar bent tot de opleiding.
+Deze vooropleiding geeft geen toelating tot de opleiding. Zie: <a href="https://www.uu.nl/bachelors">bachelorsite</a> > opleiding > toelating > nl voor meer informatie. Upload een diploma waaruit blijkt dat je toelaatbaar bent tot de opleiding.

@@ -1,4 +1,4 @@
 # Bindend studieadvies
 Je hebt een bindend studieadvies geupload. Dit kunnen we niet accepteren. We hebben één van de volgende documenten nodig: een scan van het diploma of een afstudeerverklaring van de hbo-instelling.<br>
 <br>
-Zie https://www.uu.nl/bachelors/sites/default/files/oo_hboverklaring.pdf voor de eisen die we stellen aan de afstudeerverklaring.
+Zie <a href="https://www.uu.nl/bachelors/sites/default/files/oo_hboverklaring.pdf">hier</a> voor de eisen die we stellen aan de afstudeerverklaring.

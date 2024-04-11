@@ -9,6 +9,8 @@
         ],
         "Universiteit Utrecht": [
             {"url": "https://www.uu.nl/onderwijsregelingen", "text": "Regelingen en procedures"},
+            {"url": "https://students.uu.nl/sites/default/files/UU-Reglementinschrijvingencollegegeld2024-2025.pdf", "text": "Reglement Inschrijving en Collegegeld 2024-2025 (RIC)"},
+            {"url": "https://students.uu.nl/sites/default/files/UU-Reglementinschrijvingencollegegeld2023-2024.pdf", "text": "Reglement Inschrijving en Collegegeld 2023-2024 (RIC)"},
             {"url": "https://students.uu.nl/sites/default/files/uu-reglementinschrijvingencollegegeld2022-2023.pdf", "text": "Reglement Inschrijving en Collegegeld 2022-2023 (RIC)"},
             {"url": "https://www.uu.nl/sites/default/files/reglement_inschrijving_en_collegegeld_2021-2022_definitief.pdf", "text": "Reglement Inschrijving en Collegegeld 2021-2022 (RIC)"},
             {"url": "https://intranet.uu.nl/kennisbank/onderwijs-en-examenregelingen-oer", "text": "Model OER Bachelor en Master + toelichting"},
@@ -20,26 +22,32 @@
             {"url": "https://duo.nl/zakelijk/hoger-onderwijs/bekostiging-en-subsidies/bekostiging-ho.jsp", "text": "Bekostiging Ho"},
             {"url": "https://duo.nl/zakelijk/images/beslisregels-statustoekenning-rijksbijdrage-ho-2023.pdf", "text": "Beslisregels statustoekenning Rijksbijdrage"},
             {"url": "https://duo.nl/zakelijk/images/helderheid-bekostiging-ho.pdf", "text": "Notitie Helderheid bekostiging Ho"},
-            {"url": "https://duo.nl/zakelijk/images/aanvullende-notitie.pdf", "text": "Aanvulling op notitie Helderheid"}
+            {"url": "https://duo.nl/zakelijk/images/aanvullende-notitie.pdf", "text": "Aanvulling op notitie Helderheid"},
+            {"url": "https://duo.nl/zakelijk/hoger-onderwijs/studentenadministratie/inschrijven-student.jsp", "text": "Inschrijven student"}
+        ],
+        "Onderwijsinspectie": [
+            {"url": "https://www.onderwijsinspectie.nl/documenten/publicaties/2022/12/12/onderwijsaccountantsprotocol-ocw-2022", "text": "Onderwijsaccountantsprotocol OCW 2022"}
         ]
     },
     "Collegegeld": {
         "Overheid": [
             {"url": "https://wetten.overheid.nl/jci1.3:c:BWBR0005682&hoofdstuk=7&titeldeel=3&paragraaf=2&z=2022-09-01&g=2022-09-01", "text": "WHW | Hoofdstuk 7. Onderwijs | Titel 3. Studenten en extraneï | Paragraaf 2. Eigen bijdragen"
             },
-            {"url": "https://www.rijksoverheid.nl/onderwerpen/hoger-onderwijs/vraag-en-antwoord/recht-op-halvering-collegegeld", "text": "Wanneer heb ik recht op halvering collegegeld?"}
+            {"url": "https://www.rijksoverheid.nl/onderwerpen/hoger-onderwijs/vraag-en-antwoord/recht-op-halvering-collegegeld", "text": "Wanneer heb ik recht op halvering collegegeld?"},
+            {"url": "https://wetboekplus.nl/burgerlijk-wetboek-boek-3-artikel-309-verjaring-rechtsvordering-uit-onverschuldigde-betaling/", "text": "Boek 3 Artikel 309 (3:309 BW) | Verjaring rechtsvordering uit onverschuldigde betaling"}
         ],
         "DUO": [
             {"url": "https://www.duo.nl/particulier/collegegeld.jsp#collegegeld", "text": "Collegegeld"}
         ],
         "Universiteit Utrecht": [
-            {"url": "https://students.uu.nl/sites/default/files/uu-reglementinschrijvingencollegegeld2022-2023.pdf#page=10", "text": "RIC | 4 Collegegeld"},
+            {"url": "https://students.uu.nl/sites/default/files/UU-Reglementinschrijvingencollegegeld2023-2024.pdf#page=8", "text": "RIC | 2023-2024 | 4 Collegegeld"},
+            {"url": "https://students.uu.nl/sites/default/files/uu-reglementinschrijvingencollegegeld2022-2023.pdf#page=10", "text": "RIC | 2022-2023 | 4 Collegegeld"},
             {"url": "https://www.uu.nl/bachelors/algemene-informatie/informatie-voor-nederlandse-studenten/kosten-studeren/collegegeld", "text": "Bachelors > Kosten studeren > Collegegeld"},
             {"url": "https://www.uu.nl/masters/algemene-informatie/informatie-voor-nederlandse-studenten/geldzaken/collegegeld", "text": "Masters > Geldzaken > Collegegeld"},
             {"url": "https://students.uu.nl/praktische-zaken/geldzaken/collegegeld", "text": "Praktische zaken > Geldzaken > Collegegeld"},
             {"url": "https://bestuurlijkactiefutrecht.nl/collegegeldvrij-besturen-uu/", "text": "Informatie aan studenten over collegegeldvrij besturen"},
             {"url": "https://bestuurlijkactiefutrecht.nl/wp-content/uploads/sites/324/2021/10/Profileringsfonds-2015-Regeling-Bestuursbeurzenstudentbestuurdersstudentenorganisaties.pdf", "text": "Regeling Bestuursbeurzen voor studentbestuurders in studentenorganisaties van Hogeschool Utrecht en de Universiteit Utrecht"},
-            {"url": "https://www.uu.nl/masters/toelating-en-aanmelden/flexstuderen", "text": "Flexstuderen"}
+            {"url": "https://www.uu.nl/masters/spaanse-taal-en-cultuur-educatie-en/collegegeld-en-studiefinanciering/flexstuderen", "text": "Flexstuderen (voorbeeld spaanse taal- en cultuur"}
         ]
     },
     "Verblijfsvergunning (VVR)": {
@@ -51,7 +59,8 @@
         "DUO": [
             {"url": "https://www.duo.nl/particulier/studiefinanciering/voorwaarden.jsp", "text": "Voorwaarden studiefinanciering"},
             {"url": "https://www.duo.nl/particulier/verblijfsvergunning-type-1.jsp", "text": "Beslisboom verblijfsvergunning type-1"},
-            {"url": "https://duo.nl/zakelijk/images/programma-van-eisen-hoger-onderwijs.pdf#page=219", "text": "PvE | Bijlage 13: Verblijfsdocument"}
+            {"url": "https://duo.nl/zakelijk/images/programma-van-eisen-hoger-onderwijs.pdf#page=210", "text": "PvE | Bijlage 13: Verblijfsdocument"},
+            {"url": "https://duo.nl/zakelijk/hoger-onderwijs/nieuws/bekostiging-en-subsidies/bekostiging-collegegeld-studenten-tijdelijke-verblijfstitels.jsp", "text": "Bekostiging en soort collegegeld voor studenten met tijdelijke verblijfstitels"}
         ]
     },
     "Toelaatbaarheid": {
@@ -94,6 +103,16 @@
         "Universiteit Utrecht": [
             {"url": "https://utrechtuniversity.github.io/dataprivacyhandbook/", "text": "Data Privacy Handbook"},
             {"url": "https://intranet.uu.nl/en/knowledgebase/research-data-management-support", "text": "Research Data Management Support"}
+        ]
+    },
+    "Studiefinanciëring": {
+        "DUO": [
+            {"url": "https://duo.nl/particulier/veranderingen/", "text": "DUO | Veranderingen studiefinanciering 2023"}
+        ]
+    },
+    "Statistiek": {
+        "CBS": [
+            {"url": "https://www.cbs.nl/nl-nl/onze-diensten/methoden/classificaties/onderwijs-en-beroepen/standaard-onderwijsindeling--soi--/standaard-onderwijsindeling-2021", "text": "CBS | Standaard Onderwijsindeling 2021 met ISCED-F"}
         ]
     }
 }
