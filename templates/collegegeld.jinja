@@ -1,67 +1,39 @@
 {% extends '__base__.jinja' %}
 
+{% block script %}
+    <script type="module" src="https://lcvriend.github.io/wc-simple-table/src/viewer.js"></script>
+{% endblock script %}
+
 {% block content %}
 <main>
+    <section class="data">
+        <simple-table src="../data/collegegeld/bedragen_2024.json" locale="nl-NL"></simple-table>
+    </section>
     <section class="settings">
-        <fieldset class="periode">
-            <legend>Periode</legend>
-            <div>
-                <select name="startmaand" id="startmaand" autocomplete="off">
-                    <option value="01" selected>september</option>
-                    <option value="02">oktober</option>
-                    <option value="03">november</option>
-                    <option value="04">december</option>
-                    <option value="05">januari</option>
-                    <option value="06">februari</option>
-                    <option value="07">maart</option>
-                    <option value="08">april</option>
-                    <option value="09">mei</option>
-                    <option value="10">juni</option>
-                    <option value="11">juli</option>
-                    <option value="12">augustus</option>
-                </select>
-                <label for="startmaand">maand vanaf</label>
-            </div>
-            <div>
-                <select name="stopmaand" id="stopmaand" autocomplete="off">
-                    <option value="01">september</option>
-                    <option value="02">oktober</option>
-                    <option value="03">november</option>
-                    <option value="04">december</option>
-                    <option value="05">januari</option>
-                    <option value="06">februari</option>
-                    <option value="07">maart</option>
-                    <option value="08">april</option>
-                    <option value="09">mei</option>
-                    <option value="10">juni</option>
-                    <option value="11">juli</option>
-                    <option value="12" selected>augustus</option>
-                </select>
-                <label for="stopmaand">maand t/m</label>
-            </div>
-            <div>
-                <input type="text" id="nmaanden" name="nmaanden" value="12" size="3" autocomplete="off">
-                <button id="increment">+</button>
-                <button id="decrement">-</button>
-                <label for="nmaanden">aantal maanden</label>
-            </div>
-        </fieldset>
-        <div>
-            <h4>maand labels</h4>
-            <output id="label-startmaand" class="copyable">september</output> - <output id="label-stopmaand" class="copyable">augustus</output>
-        </div>
+        <label for="collegejaar">Collegejaar
+            <select name="collegejaar" id="collegejaar" autocomplete="off">
+                <option value="2025">2025</option>
+                <option value="2024" selected>2024</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+                <option value="2020">2020</option>
+                <option value="2019">2019</option>
+            </select>
+        </label>
+        <study-period-selector></study-period-selector>
         <fieldset class="getalsnotatie">
             <legend>Getalsnotatie</legend>
-            <div>Settings</div>
+            <div>Format</div>
             <div>
-                <input type="checkbox" id="ascurrency" name="ascurrency" autocomplete="off">
-                <label for="ascurrency">formatteer als bedrag</label>
+                <input type="checkbox" id="as-currency" name="as-currency" autocomplete="off" checked>
+                <label for="as-currency">formatteer als bedrag</label>
             </div>
             <div>
-                <input type="checkbox" id="septhousands" name="septhousands" autocomplete="off">
-                <label for="septhousands">scheidingsteken</label>
+                <input type="checkbox" id="sep-thousands" name="sep-thousands" autocomplete="off" checked>
+                <label for="sep-thousands">scheidingsteken</label>
             </div>
-            <div>Formaat</div>
+            <div>Taal</div>
             <div>
                 <input type="radio" id="locale-nl" name="locale" value="nl-NL" autocomplete="off" checked>
                 <label for="locale-nl">Nederlands</label>
@@ -71,118 +43,12 @@
                 <label for="locale-en">Engels</label>
             </div>
         </fieldset>
-    </section>
-    <section class="data">
-        <table border="1">
-            <thead>
-                <tr style="text-align: right;">
-                    <th></th>
-                    <th>examentype</th>
-                    <th>BA</th>
-                    <th>MA</th>
-                </tr>
-                <tr>
-                    <th>categorie</th>
-                    <th>collegegeldtype</th>
-                    <th></th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th rowspan="2" valign="top" class="copyable">wettelijk</th>
-                    <th class="copyable">Deeltijd</th>
-                    <td class="copyable">1963</td>
-                    <td class="copyable">1963</td>
-                </tr>
-                <tr>
-                    <th class="copyable">Voltijd</th>
-                    <td class="copyable">2209</td>
-                    <td class="copyable">2209</td>
-                </tr>
-                <tr>
-                    <th rowspan="3" valign="top" class="copyable">kleinschalig</th>
-                    <th class="copyable">UCR</th>
-                    <td class="copyable">3750</td>
-                    <td class="copyable"></td>
-                </tr>
-                <tr>
-                    <th class="copyable">PPE</th>
-                    <td class="copyable">4418</td>
-                    <td class="copyable"></td>
-                </tr>
-                <tr>
-                    <th class="copyable">UCU</th>
-                    <td class="copyable">4584</td>
-                    <td class="copyable"></td>
-                </tr>
-                <tr>
-                    <th rowspan="6" valign="top" class="copyable">niet-EER</th>
-                    <th class="copyable">UCR</th>
-                    <td class="copyable">9450</td>
-                    <td class="copyable"></td>
-                </tr>
-                <tr>
-                    <th class="copyable">LAAG</th>
-                    <td class="copyable">11000</td>
-                    <td class="copyable">17500</td>
-                </tr>
-                <tr>
-                    <th class="copyable">PPE</th>
-                    <td class="copyable">13100</td>
-                    <td class="copyable"></td>
-                </tr>
-                <tr>
-                    <th class="copyable">HOOG</th>
-                    <td class="copyable">14000</td>
-                    <td class="copyable">20750</td>
-                </tr>
-                <tr>
-                    <th class="copyable">UCU</th>
-                    <td class="copyable">14000</td>
-                    <td class="copyable"></td>
-                </tr>
-                <tr>
-                    <th class="copyable">TOP</th>
-                    <td class="copyable">23300</td>
-                    <td class="copyable">26700</td>
-                </tr>
-                <tr>
-                    <th rowspan="5" valign="top" class="copyable">graad</th>
-                    <th class="copyable">LAAG</th>
-                    <td class="copyable">9895</td>
-                    <td class="copyable">12295</td>
-                </tr>
-                <tr>
-                    <th class="copyable">PPE</th>
-                    <td class="copyable">12063</td>
-                    <td class="copyable"></td>
-                </tr>
-                <tr>
-                    <th class="copyable">HOOG</th>
-                    <td class="copyable">12336</td>
-                    <td class="copyable">14363</td>
-                </tr>
-                <tr>
-                    <th class="copyable">UCU</th>
-                    <td class="copyable">12336</td>
-                    <td class="copyable"></td>
-                </tr>
-                <tr>
-                    <th class="copyable">TOP</th>
-                    <td class="copyable">20200</td>
-                    <td class="copyable">23200</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-    <section>
-    <div>
-        <h4>Flexstuderen</h4>
-        <label for="aantal-ec-flex">Aantal EC</label>
-        <input type="number" name="aantal-ec-flex" id="aantal-ec-flex">
-    </div>
-    <output class="copyable" id="te-betalen-bedrag-flex"></output>
+        <div>
+            <h4>Flexstuderen</h4>
+            <label for="aantal-ec-flex">Aantal EC</label>
+            <input type="number" name="aantal-ec-flex" id="aantal-ec-flex">
+        </div>
+        <output class="copyable" id="te-betalen-bedrag-flex"></output>
     </section>
 </main>
 {% endblock content %}
