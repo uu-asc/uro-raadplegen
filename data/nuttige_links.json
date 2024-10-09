@@ -19,14 +19,21 @@
     },
     "Bekostiging": {
         "DUO": [
+            {"url": "[Voorwaardenhulp bekostiging](https://duo.nl/zakelijk/hoger-onderwijs/studentenadministratie/inschrijven-student.jsp#eisen-nationaliteit)", "text": "Voorwaarden bekostiging nationaliteitsvereiste"},
             {"url": "https://duo.nl/zakelijk/hoger-onderwijs/bekostiging-en-subsidies/bekostiging-ho.jsp", "text": "Bekostiging Ho"},
-            {"url": "https://duo.nl/zakelijk/images/beslisregels-statustoekenning-rijksbijdrage-ho-2023.pdf", "text": "Beslisregels statustoekenning Rijksbijdrage"},
+            {"url": "https://duo.nl/zakelijk/images/beslisregels-statustoekenning-rijksbijdrage-ho-2024.pdf", "text": "Beslisregels statustoekenning Rijksbijdrage 2024"},
+            {"url": "https://duo.nl/zakelijk/images/beslisregels-statustoekenning-rijksbijdrage-ho-2023.pdf", "text": "Beslisregels statustoekenning Rijksbijdrage 2023"},
             {"url": "https://duo.nl/zakelijk/images/helderheid-bekostiging-ho.pdf", "text": "Notitie Helderheid bekostiging Ho"},
             {"url": "https://duo.nl/zakelijk/images/aanvullende-notitie.pdf", "text": "Aanvulling op notitie Helderheid"},
             {"url": "https://duo.nl/zakelijk/hoger-onderwijs/studentenadministratie/inschrijven-student.jsp", "text": "Inschrijven student"}
         ],
         "Onderwijsinspectie": [
+            {"url": "https://www.onderwijsinspectie.nl/binaries/onderwijsinspectie/documenten/publicaties/2024/07/09/onderwijsaccountantsprotocol-ocw-2024/ONDERWIJSACCOUNTANTSPROTOCOL+OCW+2024+.pdf", "text": "Onderwijsaccountantsprotocol OCW 2024"},
+            {"url": "https://www.onderwijsinspectie.nl/binaries/onderwijsinspectie/documenten/publicaties/2023/07/03/onderwijsaccountantsprotocol-ocw-2023/Onderwijsaccountantsprotocol+OCW+2023.pdf", "text": "Onderwijsaccountantsprotocol OCW 2023"},
             {"url": "https://www.onderwijsinspectie.nl/documenten/publicaties/2022/12/12/onderwijsaccountantsprotocol-ocw-2022", "text": "Onderwijsaccountantsprotocol OCW 2022"}
+        ],
+        "Universiteit Utrecht": [
+            {"url": "https://intranet.uu.nl/system/files/Kaderbrief.pdf", "text": "Kaderbrief UU"}
         ]
     },
     "Collegegeld": {
