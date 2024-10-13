@@ -1,4 +1,4 @@
-const simpleTable = document.querySelector("simple-table")
+const dataViewer = document.querySelector("data-viewer")
 const studyPeriodSelector = document.querySelector("study-period-selector")
 const flexinput = document.querySelector(`#aantal-ec-flex`)
 const flexoutput = document.querySelector(`#te-betalen-bedrag-flex`)
@@ -9,15 +9,15 @@ let LOCALE = getLocale()
 
 document.getElementById("collegejaar").addEventListener("change", event => {
     const newSrc = `../data/collegegeld/bedragen_${event.target.value}.json`
-    simpleTable.setAttribute("src" , newSrc)
+    dataViewer.setAttribute("src" , newSrc)
 })
 
-simpleTable.addEventListener("data-loaded", () => {
-    STATE = simpleTable.getValues()
+dataViewer.addEventListener("data-loaded", () => {
+    STATE = dataViewer.data.values
     updateFlexFee()
 })
 
-simpleTable.addEventListener("cell-click", event => {
+dataViewer.addEventListener("cell-click", event => {
     const content = event.detail.value
 
     navigator
@@ -53,20 +53,20 @@ function getLocale() {
 function updateTable(n) {
     const calculateFee = value => value ? (value / 12) * n : null
     const newValues = STATE.map(row => row.map(calculateFee))
-    simpleTable.data.update(newValues)
+    dataViewer.data.update(newValues)
 }
 
 document.querySelectorAll('input[name="locale"]').forEach(radio => {
     radio.addEventListener("change", () => {
         LOCALE = getLocale()
-        simpleTable.setAttribute("locale", LOCALE)
+        dataViewer.setAttribute("locale", LOCALE)
         studyPeriodSelector.setAttribute("language", LOCALE.substr(0, 2))
     })
 })
 
 function handleFormattingChange() {
     FORMAT_OPTIONS = getFormatOptions()
-    simpleTable.dataViewer.data.formatOptions = [FORMAT_OPTIONS, FORMAT_OPTIONS]
+    dataViewer.data.formatOptions = [FORMAT_OPTIONS, FORMAT_OPTIONS]
 }
 
 document.getElementById("as-currency").addEventListener("change", handleFormattingChange)
