@@ -53,7 +53,7 @@ function getLocale() {
 function updateTable(n) {
     const calculateFee = value => value ? (value / 12) * n : null
     const newValues = STATE.map(row => row.map(calculateFee))
-    simpleTable.updateValues(newValues)
+    simpleTable.data.update(newValues)
 }
 
 document.querySelectorAll('input[name="locale"]').forEach(radio => {
@@ -66,7 +66,7 @@ document.querySelectorAll('input[name="locale"]').forEach(radio => {
 
 function handleFormattingChange() {
     FORMAT_OPTIONS = getFormatOptions()
-    simpleTable.setFormatOptions([FORMAT_OPTIONS, FORMAT_OPTIONS])
+    simpleTable.dataViewer.data.formatOptions = [FORMAT_OPTIONS, FORMAT_OPTIONS]
 }
 
 document.getElementById("as-currency").addEventListener("change", handleFormattingChange)
