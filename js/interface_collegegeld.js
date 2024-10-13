@@ -3,19 +3,34 @@ const studyPeriodSelector = document.querySelector("study-period-selector")
 const flexinput = document.querySelector(`#aantal-ec-flex`)
 const flexoutput = document.querySelector(`#te-betalen-bedrag-flex`)
 
-let STATE
+let STATE = loadSTATEFromSrc(getSource())
 let FORMAT_OPTIONS = getFormatOptions()
 let LOCALE = getLocale()
 
-document.getElementById("collegejaar").addEventListener("change", event => {
-    const newSrc = `../data/collegegeld/bedragen_${event.target.value}.json`
-    dataViewer.setAttribute("src" , newSrc)
-})
+function getSource() {
+    const selector = document.getElementById("collegejaar")
+    return `../data/collegegeld/bedragen_${selector.value}.json`
+}
 
-dataViewer.addEventListener("data-loaded", () => {
-    STATE = dataViewer.data.values
+async function loadSTATEFromSrc(src) {
+    try {
+        const response = await fetch(src)
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`)
+        STATE = await response.json()
+    } catch (error) {
+        console.error("Failed to fetch data:", error)
+        this.showErrorMessage("Failed to load data")
+    }
+}
+
+async function setSources() {
+    const source = getSource()
+    dataViewer.setAttribute("src" , source)
+    await loadSTATEFromSrc(source)
     updateFlexFee()
-})
+}
+
+document.getElementById("collegejaar").addEventListener("change", setSources)
 
 dataViewer.addEventListener("cell-click", event => {
     const content = event.detail.value
@@ -50,10 +65,11 @@ function getLocale() {
     return document.querySelector('input[type="radio"]:checked')?.value
 }
 
-function updateTable(n) {
+async function updateTable(n) {
     const calculateFee = value => value ? (value / 12) * n : null
-    const newValues = STATE.map(row => row.map(calculateFee))
-    dataViewer.data.update(newValues)
+    await dataViewer.loadDataFromSrc(getSource())
+    const newValues = dataViewer.data.values.map(row => row.map(calculateFee))
+    dataViewer.data.values = newValues
 }
 
 document.querySelectorAll('input[name="locale"]').forEach(radio => {
@@ -73,7 +89,7 @@ document.getElementById("as-currency").addEventListener("change", handleFormatti
 document.getElementById("sep-thousands").addEventListener("change", handleFormattingChange)
 
 function calcFlexFee(ec) {
-    return (ec * (STATE[1][0] / 60) * 1.15).toLocaleString(LOCALE, FORMAT_OPTIONS)
+    return (ec * (STATE.values[1][0] / 60) * 1.15).toLocaleString(LOCALE, FORMAT_OPTIONS)
 }
 
 function updateFlexFee() {

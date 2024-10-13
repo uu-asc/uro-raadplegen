@@ -26,3 +26,6 @@ section {
     flex-direction: column;
     gap: 1rem;
 }
+data-viewer {
+    --cursor: pointer;
+}
