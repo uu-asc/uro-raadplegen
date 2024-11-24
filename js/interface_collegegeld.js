@@ -1,115 +1,238 @@
-const dataViewer = document.querySelector("data-viewer")
-const studyPeriodSelector = document.querySelector("study-period-selector")
-const flexinput = document.querySelector(`#aantal-ec-flex`)
-const flexoutput = document.querySelector(`#te-betalen-bedrag-flex`)
-
-let STATE = loadSTATEFromSrc(getSource())
-let FORMAT_OPTIONS = getFormatOptions()
-let LOCALE = getLocale()
-
-function getSource() {
-    const selector = document.getElementById("collegejaar")
-    return `../data/collegegeld/bedragen_${selector.value}.json`
-}
-
-async function loadSTATEFromSrc(src) {
-    try {
-        const response = await fetch(src)
-        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`)
-        STATE = await response.json()
-    } catch (error) {
-        console.error("Failed to fetch data:", error)
-        this.showErrorMessage("Failed to load data")
+// Constants and Element Selectors
+const ELEMENTS = {
+    dataViewer: document.querySelector("data-viewer"),
+    studyPeriodSelector: document.querySelector("study-period-selector"),
+    flexInput: document.querySelector("#aantal-ec-flex"),
+    flexOutput: document.querySelector("#te-betalen-bedrag-flex"),
+    collegeYearSelector: document.getElementById("collegejaar"),
+    messageBoard: document.querySelector("#messageboard"),
+    form: {
+        currency: document.querySelector("[name='as-currency']"),
+        thousands: document.querySelector("[name='sep-thousands']"),
+        localeInputs: document.querySelectorAll("input[name='locale']")
     }
 }
 
-async function setSources() {
-    const source = getSource()
-    dataViewer.setAttribute("src" , source)
-    await loadSTATEFromSrc(source)
-    updateFlexFee()
-}
-
-document.getElementById("collegejaar").addEventListener("change", setSources)
-
-dataViewer.addEventListener("cell-click", event => {
-    const content = event.detail.value
-
-    navigator
-    .clipboard.writeText(content)
-    .then(res => {
-        messageboard.innerHTML = `<span class="heart">&hearts;</span> klembord: <span class="klembord">${content}</span> <span class="heart">&hearts;</span>`
-        setTimeout(() => messageboard.innerHTML = "", 1200)
-    })
-})
-
-studyPeriodSelector.addEventListener("period-change", event => {
-    updateTable(event.detail.n)
-})
-
-function getFormatOptions() {
-    const checkboxAsCurrency = document.querySelector(`[name="as-currency"]`)
-    const checkboxSepThousands = document.querySelector('input[name="sep-thousands"]')
-    const formatOptions = {
-        "style": checkboxAsCurrency.checked ? "currency" : "decimal",
-        "currency": "EUR",
-        "useGrouping": checkboxSepThousands.checked,
-        "minimumFractionDigits": 2,
-        "maximumFractionDigits": 2,
-        "trailingZeroDisplay": !checkboxAsCurrency.checked ? "stripIfInteger" : "auto",
+// State Management
+class StateManager {
+    constructor() {
+        this.data = null
+        this.originalValues = null
     }
-    return formatOptions
-}
 
-function getLocale() {
-    return document.querySelector('input[type="radio"]:checked')?.value
-}
+    async loadFromSource(src) {
+        try {
+            const response = await fetch(src)
+            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`)
+            const data = await response.json()
 
-async function updateTable(n) {
-    const calculateFee = value => value ? (value / 12) * n : null
-    await dataViewer.loadDataFromSrc(getSource())
-    const newValues = dataViewer.data.values.map(row => row.map(calculateFee))
-    dataViewer.data.values = newValues
-}
+            // Store original values for recalculation
+            this.originalValues = data.values
+            this.data = data
 
-document.querySelectorAll('input[name="locale"]').forEach(radio => {
-    radio.addEventListener("change", () => {
-        LOCALE = getLocale()
-        dataViewer.setAttribute("locale", LOCALE)
-        studyPeriodSelector.setAttribute("language", LOCALE.substr(0, 2))
-    })
-})
-
-function handleFormattingChange() {
-    FORMAT_OPTIONS = getFormatOptions()
-    dataViewer.data.formatOptions = [FORMAT_OPTIONS, FORMAT_OPTIONS]
-}
-
-document.getElementById("as-currency").addEventListener("change", handleFormattingChange)
-document.getElementById("sep-thousands").addEventListener("change", handleFormattingChange)
-
-function calcFlexFee(ec) {
-    return (ec * (STATE.values[1][0] / 60) * 1.15).toLocaleString(LOCALE, FORMAT_OPTIONS)
-}
-
-function updateFlexFee() {
-    if ( flexinput.value ) {
-        flexoutput.innerText = calcFlexFee(flexinput.value)
-    } else { flexoutput.innerText = "" } return
-}
-
-document.addEventListener("change", event => {
-    if ( event.target.closest("fieldset")?.classList.contains("getalsnotatie") ) {
-        updateTable(studyPeriodSelector.n)
-        updateFlexFee()
+            return this.data
+        } catch (error) {
+            console.error("Failed to fetch data:", error)
+            this.showErrorMessage("Failed to load data")
+        }
     }
-    if ( event.target.matches(`#aantal-ec-flex`)) {
-        updateFlexFee()
-    }
-})
 
-document.addEventListener("keyup", event => {
-    if ( event.target.matches(`#aantal-ec-flex`)) {
-        updateFlexFee()
+    getFormatOptions() {
+        const { currency, thousands } = ELEMENTS.form
+        return {
+            style: currency.checked ? "currency" : "decimal",
+            currency: "EUR",
+            useGrouping: thousands.checked,
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2,
+            trailingZeroDisplay: !currency.checked ? "stripIfInteger" : "auto"
+        }
     }
+
+    updateFormatting() {
+        const formatOptions = this.getFormatOptions()
+        this.data.formatOptions = [formatOptions, formatOptions]
+        return this.data
+    }
+
+    calculateValues(n = 12) {
+        if (!this.originalValues) return null
+
+        const calculateFee = value => value ? (value / 12) * n : null
+        return this.originalValues.map(row => row.map(calculateFee))
+    }
+}
+
+// Form State Management
+class FormStateManager {
+    static STORAGE_KEY = "getalsnotatie-state"
+
+    static save() {
+        const { currency, thousands } = ELEMENTS.form
+        const locale = document.querySelector("input[name='locale']:checked")
+        if (!locale) return
+
+        const state = {
+            currency: currency.checked,
+            thousands: thousands.checked,
+            locale: locale.value
+        }
+        localStorage.setItem(this.STORAGE_KEY, JSON.stringify(state))
+    }
+
+    static load() {
+        const saved = localStorage.getItem(this.STORAGE_KEY)
+        if (!saved) return
+
+        try {
+            const state = JSON.parse(saved)
+            const { currency, thousands } = ELEMENTS.form
+
+            if (currency) currency.checked = state.currency
+            if (thousands) thousands.checked = state.thousands
+
+            const localeInput = document.querySelector(`input[name="locale"][value="${state.locale}"]`)
+            if (localeInput) localeInput.checked = true
+
+            return true
+        } catch (error) {
+            console.error("Error loading form state:", error)
+            return false
+        }
+    }
+}
+
+// UI Updates
+class UIManager {
+    constructor(stateManager) {
+        this.stateManager = stateManager
+    }
+
+    getLocale() {
+        return document.querySelector("input[name='locale']:checked")?.value
+    }
+
+    getCurrentPeriod() {
+        return ELEMENTS.studyPeriodSelector.n || 12
+    }
+
+    updateTable(n) {
+        const newValues = this.stateManager.calculateValues(n)
+        if (!newValues) return
+
+        ELEMENTS.dataViewer.data = {
+            ...this.stateManager.data,
+            values: newValues,
+            formatOptions: [this.stateManager.getFormatOptions(), this.stateManager.getFormatOptions()]
+        }
+    }
+
+    updateFlexFee() {
+        const { flexInput, flexOutput } = ELEMENTS
+        if (!flexInput.value || !this.stateManager.originalValues) {
+            flexOutput.innerText = ""
+            return
+        }
+
+        const fee = (
+            flexInput.value *
+            (this.stateManager.originalValues[1][0] / 60) *
+            1.15
+        ).toLocaleString(this.getLocale(), this.stateManager.getFormatOptions())
+
+        flexOutput.innerText = fee
+    }
+
+    copyToClipboard(content) {
+        navigator.clipboard.writeText(content)
+        .then(() => {
+            ELEMENTS.messageBoard.innerHTML = `<span class="heart">♥</span> klembord: <span class="klembord">${content}</span> <span class="heart">♥</span>`
+            setTimeout(() => ELEMENTS.messageBoard.innerHTML = "", 1200)
+        })
+    }
+}
+
+// Application
+class App {
+    constructor() {
+        this.stateManager = new StateManager()
+        this.uiManager = new UIManager(this.stateManager)
+    }
+
+    getSourcePath() {
+        return `../data/collegegeld/bedragen_${ELEMENTS.collegeYearSelector.value}.json`
+    }
+
+    async init() {
+        FormStateManager.load()
+        this.setupEventListeners()
+        await this.setSources()
+    }
+
+    async setSources() {
+        const source = this.getSourcePath()
+        const locale = this.uiManager.getLocale()
+        if (locale) {
+            ELEMENTS.dataViewer.setAttribute("locale", locale)
+        }
+
+        await this.stateManager.loadFromSource(source)
+        this.stateManager.updateFormatting()
+
+        // Use current period when updating values
+        const currentPeriod = this.uiManager.getCurrentPeriod()
+        this.uiManager.updateTable(currentPeriod)
+        this.uiManager.updateFlexFee()
+    }
+
+    setupEventListeners() {
+        // College Year Change
+        ELEMENTS.collegeYearSelector.addEventListener("change", () => this.setSources())
+
+        // Data Viewer Cell Click
+        ELEMENTS.dataViewer.addEventListener("cell-click", event => {
+            this.uiManager.copyToClipboard(event.detail.value)
+        })
+
+        // Study Period Change
+        ELEMENTS.studyPeriodSelector.addEventListener("period-change", event => {
+            this.uiManager.updateTable(event.detail.n)
+        })
+
+        // Locale Change
+        ELEMENTS.form.localeInputs.forEach(radio => {
+            radio.addEventListener("change", () => {
+                const locale = this.uiManager.getLocale()
+                ELEMENTS.dataViewer.setAttribute("locale", locale)
+                ELEMENTS.studyPeriodSelector.setAttribute("language", locale.substr(0, 2))
+                this.stateManager.updateFormatting()
+                this.uiManager.updateTable(this.uiManager.getCurrentPeriod())
+            })
+        })
+
+        // Form Changes
+        document.addEventListener("change", event => {
+            if (event.target.closest("fieldset")?.classList.contains("getalsnotatie")) {
+                this.uiManager.updateTable(this.uiManager.getCurrentPeriod())
+                this.uiManager.updateFlexFee()
+                FormStateManager.save()
+            }
+            if (event.target.matches("#aantal-ec-flex")) {
+                this.uiManager.updateFlexFee()
+            }
+        })
+
+        // Flex Input Updates
+        document.addEventListener("keyup", event => {
+            if (event.target.matches("#aantal-ec-flex")) {
+                this.uiManager.updateFlexFee()
+            }
+        })
+    }
+}
+
+// Initialize Application
+document.addEventListener("DOMContentLoaded", () => {
+    const app = new App()
+    app.init()
 })
