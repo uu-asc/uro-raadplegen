@@ -1,4 +1,34 @@
 {
+    "Applicaties": {
+        "OSIRIS Basis": [
+            {"url": "https://osirisadmin.uu.nl/", "text": "Productie"},
+            {"url": "https://osirisadmin.edu.uu.nl/", "text": "Educatie"},
+            {"url": "https://osirisadmin.acc.uu.nl/", "text": "Acceptatie"},
+            {"url": "https://osirisadmin.uu.nl/genericadapter", "text": "JavaAdapter"}
+        ],
+        "OSIRIS Aanmelding": [
+            {"url": "www.uu.nl/osirisaanmelding", "text": "Productie"},
+            {"url": "https://osiris.edu.uu.nl/osiris_aanmeld_uuopl/WelkomPagina.do", "text": "Educatie"},
+            {"url": "https://osiris.acc.uu.nl/osiris_aanmeld_uuacc/Welkom.do", "text": "Acceptatie"}
+        ],
+        "Studielink": [
+            {"url": "https://studielinkplatform.nl/", "text": "Platform"},
+            {"url": "https://beheer.sl-cloud.nl/", "text": "Dashboard"},
+            {"url": "https://qdelft.atlassian.net/servicedesk/customer/portal/3", "text": "Netcompany JIRA"}
+        ],
+        "DUO": [
+            {"url": "https://zakelijk.duo.nl/zakelijk/portaal/dashboard", "text": "Zakelijk Portaal"}
+        ],
+        "UU": [
+            {"url": "https://uu.topdesk.net/tas/public/login/form", "text": "Topdesk KU inlog"},
+            {"url": "https://portal.dms.uu.nl/auth/login#/", "text": "Bezwarenportaal"}
+        ]
+    },
+    "Overig": {
+        "Universiteit Utrecht": [
+            {"url": "https://students.uu.nl/contact/facultaire-studiepunten", "text": "Contactgegevens facultaire studiepunten"}
+        ]
+    },
     "Wet- en regelgeving": {
         "Overheid": [
             {"url": "https://wetten.overheid.nl/BWBR0005682", "text": "Wet op het hoger onderwijs en wetenschappelijk onderzoek (WHW)"},
@@ -10,6 +40,7 @@
         ],
         "Universiteit Utrecht": [
             {"url": "https://www.uu.nl/onderwijsregelingen", "text": "Regelingen en procedures"},
+            {"url": "https://students.uu.nl/sites/default/files/Reglement%20inschrijving%20en%20collegegeld%202025-2026.pdf", "text": "Reglement Inschrijving en Collegegeld 2025-2026 (RIC)"},
             {"url": "https://students.uu.nl/sites/default/files/UU-Reglementinschrijvingencollegegeld2024-2025.pdf", "text": "Reglement Inschrijving en Collegegeld 2024-2025 (RIC)"},
             {"url": "https://students.uu.nl/sites/default/files/UU-Reglementinschrijvingencollegegeld2023-2024.pdf", "text": "Reglement Inschrijving en Collegegeld 2023-2024 (RIC)"},
             {"url": "https://students.uu.nl/sites/default/files/uu-reglementinschrijvingencollegegeld2022-2023.pdf", "text": "Reglement Inschrijving en Collegegeld 2022-2023 (RIC)"},
@@ -22,6 +53,8 @@
         "DUO": [
             {"url": "https://duo.nl/zakelijk/hoger-onderwijs/studentenadministratie/inschrijven-student.jsp#eisen-nationaliteit", "text": "Voorwaarden bekostiging nationaliteitsvereiste"},
             {"url": "https://duo.nl/zakelijk/hoger-onderwijs/bekostiging-en-subsidies/bekostiging-ho.jsp", "text": "Bekostiging Ho"},
+            {"url": "https://duo.nl/zakelijk/images/beslisregels-statustoekenning-rijksbijdrage-ho-2026.pdf", "text": "Beslisregels statustoekenning Rijksbijdrage 2026"},
+            {"url": "https://duo.nl/zakelijk/images/beslisregels-statustoekenning-rijksbijdrage-ho-2025.pdf", "text": "Beslisregels statustoekenning Rijksbijdrage 2025"},
             {"url": "https://duo.nl/zakelijk/images/beslisregels-statustoekenning-rijksbijdrage-ho-2024.pdf", "text": "Beslisregels statustoekenning Rijksbijdrage 2024"},
             {"url": "https://duo.nl/zakelijk/images/beslisregels-statustoekenning-rijksbijdrage-ho-2023.pdf", "text": "Beslisregels statustoekenning Rijksbijdrage 2023"},
             {"url": "https://duo.nl/zakelijk/images/helderheid-bekostiging-ho.pdf", "text": "Notitie Helderheid bekostiging Ho"},
@@ -56,6 +89,11 @@
             {"url": "https://bestuurlijkactiefutrecht.nl/collegegeldvrij-besturen-uu/", "text": "Informatie aan studenten over collegegeldvrij besturen"},
             {"url": "https://bestuurlijkactiefutrecht.nl/wp-content/uploads/sites/324/2021/10/Profileringsfonds-2015-Regeling-Bestuursbeurzenstudentbestuurdersstudentenorganisaties.pdf", "text": "Regeling Bestuursbeurzen voor studentbestuurders in studentenorganisaties van Hogeschool Utrecht en de Universiteit Utrecht"},
             {"url": "https://www.uu.nl/masters/spaanse-taal-en-cultuur-educatie-en/collegegeld-en-studiefinanciering/flexstuderen", "text": "Flexstuderen (voorbeeld spaanse taal- en cultuur"}
+        ]
+    },
+    "Persoonsgegevens (IDB)": {
+        "overig": [
+            {"url": "https://www.consilium.europa.eu/prado/en/prado-latest-authentic.html", "text": "Echtheidskenmerken van identiteitsbewijzen"}
         ]
     },
     "Verblijfsvergunning (VVR)": {
