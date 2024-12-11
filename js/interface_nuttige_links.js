@@ -32,7 +32,7 @@ function renderView(view) {
             item.push(`<h4>${key}</h4>`)
             let list = []
             for (let link of links) {
-                list.push(`<li><a href="${link.url}">${link.text}</a></li>`)
+                list.push(`<li><a href="${link.url}" target="_blank">${link.text}</a></li>`)
             }
             item.push(`<ul>${list.join("")}</ul>`)
         }
