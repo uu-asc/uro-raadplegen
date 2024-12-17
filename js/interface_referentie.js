@@ -125,17 +125,14 @@ function renderNResults(view) {
 
 
 // FILTER RECORDS
-function filterRecords(data) {
-    let test = r => r.every( (item, idx) => {
-        return item
-            .toUpperCase()
-            .includes(filters[idx] ? filters[idx] : "")
-    })
-    let filters = []
-    document
-        .querySelectorAll("input.query-input")
-        .forEach( el => filters.push(el.value.toUpperCase()) )
-    return data.filter(test)
+const filterRecords = data => {
+    const filters = [...document.querySelectorAll("input.query-input")]
+        .map(input => input.value.toUpperCase())
+
+    return data.filter(record => record.every((item, idx) => {
+        const filter = filters[idx] || ""
+        return item?.toString().toUpperCase().includes(filter)
+    }))
 }
 
 
