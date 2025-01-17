@@ -20,6 +20,7 @@
             {"url": "https://zakelijk.duo.nl/zakelijk/portaal/dashboard", "text": "Zakelijk Portaal"}
         ],
         "UU": [
+            {"url": "https://uu.topdesk.net/", "text": "Topdesk"},
             {"url": "https://uu.topdesk.net/tas/public/login/form", "text": "Topdesk KU inlog"},
             {"url": "https://portal.dms.uu.nl/auth/login#/", "text": "Bezwarenportaal"}
         ]
@@ -164,6 +165,18 @@
     "Statistiek": {
         "CBS": [
             {"url": "https://www.cbs.nl/nl-nl/onze-diensten/methoden/classificaties/onderwijs-en-beroepen/standaard-onderwijsindeling--soi--/standaard-onderwijsindeling-2021", "text": "CBS | Standaard Onderwijsindeling 2021 met ISCED-F"}
+        ]
+    },
+    "Software": {
+        "Python": [
+            {"url": "https://git-scm.com", "text": "git"},
+            {"url": "https://docs.anaconda.com/miniconda/", "text": "Miniconda"},
+            {"url": "https://code.visualstudio.com/", "text": "Visual Studio Code"}
+        ],
+        "Github": [
+            {"url": "https://github.com/uu-asc/osiris-query-2", "text": "OSIRIS query 2"},
+            {"url": "https://github.com/uu-asc/duo-parsers", "text": "DUO-parsers"},
+            {"url": "https://github.com/uu-asc/csa-werkvoorraad", "text": "csa-werkvoorraad"}
         ]
     }
 }
