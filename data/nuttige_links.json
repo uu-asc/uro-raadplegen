@@ -144,6 +144,9 @@
         ]
     },
     "Promoties": {
+        "Publicaties": [
+            {"url": "https://explore.openaire.eu/search/find/research-outcomes?type=%22publications%22", "text": "OpenAIRE"}
+        ],
         "Universiteit Utrecht": [
             {"url": "https://www.uu.nl/organisatie/promoveren-aan-de-uu/praktische-zaken/reglementen-en-formulieren", "text": "Promotiereglement"}
         ]
