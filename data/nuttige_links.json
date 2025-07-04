@@ -37,6 +37,7 @@
             {"url": "https://wetten.overheid.nl/BWBR0042012/2020-08-01", "text": "Wet register onderwijsdeelnemers"},
             {"url": "https://wetten.overheid.nl/BWBR0043632/2022-11-18", "text": "Regeling register onderwijsdeelnemers"},
             {"url": "https://wetten.overheid.nl/BWBR0033693", "text": "Wet Kwaliteit in verscheidenheid hoger onderwijs"},
+            {"url": "https://wetten.overheid.nl/BWBR0024005", "text": "Regeling financiën hoger onderwijs"},
             {"url": "https://www.eerstekamer.nl/behandeling/20230612/publicatie_wet/document3/f=/vm3ub066muzr.pdf", "text": "Verankering van het experiment educatieve module"}
         ],
         "Universiteit Utrecht": [
@@ -174,6 +175,7 @@
         "Python": [
             {"url": "https://git-scm.com", "text": "git"},
             {"url": "https://docs.anaconda.com/miniconda/", "text": "Miniconda"},
+            {"url": "https://gist.github.com/lcvriend/62cf401054494a119e280bef1117cf24", "text": "Conda and Jupyter Commands Reference Guide"},
             {"url": "https://code.visualstudio.com/", "text": "Visual Studio Code"}
         ],
         "Github": [
