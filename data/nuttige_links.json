@@ -80,7 +80,9 @@
             {"url": "https://wetboekplus.nl/burgerlijk-wetboek-boek-3-artikel-309-verjaring-rechtsvordering-uit-onverschuldigde-betaling/", "text": "Boek 3 Artikel 309 (3:309 BW) | Verjaring rechtsvordering uit onverschuldigde betaling"}
         ],
         "DUO": [
-            {"url": "https://www.duo.nl/particulier/collegegeld.jsp#collegegeld", "text": "Collegegeld"}
+            {"url": "https://duo.nl/zakelijk/hoger-onderwijs/studentenadministratie/soort-collegegeld.jsp", "text": "Soort collegegeld (zakelijk)"},
+            {"url": "https://duo.nl/zakelijk/hoger-onderwijs/studentenadministratie/inschrijven-student.jsp#eisen-nationaliteit", "text": "Nationaliteitsvereiste (zakelijk)"},
+            {"url": "https://www.duo.nl/particulier/collegegeld.jsp#collegegeld", "text": "Collegegeld (student)"}
         ],
         "Universiteit Utrecht": [
             {"url": "https://students.uu.nl/sites/default/files/UU-Reglementinschrijvingencollegegeld2023-2024.pdf#page=8", "text": "RIC | 2023-2024 | 4 Collegegeld"},
