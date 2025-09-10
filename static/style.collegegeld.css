@@ -9,18 +9,6 @@ fieldset {
 label {
     margin-right: .5em;
 }
-table, th, td {
-    border: none;
-}
-td {
-    text-align: right;
-}
-tbody th {
-    font-weight: normal;
-}
-tbody th[rowspan] {
-    font-variant: small-caps;
-}
 section {
     display: flex;
     flex-direction: column;

@@ -1,9 +1,7 @@
 const messageboard = document.querySelector("#messageboard")
 
 window.addEventListener("keydown", function (event) {
-    if (event.defaultPrevented) {
-        return
-    }
+    if (event.defaultPrevented) return
 
     switch (event.key) {
         case "Escape":
@@ -16,7 +14,7 @@ window.addEventListener("keydown", function (event) {
             }
             break
         default:
-            return // Quit when this doesn't handle the key event.
+            return // quit when this doesn't handle the key event.
     }
 
     // cancel the default action to avoid it being handled twice
@@ -41,17 +39,16 @@ document.addEventListener("click", function (event) {
     if (element.matches(".copyable")) { copyText(element) }
 })
 
-function copyText(element) {
-    let content = element.innerText
-    if (element.tagName === "TEXTAREA") {
-        content = element.value
+async function copyText(element) {
+    let content = element.tagName === "TEXTAREA" ? element.value : element.innerText
+    try {
+        await navigator.clipboard.writeText(content)
+        messageboard.innerHTML = `<span class="heart">&hearts;</span> klembord: <span class="klembord">${content}</span> <span class="heart">&hearts;</span>`
+        setTimeout(() => messageboard.innerHTML = "", 1200)
+    } catch {
+        messageboard.innerHTML = `<span>Kopiëren naar klembord mislukt</span>`
+        setTimeout(() => messageboard.innerHTML = "", 1200)
     }
-    navigator
-        .clipboard.writeText(content)
-        .then(res => {
-            messageboard.innerHTML = `<span class="heart">&hearts;</span> klembord: <span class="klembord">${content}</span> <span class="heart">&hearts;</span>`
-            setTimeout(() => messageboard.innerHTML = "", 1200)
-        })
 }
 
 function copyTextFromElementWithId(id) {
