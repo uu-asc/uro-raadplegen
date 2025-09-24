@@ -1,6 +1,6 @@
 // Constants and Element Selectors
 const ELEMENTS = {
-    dataViewer: document.querySelector("data-viewer"),
+    dataViewer: document.querySelector("flatbread-table"),
     studyPeriodSelector: document.querySelector("study-period-selector"),
     flexInput: document.querySelector("#aantal-ec-flex"),
     flexOutput: document.querySelector("#te-betalen-bedrag-flex"),
@@ -120,11 +120,11 @@ class UIManager {
         const newValues = this.stateManager.calculateValues(n)
         if (!newValues) return
 
-        ELEMENTS.dataViewer.data = {
-            ...this.stateManager.data,
-            values: newValues,
-            formatOptions: [this.stateManager.getFormatOptions(), this.stateManager.getFormatOptions()]
-        }
+        ELEMENTS.dataViewer.data.values = newValues
+        ELEMENTS.dataViewer.data.formatOptions = [
+            this.stateManager.getFormatOptions(),
+            this.stateManager.getFormatOptions()
+        ]
     }
 
     updateFlexFee() {
@@ -177,9 +177,12 @@ class App {
         }
 
         await this.stateManager.loadFromSource(source)
-        this.stateManager.updateFormatting()
 
-        // Use current period when updating values
+        // Set the initial data
+        ELEMENTS.dataViewer.data = this.stateManager.data
+
+        // Then update formatting and values
+        this.stateManager.updateFormatting()
         const currentPeriod = this.uiManager.getCurrentPeriod()
         this.uiManager.updateTable(currentPeriod)
         this.uiManager.updateFlexFee()
