@@ -53,7 +53,20 @@
             {"url": "https://bestuurlijkactiefutrecht.nl/", "text": "Bestuurlijk actief Utrecht"}
         ]
     },
+    "Onderwijs": {
+        "UU": [
+            {"url": "https://www.uu.nl/sites/default/files/richtlijn_onderwijs_-_december_2018.pdf", "text": "Richtlijn Onderwijs Universiteit Utrecht"},
+            {"url": "https://www.uu.nl/sites/default/files/richtlijn_onderwijs_-_december_2018.pdf", "text": "Handreiking verantwoordelijkheden t.a.v. de kwaliteit van opleidingen"},
+            {"url": "https://intranet.uu.nl/system/files/UU-Onderwijsmodel-en-Onderwijsvisie-NL.pdf", "text": "Onderwijsvisie & onderwijsmodel"},
+            {"url": "https://intranet.uu.nl/system/files/Handreiking%20traject%20externe%20certificering%20nieuwe%20opleiding_.pdf", "text": "Handreiking externe certificering nieuwe opleiding (CROHO-label)"},
+            {"url": "https://intranet.uu.nl/system/files/UU-Handreiking-interne-certificering.pdf", "text": "Handreiking interne certificering voor opleidingen"},
+            {"url": "https://intranet.uu.nl/system/files/UU-Quick-Start-interne-certificering.pdf", "text": "Quick start voor interne certificering"}
+        ]
+    },
     "Bekostiging": {
+        "Overheid": [
+            {"url": "https://wetten.overheid.nl/BWBR0016272/2004-01-28", "text": "Notitie 'Helderheid in de bekostiging van het hoger onderwijs'"}
+        ],
         "DUO": [
             {"url": "https://duo.nl/zakelijk/hoger-onderwijs/studentenadministratie/inschrijven-student.jsp#eisen-nationaliteit", "text": "Voorwaarden bekostiging nationaliteitsvereiste"},
             {"url": "https://duo.nl/zakelijk/hoger-onderwijs/bekostiging-en-subsidies/bekostiging-ho.jsp", "text": "Bekostiging Ho"},
