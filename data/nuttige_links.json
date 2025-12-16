@@ -26,6 +26,9 @@
         ]
     },
     "Overig": {
+        "Onderwijsrecht": [
+            {"url": "https://www.lexscholaris.nl/jurisprudentie", "text": "Lex Scholaris | Onderwijsrecht | Jurisprudentie"}
+        ],
         "Universiteit Utrecht": [
             {"url": "https://students.uu.nl/contact/facultaire-studiepunten", "text": "Contactgegevens facultaire studiepunten"}
         ]
@@ -111,6 +114,11 @@
         ]
     },
     "Persoonsgegevens (IDB)": {
+        "Overheid": [
+            {"url": "https://rvig.nl/hup/handleiding-uitvoeringsprocedures", "text": "RvIG | Handleiding Uitvoeringsprocedures (HUP)"},
+            {"url": "https://publicaties.rvig.nl/landelijke-tabellen-32-tm-61", "text": "RvIG | Landelijke tabellen 32 t/m 61"},
+            {"url": "https://rvig.nl/hup/geslachtswijziging", "text": "RvIG | Geslachtswijziging"}
+        ],
         "overig": [
             {"url": "https://www.consilium.europa.eu/prado/en/prado-latest-authentic.html", "text": "Echtheidskenmerken van identiteitsbewijzen"}
         ]
